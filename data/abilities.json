@@ -1,0 +1,431 @@
+{
+  "abilities": [
+    {
+      "id": "k",
+      "title": "General Knowledge (K)",
+      "shortLabel": "K",
+      "weight": "10%",
+      "description": "Knowledge that is familiar to most members of society or is important enough that most adults have been exposed to it.",
+      "mainFigure": "k_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Commonsense",
+          "description": "The vast set of shared, obvious background knowledge about how the world works."
+        },
+        {
+          "name": "Science",
+          "description": "Knowledge of the natural and physical sciences."
+        },
+        {
+          "name": "Social Science",
+          "description": "Understanding of human behavior, societies, and institutions."
+        },
+        {
+          "name": "History",
+          "description": "Knowledge of past events and objects."
+        },
+        {
+          "name": "Culture",
+          "description": "Cultural literacy and awareness."
+        }
+      ]
+    },
+    {
+      "id": "rw",
+      "title": "Reading and Writing Ability (RW)",
+      "shortLabel": "RW",
+      "weight": "10%",
+      "description": "Captures all of the declarative knowledge and procedural skills a person uses to consume and produce written language.",
+      "mainFigure": "rw_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Letter-Word Ability",
+          "description": "The ability to recognize letters and decode words."
+        },
+        {
+          "name": "Reading Comprehension",
+          "description": "The ability to understand connected discourse during reading."
+        },
+        {
+          "name": "Writing Ability",
+          "description": "The ability to write with clarity of thought, organization, and good sentence structure."
+        },
+        {
+          "name": "English Usage Knowledge",
+          "description": "Knowledge of writing in the English language with respect to capitalization, punctuation, usage, and spelling."
+        }
+      ]
+    },
+    {
+      "id": "m",
+      "title": "Mathematical Ability (M)",
+      "shortLabel": "M",
+      "weight": "10%",
+      "description": "The depth and breadth of mathematical knowledge and skills.",
+      "mainFigure": "m_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Arithmetic",
+          "description": "The branch of mathematics that deals with the properties and manipulation of numbers using the four basic operations: addition, subtraction, multiplication, and division."
+        },
+        {
+          "name": "Algebra",
+          "description": "The study of symbols and the rules for combining them to express general relationships and solve equations."
+        },
+        {
+          "name": "Geometry",
+          "description": "The branch of mathematics that studies shapes and space, including size, position, and distance."
+        },
+        {
+          "name": "Probability",
+          "description": "The quantification of uncertainty by assigning numbers from 0 to 1 to events."
+        },
+        {
+          "name": "Calculus",
+          "description": "The mathematics of change and accumulation, using derivatives to find instantaneous rates and integrals to calculate the accumulation of quantities."
+        }
+      ]
+    },
+    {
+      "id": "r",
+      "title": "On-the-Spot Reasoning (R)",
+      "shortLabel": "R",
+      "weight": "10%",
+      "description": "The deliberate but flexible control of attention to solve novel \"on the spot\" problems that cannot be performed by relying exclusively on previously learned habits, schemas, and scripts.",
+      "mainFigure": "r_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Deduction",
+          "description": "The process of reasoning from one or more general statements or premises to reach a conclusion that is logically guaranteed to be true."
+        },
+        {
+          "name": "Induction",
+          "description": "The ability to observe a phenomenon and discover the underlying principles or rules that determine its behavior."
+        },
+        {
+          "name": "Theory of Mind",
+          "description": "The ability to attribute unobservable mental states—such as beliefs, intentions, and desires—to others and to understand that those states may differ from one's own."
+        },
+        {
+          "name": "Planning",
+          "description": "The ability to devise a sequence of actions to achieve a specific goal by mentally mapping out the steps from an initial state to a desired future state."
+        },
+        {
+          "name": "Adaptation",
+          "description": "The ability to infer unstated classification rules from a sequence of simple performance feedback."
+        }
+      ]
+    },
+    {
+      "id": "wm",
+      "title": "Working Memory (WM)",
+      "shortLabel": "WM",
+      "weight": "10%",
+      "description": "The ability to maintain, manipulate, and update information in active attention. (Often referred to as short-term memory.)",
+      "mainFigure": "wm_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Textual Working Memory",
+          "description": "The capacity to maintain and transform textual information in active attention.",
+          "subcategories": [
+            {
+              "name": "Recall",
+              "description": "The ability to remember a short sequence of elements (digits, letters, words, and nonsense words) and answer basic questions about them."
+            },
+            {
+              "name": "Transformation Sequence",
+              "description": "The ability to remember and update a short list of digits or lists of digits following a sequence of operations."
+            }
+          ]
+        },
+        {
+          "name": "Auditory Working Memory",
+          "description": "The ability to hold and manipulate auditory information, including speech, sounds, and music.",
+          "subcategories": [
+            {
+              "name": "Recall",
+              "description": "The ability to remember a collection of voices, utterances, and sound effects and answer basic questions about them."
+            },
+            {
+              "name": "Transformation Sequence",
+              "description": "The ability to remember and modify a short utterance with a variety of transformations."
+            }
+          ]
+        },
+        {
+          "name": "Visual Working Memory",
+          "description": "The ability to hold and manipulate visual information, including images, scenes, spatial layouts, and video.",
+          "subcategories": [
+            {
+              "name": "Recall",
+              "description": "The ability to remember a collection of images and answer basic questions about them."
+            },
+            {
+              "name": "Transformation Sequence",
+              "description": "The ability to transform a visual input following a sequence of operations."
+            },
+            {
+              "name": "Spatial Navigation Memory",
+              "description": "The ability to represent a sense of location in an environment."
+            },
+            {
+              "name": "Long Video Q&A",
+              "description": "The ability to watch a long video or a movie and answer basic questions about it."
+            }
+          ]
+        },
+        {
+          "name": "Cross-Modal Working Memory",
+          "description": "The ability to remember a small number of correspondences of elements across modalities (textual, auditory, visual)."
+        }
+      ]
+    },
+    {
+      "id": "ms",
+      "title": "Long-Term Memory Storage (MS)",
+      "shortLabel": "MS",
+      "weight": "10%",
+      "description": "The ability to stably acquire, consolidate, and store new information from recent experiences.",
+      "mainFigure": "ms_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Associative Memory",
+          "description": "The ability to form a link between two previously unrelated stimuli, such that the subsequent presentation of one of the stimuli serves to activate the recall of the other stimuli.",
+          "subcategories": [
+            {
+              "name": "Cross-Modal Association",
+              "description": "The ability to form associations between audio, visual, or textual information."
+            },
+            {
+              "name": "Personalization Adherence",
+              "description": "The ability to associate specific rules, preferences, or corrections with a distinct interaction context and apply them consistently and unprompted over time."
+            },
+            {
+              "name": "Procedural Association",
+              "description": "The ability to acquire and retain a sequence of associated steps or rules (a procedure) and execute them when cued with the name of the procedure."
+            }
+          ]
+        },
+        {
+          "name": "Meaningful Memory",
+          "description": "The ability to remember narratives and other forms of semantically related information.",
+          "subcategories": [
+            {
+              "name": "Story Recall",
+              "description": "The ability to remember the gist of stories."
+            },
+            {
+              "name": "Movie Recall",
+              "description": "The ability to remember the gist of movies."
+            },
+            {
+              "name": "Episodic Context Recall",
+              "description": "The ability to remember specific events or experiences, including their context (the \"what, where, when, and how\")."
+            }
+          ]
+        },
+        {
+          "name": "Verbatim Memory",
+          "description": "The ability to recall information exactly as it was presented, requiring precise encoding of specific sequences, sets, or designs, often independent of the information's meaning.",
+          "subcategories": [
+            {
+              "name": "Short Sequence Recall",
+              "description": "The ability to exactly recall short sequences of text after a delay."
+            },
+            {
+              "name": "Set Recall",
+              "description": "The ability to recall a set (the order of recall does not matter)."
+            },
+            {
+              "name": "Design Recall",
+              "description": "The ability to reproduce novel designs, schematics, or diagrams after a delay."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr",
+      "title": "Long-Term Memory Retrieval (MR)",
+      "shortLabel": "MR",
+      "weight": "10%",
+      "description": "The fluency and precision with which individuals can access long-term memory.",
+      "mainFigure": "mr_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Retrieval Fluency (Fluency)",
+          "description": "The speed and ease of generating ideas, associations, and solutions based on stored knowledge.",
+          "subcategories": [
+            {
+              "name": "Ideational Fluency",
+              "description": "The ability to rapidly produce a series of ideas, words, or phrases related to a specific condition, category, or object."
+            },
+            {
+              "name": "Expressional Fluency",
+              "description": "The ability to rapidly think of different ways of expressing an idea."
+            },
+            {
+              "name": "Alternative Solution Fluency",
+              "description": "The ability to rapidly think of several alternative solutions to a practical problem."
+            },
+            {
+              "name": "Word Fluency",
+              "description": "The ability to rapidly produce words that share a non-semantic feature."
+            },
+            {
+              "name": "Naming Facility",
+              "description": "The ability to rapidly and accurately recall the specific names for objects, people, places, or concepts from memory."
+            },
+            {
+              "name": "Figural Fluency",
+              "description": "The ability to rapidly draw or sketch as many things as possible."
+            }
+          ]
+        },
+        {
+          "name": "Retrieval Precision (Hallucinations)",
+          "description": "The accuracy of accessed knowledge, including the critical ability to avoid confabulation (hallucinations)."
+        }
+      ]
+    },
+    {
+      "id": "v",
+      "title": "Visual Processing (V)",
+      "shortLabel": "V",
+      "weight": "10%",
+      "description": "The ability to analyze and generate natural and unnatural images and videos.",
+      "mainFigure": "v_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Perception",
+          "description": "The ability to process and interpret visual input from images and videos to identify objects and understand scenes.",
+          "subcategories": [
+            {
+              "name": "Image recognition",
+              "description": "The ability to classify images of commonplace objects, places, or facial expressions including distorted images."
+            },
+            {
+              "name": "Image captioning",
+              "description": "The ability to generate a concise, human-like text description for the visual content of an image."
+            },
+            {
+              "name": "Image anomaly detection",
+              "description": "Includes detecting whether there is something anomalous in an image, whether a visual object is the odd one out, or what is missing from an object."
+            },
+            {
+              "name": "Clip captioning",
+              "description": "The ability to generate a concise, human-like text description of a short video segment."
+            },
+            {
+              "name": "Video anomaly detection",
+              "description": "The ability to detect whether a short video segment is anomalous or implausible."
+            }
+          ]
+        },
+        {
+          "name": "Visual Generation",
+          "description": "The ability to synthesize images and short videos."
+        },
+        {
+          "name": "Visual Reasoning",
+          "description": "The ability to solve problems and make inferences using spatial logic and visual abstractions (e.g., mental rotation, mental folding)."
+        },
+        {
+          "name": "Spatial Scanning",
+          "description": "The ability to accurately survey (visually explore) a wide or complicated spatial field or pattern with multiple obstacles, and identify target configurations or identify a path through the field to a target endpoint."
+        }
+      ]
+    },
+    {
+      "id": "a",
+      "title": "Auditory Processing (A)",
+      "shortLabel": "A",
+      "weight": "10%",
+      "description": "The ability to discriminate, remember, reason, and work creatively on auditory stimuli, which may consist of tones and speech units.",
+      "mainFigure": "a_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Phonetic Coding",
+          "description": "The ability to hear phonemes distinctly, blend sounds into words, and segment words into parts, sounds, or phonemes."
+        },
+        {
+          "name": "Speech Recognition",
+          "description": "The ability to transcribe a spoken audio signal into its corresponding sequence of text."
+        },
+        {
+          "name": "Voice",
+          "description": "The quality and responsiveness of the AI's synthesized voice.",
+          "subcategories": [
+            {
+              "name": "Natural speech",
+              "description": "The ability to utter sentences or paragraphs that sound natural and not robotic."
+            },
+            {
+              "name": "Natural conversation",
+              "description": "The ability to maintain conversational fluidity without long delays or excessive interruptions."
+            }
+          ]
+        },
+        {
+          "name": "Rhythmic Ability",
+          "description": "The ability to recognize and maintain a musical beat, including reproducing rhythms, detecting differences between rhythms, and synchronizing by playing or humming along."
+        },
+        {
+          "name": "Musical Judgment",
+          "description": "The ability to discriminate and judge simple patterns in music."
+        }
+      ]
+    },
+    {
+      "id": "s",
+      "title": "Speed (S)",
+      "shortLabel": "S",
+      "weight": "10%",
+      "description": "The ability to perform simple cognitive tasks quickly.",
+      "mainFigure": "s_examples.pdf",
+      "subcategories": [
+        {
+          "name": "Perceptual Speed–Search",
+          "description": "The speed and fluency of searching or scanning an extended textual or visual field to locate one or more simple patterns."
+        },
+        {
+          "name": "Perceptual Speed–Compare",
+          "description": "The speed and fluency of looking up and comparing textual or visual stimuli that are side by side or more widely separated in an extended textual or visual field."
+        },
+        {
+          "name": "Reading Speed",
+          "description": "Rate of reading text with full comprehension."
+        },
+        {
+          "name": "Writing Speed",
+          "description": "The rate at which words or sentences can be generated or copied."
+        },
+        {
+          "name": "Number Facility",
+          "description": "The rate at which basic arithmetic or algorithmic operations are performed accurately."
+        },
+        {
+          "name": "Simple Reaction Time",
+          "description": "Reaction time to the onset of a single stimulus (textual, visual, or auditory)."
+        },
+        {
+          "name": "Choice Reaction Time",
+          "description": "Reaction time to the onset of one of several possible stimuli."
+        },
+        {
+          "name": "Inspection Time",
+          "description": "The speed at which differences in visual stimuli can be perceived."
+        },
+        {
+          "name": "Comparison Speed",
+          "description": "Reaction time where stimuli must be compared for a particular characteristic or attribute."
+        },
+        {
+          "name": "Pointer Fluency",
+          "description": "The fluency of moving a virtual computer mouse to execute simple requests."
+        }
+      ]
+    }
+  ]
+}
+

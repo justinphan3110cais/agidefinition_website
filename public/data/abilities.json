@@ -1,0 +1,864 @@
+{
+  "abilities": [
+    {
+      "id": "k",
+      "title": "General Knowledge (K)",
+      "shortLabel": "K",
+      "weight": "10%",
+      "description": "Knowledge that is familiar to most members of society or is important enough that most adults have been exposed to it.",
+      "mainFigure": "k_examples.png",
+      "note": "This is highly related to the broad CHC abilities \"Comprehension-Knowledge (Gc)\" and \"Domain-Specific Knowledge (Gkn).\"",
+      "subcategories": [
+        {
+          "name": "Commonsense",
+          "weight": "2%",
+          "description": "The vast set of shared, obvious background knowledge about how the world works.",
+          "fullContent": {
+            "definition": "Commonsense is the vast set of shared, obvious background knowledge about how the world works.",
+            "testingNote": "Text input, text output; no partial credit. External tools (e.g., search) are disabled.",
+            "note": "This is highly related to the narrow CHC ability \"General Verbal Information (K0).\"",
+            "examples": [
+              "(Intuitive Physics) \"If you drop a glass bottle on a concrete floor, what is the most likely outcome?\"",
+              "(Procedural Knowledge) \"Describe the typical sequence of actions when preparing to board a commercial airplane once you arrive at an airport.\"",
+              "(Temporal Commonsense) \"Does making a sandwich usually take longer than baking a loaf of bread?\"",
+              "(Commonsense Morality/Cognitive Empathy) \"Would people typically get mad if they found out a person burned children for the fun of it?\""
+            ],
+            "tests": [
+              "System performance on <a href=\"https://arxiv.org/abs/1911.11641\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">PIQA</a> must exceed 85% accuracy.",
+              "System performance on <a href=\"https://arxiv.org/abs/2008.02275\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ETHICS</a> Commonsense Morality must exceed 80% accuracy."
+            ]
+          }
+        },
+        {
+          "name": "Science",
+          "weight": "2%",
+          "description": "Knowledge of the natural and physical sciences.",
+          "fullContent": {
+            "definition": "Knowledge of the natural and physical sciences. Proficiency is tested without assuming knowledge of calculus. We give three opportunities to demonstrate proficiency in aspects of science: <span class=\"font-semibold\"><u>physics</u></span>, <span class=\"font-semibold\"><u>chemistry</u></span>, and <span class=\"font-semibold\"><u>biology</u></span>. The AGI score is 1% if the model is proficient in exactly one of these subjects. The AGI score is 2% if it is proficient in two or more of these subjects.",
+            "testingNote": "Text modality tested.",
+            "note": "This is highly related to the narrow CHC ability \"General Science Information (K1).\"",
+            "subcategories": [
+              {
+                "name": "Physics",
+                "examples": [
+                  "A 2 kg object is moving at a constant velocity of 3 m/s. What is the net force acting on the object?",
+                  "A resistor has a resistance of 10 ohms and is connected to a 5-volt battery. What is the current flowing through the resistor?",
+                  "Water flows through a horizontal pipe that narrows. Where the pipe is narrower, is the water's speed higher or lower? Is the pressure higher or lower?"
+                ],
+                "test": "A score of 5 on both the AP Physics 1 and Physics 2 is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Chemistry", 
+                "examples": [
+                  "State the molecular geometry for the sulfur tetrafluoride molecule.",
+                  "Arrange the following substances in order of increasing vapor pressure at a given temperature: CH₃CH₂CH₂OH (1-propanol), CH₃OCH₃ (dimethyl ether), and CH₃CH₂OH (ethanol).",
+                  "Calculate the pH of a 0.25 M solution of sodium acetate (NaCH₃COO). The acid dissociation constant, Kₐ, for acetic acid (CH₃COOH) is 1.8 × 10⁻⁵."
+                ],
+                "test": "A score of 5 on the AP Chemistry test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Biology",
+                "examples": [
+                  "Which molecule is the final electron acceptor in the electron transport chain of cellular respiration, and what molecule is formed as a result?",
+                  "The forelimbs of a human, a bat, and a whale all have a similar bone structure, even though they are used for very different functions (grasping, flying, and swimming, respectively). What is the term for these types of structures?",
+                  "In pea plants, the allele for purple flowers (P) is dominant to the allele for white flowers (p). If two heterozygous (Pp) pea plants are crossed, what is the expected phenotypic ratio of their offspring?"
+                ],
+                "test": "A score of 5 on the AP Biology test is sufficient for the 1%, subject to memorization and robustness checks."
+              }
+            ]
+          }
+        },
+        {
+          "name": "Social Science",
+          "weight": "2%",
+          "description": "Understanding of human behavior, societies, and institutions.",
+          "fullContent": {
+            "definition": "Understanding of human behavior, societies, and institutions. We give five opportunities to demonstrate proficiency in aspects of social science: <span class=\"font-semibold\"><u>psychology</u></span>, <span class=\"font-semibold\"><u>microeconomics</u></span>, and <span class=\"font-semibold\"><u>macroeconomics</u></span>, <span class=\"font-semibold\"><u>geography</u></span>, and <span class=\"font-semibold\"><u>comparative government</u></span>. The AGI score is 1% if the model is proficient in exactly one of these subjects. The AGI score is 2% if it is proficient in two or more of these subjects.",
+            "testingNote": "Only the text modality is tested.",
+            "note": "This is related to the narrow CHC ability \"Geography Achievement (A5).\"",
+            "subcategories": [
+              {
+                "name": "Psychology",
+                "examples": [
+                  "Name the Big Five personality traits.",
+                  "Which part of the brain is most associated with fear and emotional responses such as aggression?"
+                ],
+                "test": "A score of 5 on the AP Psychology test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Microeconomics",
+                "examples": [
+                  "A firm's total cost is $500, and its fixed cost is $200. If it produces 10 units, what is its average variable cost?",
+                  "Define a positive externality and provide an example."
+                ],
+                "test": "A score of 5 on the AP Microeconomics test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Macroeconomics",
+                "examples": [
+                  "If the reserve requirement is 20%, what is the maximum potential expansion of the money supply from a new $1,000 deposit?",
+                  "What is the difference between the nominal interest rate and the real interest rate?"
+                ],
+                "test": "A score of 5 on the AP Macroeconomics test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Geography",
+                "examples": [
+                  "What is the difference between a centripetal force and a centrifugal force in a state?",
+                  "What happens to birth and death rates in Stage 3 of the demographic transition model?"
+                ],
+                "test": "A score of 5 on the AP Human Geography test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Comparative Government",
+                "examples": [
+                  "What is the primary difference between a presidential system and a parliamentary system?",
+                  "Describe the role of the Guardian Council in Iran."
+                ],
+                "test": "A score of 5 on the AP Comparative Government and Politics test is sufficient for the 1%, subject to memorization and robustness checks."
+              }
+            ]
+          }
+        },
+        {
+          "name": "History",
+          "weight": "2%",
+          "description": "Knowledge of past events and objects.",
+          "fullContent": {
+            "definition": "Knowledge of past events and objects. We give four opportunities to demonstrate proficiency in aspects of history: <span class=\"font-semibold\"><u>European history</u></span>, <span class=\"font-semibold\"><u>US history</u></span>, <span class=\"font-semibold\"><u>world history</u></span>, and <span class=\"font-semibold\"><u>art history</u></span>. The AGI score is 1% if the model is proficient in exactly one of these subjects. The AGI score is 2% if it is proficient in two or more of these subjects.",
+            "testingNote": "The text and image modalities are tested.",
+            "subcategories": [
+              {
+                "name": "European History",
+                "examples": [
+                  "What were the main goals of the Congress of Vienna in 1815?",
+                  "Explain the political, social, and religious causes of the Thirty Years' War."
+                ],
+                "test": "A score of 5 on the AP European History test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "US History",
+                "examples": [
+                  "Explain the concept of Manifest Destiny and its impact on westward expansion in the 19th century.",
+                  "Analyze the goals and strategies of the Civil Rights Movement of the 1950s and 1960s."
+                ],
+                "test": "A score of 5 on the AP US History test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "World History",
+                "examples": [
+                  "Discuss the rise and impact of the Ottoman Empire from the 14th to the 20th centuries.",
+                  "Describe the end of the Cold War."
+                ],
+                "test": "A score of 5 on the AP World History test is sufficient for the 1%, subject to memorization and robustness checks."
+              },
+              {
+                "name": "Art History",
+                "examples": [
+                  "Discuss the use of contrapposto in ancient Greek and Roman sculpture, using specific examples.",
+                  "Explain how the Benin Bronzes reflect the political and religious power of the Oba."
+                ],
+                "test": "A score of 5 on the AP Art History test is sufficient for the 1%, subject to memorization and robustness checks."
+              }
+            ]
+          }
+        },
+        {
+          "name": "Culture",
+          "weight": "2%",
+          "description": "Cultural literacy and awareness.",
+          "fullContent": {
+            "definition": "This evaluates cultural literacy and awareness. It is divided into <span class=\"font-semibold\"><u>Current Affairs (1%)</u></span> and <span class=\"font-semibold\"><u>Popular Culture (1%)</u></span>.",
+            "note": "The examples below are US-centric. This is highly related to the narrow CHC ability \"General Verbal Information (K0).\"",
+            "subcategories": [
+              {
+                "name": "Current Affairs",
+                "description": "Knowledge of recent, significant events and contemporary issues.",
+                "testingNote": "Text modality; search tools enabled.",
+                "examples": [
+                  "Who is the current president of the United States of America?",
+                  "Has the US economy been in a recession for the past year?",
+                  "Is Microsoft's market cap over five trillion dollars?",
+                  "Are Russia and Ukraine at war?"
+                ]
+              },
+              {
+                "name": "Popular Culture",
+                "description": "Knowledge of widely recognized art, music, literature, media, and public figures.",
+                "testingNote": "Text, audio, and visual modalities tested.",
+                "examples": [
+                  "Who is this?<br><br><img src=\"/assets/examples/superman.png\" alt=\"Superman image\" style=\"max-width: 200px; margin: 1px 0;\">",
+                  "I'll play the first part of a song. <em>Tester plays the first 18 seconds of <a href=\"https://www.youtube.com/watch?v=v5ryZdpEHqM\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">White Christmas 🔊</a> so that the listener just hears \"I'm dreaming of a White\".</em> What word does he say next?",
+                  "\"Is this a highly well-known musical piece, namely a piece that most people in the country have heard?\" <em>Tester plays <a href=\"https://www.youtube.com/watch?v=QQCZIb0fbt8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Magmoor Caverns 🔊</a></em>. Answer: No."
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rw",
+      "title": "Reading and Writing Ability (RW)",
+      "shortLabel": "RW",
+      "weight": "10%",
+      "description": "Reading and writing ability captures all of the declarative knowledge and procedural skills a person uses to consume and produce written language.",
+      "mainFigure": "rw_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Reading and Writing (Grw).\"",
+      "subcategories": [
+        {
+          "name": "Letter-Word Ability",
+          "weight": "1%",
+          "description": "The ability to recognize letters and decode words.",
+          "fullContent": {
+            "definition": "This is the ability to recognize letters and decode words.",
+            "testingNote": "Text input, text output for all testing.",
+            "note": "This is highly related to the narrow CHC ability \"Reading Decoding (RD).\"",
+            "examples": [
+              "Which two letters match exactly? Bb Dd Aa aa",
+              "What letter is missing in do_r?",
+              "Which letter is facing the correct way? m m t (with reversed letters)",
+              "How many \"r's\" are in \"raspberry\"?",
+              "How many syllables are in the word refrigerator?",
+              "Count the number of ts in \"tennessee\"."
+            ]
+          }
+        },
+        {
+          "name": "Reading Comprehension",
+          "weight": "3%",
+          "description": "The ability to understand connected discourse during reading.",
+          "fullContent": {
+            "definition": "This is the ability to understand connected discourse during reading. Systems must also be able to determine if a question is underdetermined by the context. We split reading comprehension into three levels: <span class=\"font-semibold\"><u>sentence level (1%)</u></span>, <span class=\"font-semibold\"><u>paragraph level (1%)</u></span>, and <span class=\"font-semibold\"><u>document level (1%)</u></span>.",
+            "testingNote": "Text input, text output for all testing.",
+            "note": "This is highly related to the narrow CHC ability \"Reading Comprehension (RC).\"",
+            "examples": [
+              "<strong>Sentence Level:</strong> Read the sentence: \"The trophy would not fit in the brown suitcase because it was too large.\" What was too large?",
+              "<strong>Paragraph Level:</strong> Read the paragraph: \"Mars is the fourth planet from the Sun. It is often referred to as the 'Red Planet' because the iron oxide prevalent on its surface gives it a reddish appearance. This rust is a key feature of its landscape.\" Why is Mars called the Red Planet?",
+              "<strong>Document Level:</strong> Read the following product manual excerpt: \"...Protect the motor, display and battery against extreme temperatures... A two-year warranty applies to the battery. Should a fault occur during this period, your Gazelle specialist will replace the battery. Normal aging as well as wear and tear...\" What is the warranty period for the battery? (Full document <a href=\"https://static.giant-bicycles.com/Manuals/E-bikeUsermanualV100_en-EN_1735039859.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">here</a> 📄)"
+            ],
+            "tests": [
+              "<strong>Sentence Level:</strong> Reliably solving Winograd schemas is sufficient for the 1%. For example, >85% accuracy on WinoGrande strongly suggests proficiency.",
+              "<strong>Paragraph Level:</strong> Model accuracy on COQA must exceed 85%, ReCoRD accuracy must exceed 90%, and LAMBADA accuracy must exceed 80% (zero shot).",
+              "<strong>Document Level:</strong> Model accuracy exceeding 55% on LongBench v2 suggests proficiency. Since models must determine if a question is underdetermined, it should also have a hallucination rate of less than 1% on Vectara HHEM."
+            ]
+          }
+        },
+        {
+          "name": "Writing Ability",
+          "weight": "3%",
+          "description": "Ability to write with clarity of thought, organization, and good sentence structure.",
+          "fullContent": {
+            "definition": "Ability to write with clarity of thought, organization, and good sentence structure. We split writing ability into three levels: <span class=\"font-semibold\"><u>sentence level (1%)</u></span>, <span class=\"font-semibold\"><u>paragraph level (1%)</u></span>, and <span class=\"font-semibold\"><u>essay level (1%)</u></span>.",
+            "testingNote": "Text input, text output for all testing.",
+            "note": "This is highly related to the narrow CHC ability \"Writing Ability (WA).\"",
+            "examples": [
+              "<strong>Sentence Level:</strong> Write a single sentence using the words \"ocean,\" \"moon,\" and \"tide.\"",
+              "<strong>Paragraph Level:</strong> Write a paragraph discussing the benefits of regular exercise.",
+              "<strong>Essay Level:</strong> Write a well-structured essay arguing for or against the proposition that remote work should be the default option for office-based jobs."
+            ],
+            "tests": [
+              "If the model receives a 4 or greater out of 6 on GRE Analytical Writing prompts, then that is sufficient for 3%, subject to memorization and robustness checks."
+            ]
+          }
+        },
+        {
+          "name": "English Usage Knowledge",
+          "weight": "3%",
+          "description": "Knowledge of writing in the English language with respect to capitalization, punctuation, usage, and spelling.",
+          "fullContent": {
+            "definition": "This is knowledge of writing in the English language with respect to capitalization, punctuation, usage, and spelling. We split English usage knowledge into three levels: <span class=\"font-semibold\"><u>sentence level (1%)</u></span>, <span class=\"font-semibold\"><u>paragraph level (1%)</u></span>, and <span class=\"font-semibold\"><u>document level (1%)</u></span>. Document level English usage knowledge can be operationalized as proofreading a multipage document.",
+            "testingNote": "Text input, text output for all testing.",
+            "note": "This is highly related to the narrow CHC ability \"English Usage (EU).\"",
+            "examples": [
+              "<strong>Sentence Level:</strong> Is the following sentence grammatically acceptable? \"I bought an Italian hunting blue little antique beautiful cap.\"",
+              "<strong>Paragraph Level:</strong> Find the typos in this: <em>Example paragraph with intentional typos</em> (<a href=\"https://docs.google.com/document/d/1frn4zHFFJ1kMXZeFh8zGcoI9feYliFNvktipLMytMo4/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">link here</a> 📄).",
+              "<strong>Document Level:</strong> Find the typos in this: <em>Example with five intentional typos</em> (<a href=\"https://docs.google.com/document/d/1GdZt0ZlIHR92XsHlWIiAWpEbCWjVc3uQ32oj6y0-abk/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">link here</a> 📄), <em>example with six intentional typos</em> (<a href=\"https://docs.google.com/document/d/1KlbXYsepvvhLii-wCx6H9rmeyfmTtTFtAXNa29uZxX4/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">link here</a> 📄)."
+            ],
+            "tests": [
+              "For sentence-level English usage knowledge, it is necessary that AI systems be able to achieve greater than a 60% correlation on the Corpus of Linguistic Acceptability."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "m",
+      "title": "Mathematical Ability (M)",
+      "shortLabel": "M",
+      "weight": "10%",
+      "description": "This is the depth and breadth of mathematical knowledge and skills.",
+      "mainFigure": "m_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Quantitative Knowledge (Gq)\" and the narrow abilities Mathematical Knowledge (KM), Mathematical Achievement (A3), and General Sequential Reasoning (RG).",
+      "subcategories": [
+        {
+          "name": "Arithmetic",
+          "weight": "2%",
+          "description": "The manipulation of numbers using basic operations and solving word problems.",
+          "fullContent": {
+            "definition": "Arithmetic is the branch of mathematics that deals with the properties and manipulation of numbers using the four basic operations: addition, subtraction, multiplication, and division. <span class=\"font-semibold\"><u>Rudimentary arithmetic</u></span> accounts for 1% and covers evaluating arithmetic expressions with numbers up to five digits. <span class=\"font-semibold\"><u>Proficiency in arithmetic</u></span> accounts for 1% and covers solving basic arithmetic word problems.",
+            "testingNote": "Text modality tested. Tools disabled.",
+            "examples": [
+              "<strong>Rudimentary Illustrative Examples:</strong>",
+              "What is $19 + 11$?",
+              "What is $60,003 - 46,789$?",
+              "What is 2,405 times 61?",
+              "What is 15,267 divided by 721?",
+              "<strong>Proficient Illustrative Examples:</strong>",
+              "Janet had 22 green pens and 10 yellow pens. Then she bought 6 bags of blue pens and 2 bags of red pens. There were 9 pens in each bag of blue and 6 pens in each bag of red. How many pens does Janet have now?<br><br><u>Answer:</u> 98 (GSM8K)",
+              "A company's HR hires 20 new employees every month to add to its total workforce. If the company's initial employee number is 200, and each employee is paid a $4000 salary per month, calculate the total amount of money the company pays to its employees after three months?<br><br><u>Answer:</u> 2880000 (GSM8K)"
+            ],
+            "tests": [
+              "Greater than 95% on <a href=\"https://arxiv.org/abs/2110.14168\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">GSM8K</a> is sufficient for the 2%, subject to memorization and robustness checks."
+            ]
+          }
+        },
+        {
+          "name": "Algebra",
+          "weight": "2%",
+          "description": "The study of symbols and the rules for combining them to express general relationships and solve equations.",
+          "fullContent": {
+            "definition": "Algebra studies symbols and the rules for combining them to express general relationships and solve equations. <span class=\"font-semibold\"><u>Rudimentary algebra</u></span> accounts for 1% and covers SAT-level algebra problems. <span class=\"font-semibold\"><u>Proficiency in algebra</u></span> accounts for 1% and covers competition-level (MathCounts State/Nationals) algebra problems.",
+            "examples": [
+              "<strong>Rudimentary Illustrative Examples:</strong>",
+              "Let $g(x)=ax^2+24$, where a is a constant. If $g(4)=8$, what is $g(-4)$?<br><br><u>Answer:</u> 8",
+              "A grocery's prices (in dollars per pound) change linearly with $x$, the number of weeks after July 1. Beef: $b(x) = 2.35 + 0.25x$. Chicken: $c(x) = 1.75 + 0.40x$. (a) For what value of x are the prices equal? (b) What is the common price?<br><br><u>Answer:</u> (a) 4 weeks, (b) $3.35 per lb",
+              "<strong>Proficient Illustrative Examples:</strong>",
+              "The first three terms of a geometric sequence are the integers a, 720, b, where a < 720 < b. What is the sum of the digits of the least possible value of b?<br>(A) 9<br>(B) 12<br>(C) 16<br>(D) 18<br>(E) 21<br><u>Answer:</u> E (21)",
+              "Integers a, b, and c satisfy ab + c = 100, bc + a = 87, and ca + b = 60. What is ab + bc + ca?<br>(A) 212<br>(B) 247<br>(C) 258<br>(D) 276<br>(E) 284<br><u>Answer:</u> D (276)"
+            ],
+            "tests": [
+              "Greater than 90% on <a href=\"https://arxiv.org/abs/2103.03874\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">MATH</a> Algebra is sufficient for the 2%, subject to memorization and robustness checks."
+            ]
+          }
+        },
+        {
+          "name": "Geometry",
+          "weight": "2%",
+          "description": "The study of shapes, space, size, position, and distance.",
+          "fullContent": {
+            "definition": "Geometry is the branch of mathematics that studies shapes and space, including size, position, and distance. <span class=\"font-semibold\"><u>Rudimentary geometry</u></span> accounts for 1% and covers SAT-level geometry problems. <span class=\"font-semibold\"><u>Proficiency in geometry</u></span> accounts for 1% and covers competition-level (MathCounts State/Nationals) geometry problems.",
+            "examples": [
+              "<strong>Rudimentary Illustrative Examples:</strong>",
+              "What is the value of w in the figure?<br><br><img src=\"/assets/examples/math_angles.png\" alt=\"Geometry angle problem\" style=\"max-width: 200px; margin: 1px 0;\"><br><u>Answer:</u> 100 degrees (<a href=\"http://mspricemath.pbworks.com/w/file/fetch/107344674/SAT%20Geometry%20Problems.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+              "A square and an equilateral triangle have equal perimeters. If the square has sides of length 3, what is the length of one side of the triangle?<br><br><u>Answer:</u> 4 (<a href=\"http://mspricemath.pbworks.com/w/file/fetch/107344674/SAT%20Geometry%20Problems.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+              "If the volume of a cube is 8, what is the shortest distance from the center of the cube to the base of the cube?<br>(A) 1<br>(B) 2<br>(C) 4<br>(D) $\\sqrt{2}$<br>(E) $2\\sqrt{2}$<br><u>Answer:</u> A (1) (<a href=\"http://mspricemath.pbworks.com/w/file/fetch/107344674/SAT%20Geometry%20Problems.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+              "<strong>Proficient Illustrative Example:</strong>",
+              "An orange shaded rectangle is inscribed in a quarter-circle. Two sides of the rectangle lie along the two perpendicular radii of the quarter-circle, and the rectangle's edge touches the quarter-circle arc. Two segments are given as 2 and 4 units, as shown below. What is the area of the orange shaded rectangle?<br><br><img src=\"/assets/examples/orange_square.png\" alt=\"Quarter-circle with inscribed rectangle\" style=\"max-width: 200px; margin: 1px 0;\"><br><u>Answer:</u> 48 (<a href=\"https://www.youtube.com/watch?v=WWP3Jn651Lg\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)"
+            ],
+            "tests": [
+              "Greater than 95% on <a href=\"https://arxiv.org/abs/2103.03874\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">MATH</a> Geometry is sufficient for the 2%, subject to memorization and robustness checks."
+            ]
+          }
+        },
+        {
+          "name": "Probability",
+          "weight": "2%",
+          "description": "The quantification of uncertainty by assigning numbers from 0 to 1 to events.",
+          "fullContent": {
+            "definition": "Probability quantifies uncertainty by assigning numbers from 0 to 1 to events. <span class=\"font-semibold\"><u>Rudimentary probability</u></span> accounts for 1% and covers SAT-level probability problems. <span class=\"font-semibold\"><u>Proficiency in probability</u></span> accounts for 1% and covers undergraduate probability calculations.",
+            "examples": [
+              "<strong>Rudimentary Illustrative Examples:</strong>",
+              "A certain hospital currently contains 319 patients, 25 nurses, 8 doctors, and 48 visiting family members. If a person is picked at random from every person currently in the hospital, which of the following choices is closest to the probability that they are a nurse?<br>(A) .063<br>(B) .066<br>(C) .25<br>(D) 16<br><u>Answer:</u> (A) .063 (<a href=\"https://myuniuni.oss-cn-beijing.aliyuncs.com/files/sat/04%E6%A6%82%E7%8E%87%E7%BB%9F%E8%AE%A1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+              "When one student is chosen at random from the Debate Club, the probability that a boy is chosen is 2/5. There are currently 25 students on the Debate Club. How many boys would have to join the club in order for the probability of choosing a boy at random to be 1/2?<br>(A) 3<br>(B) 2<br>(C) 5<br>(D) 1<br>(E) 4<br><u>Answer:</u> (C) 5 (<a href=\"https://my-mathematics.weebly.com/uploads/8/8/7/9/8879216/sat_focused_practice_worksheet_4-_probability_-.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+              "<strong>Proficient Illustrative Examples:</strong>",
+              "Suppose an airline accepted 12 reservations for a commuter plane with 10 seats. They know that 7 reservations went to regular commuters who will show up for sure. The other 5 passengers will show up with a 50% chance, independently of each other. (a) Find the probability that the flight will be overbooked, i.e., more passengers will show up than seats are available. (b) Find the probability that there will be empty seats. (c) Let X be the number of passengers turned away. Find E(X).<br><br><u>Answer:</u> (a) 0.1875, (b) 0.5, (c) 0.219",
+              "Suppose N dice are rolled, where $1 \\le N \\le 6$. (a) Given that no two of the N dice show the same face, what is the probability that one of the dice shows a six? Give a formula in terms of N. (b) In (a) the number of dice N was fixed, but now repeat assuming instead that N is random, determined as the value of another die roll. Your answer now should be simply a number, not involving N.<br><br><u>Answer:</u> (a) N/6, (b) 0.3604"
+            ]
+          }
+        },
+        {
+          "name": "Calculus",
+          "weight": "2%",
+          "description": "The mathematics of change and accumulation.",
+          "fullContent": {
+            "definition": "Calculus is the mathematics of change and accumulation, using derivatives to find instantaneous rates and integrals to calculate the accumulation of quantities. <span class=\"font-semibold\"><u>Rudimentary calculus</u></span> accounts for 1% and covers AP Calculus AB computational calculus problems. <span class=\"font-semibold\"><u>Proficiency in calculus</u></span> accounts for 1% and covers AP Calculus BC and multivariate calculus.",
+            "examples": [
+              "<strong>Rudimentary Illustrative Examples:</strong>",
+              "$\\lim_{x \\to \\infty} \\frac{\\sqrt{9x^4 + 1}}{x^2 - 3x + 5}$ is?<br>(A) 1<br>(B) 3<br>(C) 9<br>(D) nonexistent<br><u>Answer:</u> B",
+              "Which of the following limits is equal to $\\int_{3}^{5} x^{4}\\,dx$?<br>(A) $\\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\left(3+\\frac{k}{n}\\right)^{4}\\frac{1}{n}$<br>(B) $\\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\left(3+\\frac{k}{n}\\right)^{4}\\frac{2}{n}$<br>(C) $\\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\left(3+\\frac{2k}{n}\\right)^{4}\\frac{1}{n}$<br>(D) $\\lim_{n\\to\\infty}\\sum_{k=1}^{n}\\left(3+\\frac{2k}{n}\\right)^{4}\\frac{2}{n}$<br><u>Answer:</u> D",
+              "<strong>Proficient Illustrative Examples:</strong>",
+              "For what value of $k$, if any, is $\\int_{0}^{\\infty} kx e^{-2x}\\,dx = 1$?<br>(A) 1/4<br>(B) 1<br>(C) 4<br>(D) There is no such value of $k$.<br><u>Answer:</u> C",
+              "A circular object is increasing in size in some unspecified manner, but it is known that when the radius is 6, the rate of change of the radius is 4. Find the rate of change of the area when the radius is 6.<br><br><u>Answer:</u> $dA/dt = 48\\pi$",
+              "Find all the critical points of the function $f(x, y) = x^3 - 6xy + y^2 + 6x + 3y - 5$."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "r",
+      "title": "On-the-Spot Reasoning (R)",
+      "shortLabel": "R",
+      "weight": "10%",
+      "description": "The deliberate but flexible control of attention to solve novel \"on the spot\" problems that cannot be performed by relying exclusively on previously learned habits, schemas, and scripts.",
+      "mainFigure": "r_examples.png",
+      "note": "This is highly related to the CHC broad ability \"Fluid Reasoning (Gf).\"",
+      "subcategories": [
+        {
+          "name": "Deduction",
+          "weight": "2%",
+          "description": "Reasoning from general statements or premises to reach a logically guaranteed conclusion.",
+          "fullContent": {
+            "definition": "Deduction is the process of reasoning from one or more general statements or premises to reach a conclusion that is logically guaranteed to be true. This should test categorical reasoning, sufficient conditional reasoning, necessary conditional reasoning, disjunctive reasoning, and conjunctive reasoning.",
+            "note": "This is highly related to the CHC narrow ability \"General Sequential Reasoning (RG).\"",
+            "examples": [
+              "David knows Mr. Zhang's friend Jack, and Jack knows David's friend Ms. Lin. Everyone of them who knows Jack has a master's degree, and everyone of them who knows Ms. Lin is from Shanghai. Who is from Shanghai and has a master's degree?<br>(A) David<br>(B) Jack<br>(C) Mr. Zhang<br>(D) Ms. Lin<br><u>Answer:</u> A",
+              "Last night, Mark either went to play in the gym or visited his teacher Tony. If Mark drove last night, he didn't go to play in the gym. Mark would go visit his teacher Tony only if he and his teacher had an appointment. In fact, Mark had no appointment with his teacher Tony in advance. Which is true based on the above statements?<br>(A) Mark went to the gym with his teacher Tony last night<br>(B) Mark visited his teacher Tony last night<br>(C) Mark didn't drive last night<br>(D) Mark didn't go to the gym last night<br><u>Answer:</u> C"
+            ],
+            "tests": [
+              "An accuracy level of 86% (human-level) on <a href=\"https://arxiv.org/abs/2304.03439\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">LogiQA 2.0</a> is sufficient for the 2%, subject to memorization and robustness checks."
+            ]
+          }
+        },
+        {
+          "name": "Induction",
+          "weight": "4%",
+          "description": "Discovering the underlying principles or rules that determine a phenomenon's behavior.",
+          "fullContent": {
+            "definition": "The ability to observe a phenomenon and discover the underlying principles or rules that determine its behavior. For induction tests, we use <a href=\"https://en.wikipedia.org/wiki/Raven%27s_Progressive_Matrices\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Raven's Progressive Matrices (RPMs)</a>. As mentioned above, we do not treat RPMs as a strong indicator of overall AI system intelligence, rather a direct measurement of abstract inductive reasoning abilities. We do not privilege any modality, so we test performance on these induction examples described verbally (2%) or rendered visually (2%).",
+            "testingNote": "To test this the authors of the paper have two private RPM sets. Each test has a visual representation as well as a verbal representation. We average the percentile of the two tests to determine the AI's percentile (p) in comparison to a human population.<br><br>The mapping from percentile to score is as follows:<br>• 0 ≤ p < 50 → 0%<br>• 50 ≤ p < 90 → 1%<br>• 90 ≤ p → 2%<br><br>If it is below average, the AGI score does not increase. If it is above average but beneath the 90th percentile, the AGI score increases 1%. If the percentile is at or above the 90th percentile, the AGI score increases 2%.",
+            "note": "This is highly related to the CHC narrow ability \"Induction (I).\"",
+            "examples": [
+              "See: Example RPM Document (<a href=\"https://docs.google.com/document/d/1QVJE5sRFPIP2-YDoE6rXOFMAr8DBoEXykEomPbi4BFo/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">linked here 📄</a>)."
+            ],
+            "tests": [
+              "This is related to the <a href=\"https://arxiv.org/abs/1911.01547\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ARC-AGI challenge</a>."
+            ]
+          }
+        },
+        {
+          "name": "Theory of Mind",
+          "weight": "2%",
+          "description": "Attributing mental states to others and understanding those states may differ from one's own.",
+          "fullContent": {
+            "definition": "The ability to attribute unobservable mental states—such as beliefs, intentions, and desires—to others and to understand that those states may differ from one's own.",
+            "examples": [
+              "The can of Pringles has moldy chips in it. Mary picks up the can in the supermarket and walks to the cashier. Is Mary likely to be aware that \"The can of Pringles has moldy chips in it.\"?<br><u>Answer:</u> No."
+            ],
+            "tests": [
+              "An accuracy level at or above 87.5% (human-level) on <a href=\"https://arxiv.org/abs/2310.15421\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">FANToM</a> is necessary for the 2%.",
+              "An accuracy level at or above 85.4% (human-level) on <a href=\"https://arxiv.org/abs/2402.15052\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ToMBench</a> is necessary for the 2%."
+            ]
+          }
+        },
+        {
+          "name": "Planning",
+          "weight": "1%",
+          "description": "Devising a sequence of actions to achieve a specific goal.",
+          "fullContent": {
+            "definition": "Planning is the ability to devise a sequence of actions to achieve a specific goal by mentally mapping out the steps from an initial state to a desired future state.",
+            "tests": [
+              "An accuracy of 90% or above on <a href=\"https://arxiv.org/abs/2406.04520\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Natural Plan</a> is necessary for the 1%.",
+              "An accuracy of 90% or above on <a href=\"https://arxiv.org/abs/2206.10498\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">PlanBench BlocksWorld</a> is necessary for the 1%."
+            ]
+          }
+        },
+        {
+          "name": "Adaptation",
+          "weight": "1%",
+          "description": "The ability to infer unstated classification rules from performance feedback.",
+          "fullContent": {
+            "definition": "The ability to infer an unstated classification rule from performance feedback and to flexibly abandon that rule and search for a new one when the sorting criteria change without warning.",
+            "tests": [
+              "Achieving fewer than 15 Total Errors on the <a href=\"https://www.psytoolkit.org/experiment-library/experiment_wcst.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Wisconsin Card Sorting Test</a> is sufficient for the 1%, subject to memorization and robustness checks. This is related to the <a href=\"https://arxiv.org/abs/1911.01547\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ARC-AGI v3 challenge</a>."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "wm",
+      "title": "Working Memory (WM)",
+      "shortLabel": "WM",
+      "weight": "10%",
+      "description": "The ability to maintain, manipulate, and update information in active attention. (Often referred to as short-term memory.)",
+      "mainFigure": "wm_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Working Memory Capacity (Gwm).\" Note that textual working memory is partially tested in Reading Writing Ability (RW) through Reading Comprehension ability. Likewise some auditory working memory is tested in Auditory Ability (A) through Phonetic Coding and Rhythmic Ability. This is a reason for the relatively higher weight of visual working memory in this section.",
+      "subcategories": [
+        {
+          "name": "Textual Working Memory",
+          "weight": "2%",
+          "description": "The ability to hold and manipulate sequences of verbal information presented textually.",
+          "fullContent": {
+            "definition": "This tests the capacity to maintain and transform textual information in active attention. We test textual working memory in two ways: <span class=\"font-semibold\"><u>recall (1%)</u></span> and <span class=\"font-semibold\"><u>transformation sequence (1%)</u></span>.",
+            "testingNote": "Text input, text output. External tools are disabled.",
+            "subcategories": [
+              {
+                "name": "Recall",
+                "description": "The ability to remember a short sequence of elements (digits, letters, words, and nonsense words) and answer basic questions about them.",
+                "testingNote": "This is highly related to the narrow CHC ability \"Memory Span (MS).\"",
+                "examples": [
+                  "\"Dog-7-Apple - 3- Chair.\" Repeat the words from the sequence in order.",
+                  "\"Apple, 9, Truck, 3, Lamp, 6.\" What was the number after Truck?",
+                  "\"Fleep, Zorp, Glim, Chair.\" State the nonsense words in alphabetical order."
+                ]
+              },
+              {
+                "name": "Transformation Sequence",
+                "description": "The ability to remember and update a short list of digits or lists of digits following a sequence of operations (e.g., append, insert, pop, remove, slice, sort, reverse, union, intersection setminus, add elementwise, swap element at position).",
+                "testingNote": "This is highly related to the narrow CHC ability \"Attentional control (AC).\"",
+                "examples": [
+                  "Start with the list: [10, 20, 30]. First, append the number 40. Then, reverse the list.",
+                  "Given the list: ['red', 'green', 'blue', 'yellow']. Remove the element 'green.' Then, insert the word 'purple' at the beginning of the list.",
+                  "You have two sets of numbers: A={1,2,3} and B={3,4,5}. Call the intersection C. What is the set A after removing the element(s) in the intersection C?"
+                ],
+                "test": "A related benchmark is <a href=\"https://arxiv.org/abs/2311.09835\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Michelangelo</a>, but it is substantially harder since it uses very long sequences, whereas we use shorter sequences."
+              }
+            ]
+          }
+        },
+        {
+          "name": "Auditory Working Memory",
+          "weight": "2%",
+          "description": "The ability to hold and manipulate auditory information, including speech, sounds, and music.",
+          "fullContent": {
+            "definition": "We test auditory working memory in two ways: <span class=\"font-semibold\"><u>recall (1%)</u></span> and <span class=\"font-semibold\"><u>transformation sequence (1%)</u></span>.",
+            "testingNote": "Audio input, audio/text output.",
+            "subcategories": [
+              {
+                "name": "Recall",
+                "description": "The ability to remember a collection of voices, utterances, and sound effects and answer basic questions about them.",
+                "testingNote": "This is highly related to the narrow CHC ability \"Auditory short-term storage (Wa).\"",
+                "examples": [
+                  "I will play a collection of sounds. I will then play a sound after the first collection and ask if the sound was played during the first collection. Collection: <a href=\"https://www.youtube.com/watch?v=VbZs_umzQvE\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Portal button 🔊</a>, <a href=\"https://www.youtube.com/watch?v=29ayN0ExAFw\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Metal gear solid sound effect 🔊</a>, <a href=\"https://www.youtube.com/watch?v=kAxof5WBY0g\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Super Metroid Item Acquisition Fanfare 🔊</a>. Question: Was this sound <a href=\"https://www.youtube.com/watch?v=S6lKl-ppF8o\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Portal 2 SFX - Container Alarm 🔊</a> played in the first collection?",
+                  "I will play a collection of voices. After presenting that collection, I will play a voice. You will be tasked with determining whether you have heard that voice in the collection. Voice collection: <a href=\"https://drive.google.com/file/d/1kQYOvU_quesgLS6MgFgbCPvkCOx7vYTy/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">echo.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1-wb8SWVMhn2fs18FPKHvpUVPFAfbrs9e/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">coral.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1qJ1-tVl40fyLlTqBWL8P8iX7NxhxGJlK/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">fabin.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1FdfHzYwnQC5wYceNaRwRF_roqbaF4tgm/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">marin.wav 🔊</a><br>Question: Was this voice <a href=\"https://drive.google.com/file/d/1kSzx-39N9iN83bjzOmHeTvnauKitE4rO/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">coral_2.wav 🔊</a> played in the first collection?",
+                  "Listen to this sequence of tones: 🎵 [C4, E4, G4, F4, A4]. Now listen to this sequence: 🎵 [C4, E4, F4, G4, A4]. Are they the same?"
+                ]
+              },
+              {
+                "name": "Transformation Sequence",
+                "description": "The ability to remember and modify a short utterance with a variety of transformations (change articulation, change emotional expressiveness, question inflection, laugh, sigh, hum, change pitch, change timbre).",
+                "examples": [
+                  "Say \"I spilled my coffee on my shirt. Today's just not my day.\" Now say it with a sigh between the two sentences.",
+                  "Say \"the quick brown fox jumps over the lazy dog.\" Now say it in a deeper voice and make it sound like a question.",
+                  "Say \"that's the funniest thing I ever heard.\" Now utter a laugh before repeating it, and when you repeat the sentence, say it monotonously while also using a (potentially broken) British accent."
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Visual Working Memory",
+          "weight": "4%",
+          "description": "The ability to hold and manipulate visual information, including images, scenes, spatial layouts, and video.",
+          "fullContent": {
+            "definition": "We test visual working memory in four ways: <span class=\"font-semibold\"><u>recall (1%)</u></span>, <span class=\"font-semibold\"><u>transformation sequence (1%)</u></span>, <span class=\"font-semibold\"><u>spatial navigation memory (1%)</u></span>, and <span class=\"font-semibold\"><u>long video Q&A (1%)</u></span>.",
+            "subcategories": [
+              {
+                "name": "Recall",
+                "description": "The ability to remember a collection of images and answer basic questions about them.",
+                "testingNote": "This is highly related to the narrow CHC ability \"Visual-spatial short-term storage.\"",
+                "examples": [
+                  "I will give you two collections of visual elements, one shown after the other. Identify which visual elements, if any, in the second collection were present in the first collection.<br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;\"><div><strong>Collection 1:</strong><br><img src=\"/assets/examples/4_planes.png\" alt=\"Collection of 4 planes\" style=\"max-width: 200px; margin: 10px 0;\"></div><div><strong>Collection 2:</strong><br><img src=\"/assets/examples/2_planes.png\" alt=\"Collection of 2 planes\" style=\"max-width: 200px; margin: 10px 0;\"></div></div>",
+                  "I will give you two collections of visual elements, one shown after the other. Identify which element in the second collection is most like the first collection.<br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;\"><div><strong>Collection 1:</strong><br><img src=\"/assets/examples/6_shoes.png\" alt=\"Collection of 6 shoes\" style=\"max-width: 200px; margin: 10px 0;\"></div><div><strong>Collection 2:</strong><br><img src=\"/assets/examples/2_shoes.png\" alt=\"Collection of 2 shoes\" style=\"max-width: 200px; margin: 10px 0;\"></div></div>"
+                ]
+              },
+              {
+                "name": "Transformation Sequence",
+                "description": "The ability to transform a visual input following a sequence of operations (e.g. object addition, object deletion, object rotation, denoise, deblur, colorization, etc.).",
+                "testingNote": "This is highly related to the narrow CHC ability \"Visualization (Vz).\" Image and text input, image output.",
+                "examples": [
+                  "Edit this image so that both the dock is removed and also the middle bird, while preserving the rest of the image:<br><img src=\"/assets/examples/nature.png\" alt=\"Nature scene with dock and birds\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "Finish this sketch:<br><img src=\"/assets/examples/dino.png\" alt=\"Incomplete dinosaur sketch\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "Fill in the colors according to the key at the bottom:<br><img src=\"/assets/examples/tomato.png\" alt=\"Tomato coloring page with color key\" style=\"max-width: 300px; margin: 10px 0;\">"
+                ]
+              },
+              {
+                "name": "Spatial Navigation Memory",
+                "description": "The ability to represent a sense of location in an environment.",
+                "examples": [
+                  "<a href=\"https://drive.google.com/file/d/13E_pU3luxpHowCTgsqfjyeAKOhbqY_lL/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">vsibench.mp4 🎥</a> If I am standing in front of the refrigerator and facing the kitchen window, is the stove to my left, right, or back?"
+                ],
+                "tests": [
+                  "System performance on <a href=\"https://arxiv.org/abs/2412.14171\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">VSI-Bench</a> must exceed 80% accuracy.",
+                  "System performance on <a href=\"https://arxiv.org/abs/2506.21458\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">MindCube Tiny</a> must exceed 90%."
+                ]
+              },
+              {
+                "name": "Long Video Q&A",
+                "description": "The ability to watch a long video or a movie (up to three hours) and answer basic questions about it (including anomaly detection and indicating when a question is not determined by the context). If the AI cannot process the movie, it will not receive 1%.",
+                "examples": [
+                  "Show the movie Avengers: Infinity War. Was the dwarf on Nidavellir taller than Rocket Racoon? Was he taller than Thor?<br><u>Answer:</u> Yes, Yes",
+                  "Show the movie Wicked. Who took credit for levitating Nessarose?<br><u>Answer:</u> Madame Morrible",
+                  "Show the movie Star Wars. What was Darth Vader's midichlorian count according to Ben Kenobi in the movie?<br><u>Answer:</u> Not discussed in the movie",
+                  "Show The Adventures of Mark Twain. Who is the main character of the anomalously scary scene in this movie? What does the main character of the scene do with the animal?<br><u>Answer:</u> Satan; he squashes the cow"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "Cross-Modal Working Memory",
+          "weight": "2%",
+          "description": "The ability to maintain and modify information presented across different modalities.",
+          "fullContent": {
+            "definition": "We test cross-modal working memory in two ways: <span class=\"font-semibold\"><u>cross-modal binding (1%)</u></span> and <span class=\"font-semibold\"><u>dual n-back (1%)</u></span>.",
+            "subcategories": [
+              {
+                "name": "Cross-Modal Binding",
+                "description": "The ability to remember a small number of correspondences of elements across modalities (textual, auditory, visual).",
+                "examples": [
+                  "I will show a collection of picture-word pairs. I will then show one element, and you must recall the element to which it was paired.<img src=\"/assets/examples/drup_spol_ston.png\" alt=\"Picture-word pairs: drup, spol, ston\" style=\"max-width: 300px; margin: 10px 0;\"><br><br>Question: What corresponds to <img src=\"/assets/examples/x_figure.png\" alt=\"X figure\" style=\"max-width: 40px; margin: 0 5px; vertical-align: middle;\">(<a href=\"https://www.airipa.it/wp-content/uploads/2019/03/toffalini_etal2019-1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+                  "I will show a collection of picture-word pairs. I will then show one element, and you must recall the element to which it was paired.<img src=\"/assets/examples/animals.png\" alt=\"Animal picture-word pairs\" style=\"max-width: 250px; margin: 10px 0;\">Question: What corresponds to \"Dog\"?"
+                ]
+              },
+              {
+                "name": "Dual N-Back",
+                "description": "The ability to simultaneously monitor and update visual and audio streams of recent information and to recognize and report when the current item in each stream matches the one presented a fixed number of steps earlier.",
+                "testingNote": "This is highly related to the narrow CHC ability \"Working Memory Capacity (Wc).\"",
+                "test": "Achieving 85% or greater on the <a href=\"https://dual-n-back.io\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">dual n-back test</a> (n=2) is sufficient for the 1%, subject to memorization and robustness checks."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ms",
+      "title": "Long-Term Memory Storage (MS)",
+      "shortLabel": "MS",
+      "weight": "10%",
+      "description": "The ability to stably acquire, consolidate, and store new information from recent experiences.",
+      "mainFigure": "ms_examples.png",
+      "subcategories": [
+        {
+          "name": "Associative Memory",
+          "description": "The ability to form a link between two previously unrelated stimuli, such that the subsequent presentation of one of the stimuli serves to activate the recall of the other stimuli.",
+          "subcategories": [
+            {
+              "name": "Cross-Modal Association",
+              "description": "The ability to form associations between audio, visual, or textual information."
+            },
+            {
+              "name": "Personalization Adherence",
+              "description": "The ability to associate specific rules, preferences, or corrections with a distinct interaction context and apply them consistently and unprompted over time."
+            },
+            {
+              "name": "Procedural Association",
+              "description": "The ability to acquire and retain a sequence of associated steps or rules (a procedure) and execute them when cued with the name of the procedure."
+            }
+          ]
+        },
+        {
+          "name": "Meaningful Memory",
+          "description": "The ability to remember narratives and other forms of semantically related information.",
+          "subcategories": [
+            {
+              "name": "Story Recall",
+              "description": "The ability to remember the gist of stories."
+            },
+            {
+              "name": "Movie Recall",
+              "description": "The ability to remember the gist of movies."
+            },
+            {
+              "name": "Episodic Context Recall",
+              "description": "The ability to remember specific events or experiences, including their context (the \"what, where, when, and how\")."
+            }
+          ]
+        },
+        {
+          "name": "Verbatim Memory",
+          "description": "The ability to recall information exactly as it was presented, requiring precise encoding of specific sequences, sets, or designs, often independent of the information's meaning.",
+          "subcategories": [
+            {
+              "name": "Short Sequence Recall",
+              "description": "The ability to exactly recall short sequences of text after a delay."
+            },
+            {
+              "name": "Set Recall",
+              "description": "The ability to recall a set (the order of recall does not matter)."
+            },
+            {
+              "name": "Design Recall",
+              "description": "The ability to reproduce novel designs, schematics, or diagrams after a delay."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mr",
+      "title": "Long-Term Memory Retrieval (MR)",
+      "shortLabel": "MR",
+      "weight": "10%",
+      "description": "The fluency and precision with which individuals can access long-term memory.",
+      "mainFigure": "mr_examples.png",
+      "subcategories": [
+        {
+          "name": "Retrieval Fluency (Fluency)",
+          "description": "The speed and ease of generating ideas, associations, and solutions based on stored knowledge.",
+          "subcategories": [
+            {
+              "name": "Ideational Fluency",
+              "description": "The ability to rapidly produce a series of ideas, words, or phrases related to a specific condition, category, or object."
+            },
+            {
+              "name": "Expressional Fluency",
+              "description": "The ability to rapidly think of different ways of expressing an idea."
+            },
+            {
+              "name": "Alternative Solution Fluency",
+              "description": "The ability to rapidly think of several alternative solutions to a practical problem."
+            },
+            {
+              "name": "Word Fluency",
+              "description": "The ability to rapidly produce words that share a non-semantic feature."
+            },
+            {
+              "name": "Naming Facility",
+              "description": "The ability to rapidly and accurately recall the specific names for objects, people, places, or concepts from memory."
+            },
+            {
+              "name": "Figural Fluency",
+              "description": "The ability to rapidly draw or sketch as many things as possible."
+            }
+          ]
+        },
+        {
+          "name": "Retrieval Precision (Hallucinations)",
+          "description": "The accuracy of accessed knowledge, including the critical ability to avoid confabulation (hallucinations)."
+        }
+      ]
+    },
+    {
+      "id": "v",
+      "title": "Visual Processing (V)",
+      "shortLabel": "V",
+      "weight": "10%",
+      "description": "The ability to analyze and generate natural and unnatural images and videos.",
+      "mainFigure": "v_examples.png",
+      "subcategories": [
+        {
+          "name": "Perception",
+          "description": "The ability to process and interpret visual input from images and videos to identify objects and understand scenes.",
+          "subcategories": [
+            {
+              "name": "Image recognition",
+              "description": "The ability to classify images of commonplace objects, places, or facial expressions including distorted images."
+            },
+            {
+              "name": "Image captioning",
+              "description": "The ability to generate a concise, human-like text description for the visual content of an image."
+            },
+            {
+              "name": "Image anomaly detection",
+              "description": "Includes detecting whether there is something anomalous in an image, whether a visual object is the odd one out, or what is missing from an object."
+            },
+            {
+              "name": "Clip captioning",
+              "description": "The ability to generate a concise, human-like text description of a short video segment."
+            },
+            {
+              "name": "Video anomaly detection",
+              "description": "The ability to detect whether a short video segment is anomalous or implausible."
+            }
+          ]
+        },
+        {
+          "name": "Visual Generation",
+          "description": "The ability to synthesize images and short videos."
+        },
+        {
+          "name": "Visual Reasoning",
+          "description": "The ability to solve problems and make inferences using spatial logic and visual abstractions (e.g., mental rotation, mental folding)."
+        },
+        {
+          "name": "Spatial Scanning",
+          "description": "The ability to accurately survey (visually explore) a wide or complicated spatial field or pattern with multiple obstacles, and identify target configurations or identify a path through the field to a target endpoint."
+        }
+      ]
+    },
+    {
+      "id": "a",
+      "title": "Auditory Processing (A)",
+      "shortLabel": "A",
+      "weight": "10%",
+      "description": "The ability to discriminate, remember, reason, and work creatively on auditory stimuli, which may consist of tones and speech units.",
+      "mainFigure": "a_examples.png",
+      "subcategories": [
+        {
+          "name": "Phonetic Coding",
+          "description": "The ability to hear phonemes distinctly, blend sounds into words, and segment words into parts, sounds, or phonemes."
+        },
+        {
+          "name": "Speech Recognition",
+          "description": "The ability to transcribe a spoken audio signal into its corresponding sequence of text."
+        },
+        {
+          "name": "Voice",
+          "description": "The quality and responsiveness of the AI's synthesized voice.",
+          "subcategories": [
+            {
+              "name": "Natural speech",
+              "description": "The ability to utter sentences or paragraphs that sound natural and not robotic."
+            },
+            {
+              "name": "Natural conversation",
+              "description": "The ability to maintain conversational fluidity without long delays or excessive interruptions."
+            }
+          ]
+        },
+        {
+          "name": "Rhythmic Ability",
+          "description": "The ability to recognize and maintain a musical beat, including reproducing rhythms, detecting differences between rhythms, and synchronizing by playing or humming along."
+        },
+        {
+          "name": "Musical Judgment",
+          "description": "The ability to discriminate and judge simple patterns in music."
+        }
+      ]
+    },
+    {
+      "id": "s",
+      "title": "Speed (S)",
+      "shortLabel": "S",
+      "weight": "10%",
+      "description": "The ability to perform simple cognitive tasks quickly.",
+      "mainFigure": "s_examples.png",
+      "subcategories": [
+        {
+          "name": "Perceptual Speed–Search",
+          "description": "The speed and fluency of searching or scanning an extended textual or visual field to locate one or more simple patterns."
+        },
+        {
+          "name": "Perceptual Speed–Compare",
+          "description": "The speed and fluency of looking up and comparing textual or visual stimuli that are side by side or more widely separated in an extended textual or visual field."
+        },
+        {
+          "name": "Reading Speed",
+          "description": "Rate of reading text with full comprehension."
+        },
+        {
+          "name": "Writing Speed",
+          "description": "The rate at which words or sentences can be generated or copied."
+        },
+        {
+          "name": "Number Facility",
+          "description": "The rate at which basic arithmetic or algorithmic operations are performed accurately."
+        },
+        {
+          "name": "Simple Reaction Time",
+          "description": "Reaction time to the onset of a single stimulus (textual, visual, or auditory)."
+        },
+        {
+          "name": "Choice Reaction Time",
+          "description": "Reaction time to the onset of one of several possible stimuli."
+        },
+        {
+          "name": "Inspection Time",
+          "description": "The speed at which differences in visual stimuli can be perceived."
+        },
+        {
+          "name": "Comparison Speed",
+          "description": "Reaction time where stimuli must be compared for a particular characteristic or attribute."
+        },
+        {
+          "name": "Pointer Fluency",
+          "description": "The fluency of moving a virtual computer mouse to execute simple requests."
+        }
+      ]
+    }
+  ]
+}
