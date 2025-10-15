@@ -46,7 +46,8 @@ export function AGISidebar({ activeSection, onSectionChange }: AGISidebarProps) 
         const data = await response.json();
         setAbilities([
           { id: "introduction", title: "Introduction", shortLabel: "Intro", weight: "", description: "", mainFigure: "", subcategories: [] },
-          ...data.abilities
+          ...data.abilities,
+          { id: "discussion", title: "Discussion", shortLabel: "Discussion", weight: "", description: "", mainFigure: "", subcategories: [] }
         ]);
       } catch (error) {
         console.error('Failed to load abilities:', error);
@@ -96,51 +97,78 @@ export function AGISidebar({ activeSection, onSectionChange }: AGISidebarProps) 
         <nav className="space-y-0">
           {abilities.map((ability, index) => {
             const isIntroduction = ability.id === "introduction";
-            const abilityNumber = isIntroduction ? null : index; // General Knowledge starts at 1
+            const isDiscussion = ability.id === "discussion";
+            const abilityNumber = isIntroduction ? null : (isDiscussion ? null : index - 1); // General Knowledge starts at 1 (subtract 1 for Introduction)
             
             return (
-              <button
-                key={ability.id}
-                onClick={() => onSectionChange(ability.id)}
-                className={`w-full text-left py-1 text-sm transition-all duration-150 ease-in-out ${
-                  activeSection === ability.id
-                    ? 'text-gray-900 font-medium'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
-                style={{fontFamily: 'Arial, sans-serif'}}
-                title={isCollapsed ? ability.title : undefined}
-              >
-                {isCollapsed ? (
-                  <span className="text-xs text-center block">
-                    {isIntroduction ? "★" : abilityNumber}
-                  </span>
-                ) : (
-                  <span className="flex items-start justify-between w-full">
-                    <span className="flex items-start gap-2 flex-1">
-                      <span className="text-gray-400 font-normal min-w-[1.5rem]">
-                        {isIntroduction ? "★" : `${abilityNumber}.`}
-                      </span>
-                      {!isIntroduction && (
+              <div key={ability.id}>
+                <button
+                  onClick={() => onSectionChange(ability.id)}
+                  className={`w-full text-left py-1 text-sm transition-all duration-150 ease-in-out ${
+                    activeSection === ability.id
+                      ? 'text-gray-900 font-medium'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                  style={{fontFamily: 'Arial, sans-serif'}}
+                  title={isCollapsed ? ability.title : undefined}
+                >
+                  {isCollapsed ? (
+                    <div className="flex justify-center">
+                      {isIntroduction ? (
+                        <span className="text-xs text-center">★</span>
+                      ) : isDiscussion ? (
+                        <span className="text-xs text-center">§</span>
+                      ) : (
                         <img 
                           src={`/assets/icons/${ability.id.toLowerCase()}.svg`}
                           alt={`${ability.title} icon`}
-                          className="w-4 h-4 mt-0.5 flex-shrink-0"
+                          className="w-4 h-4"
                           onError={(e) => {
-                            // Hide icon if it doesn't exist
+                            // Fallback to number if icon doesn't exist
                             e.currentTarget.style.display = 'none';
+                            e.currentTarget.parentElement!.innerHTML = `<span class="text-xs text-center">${abilityNumber}</span>`;
                           }}
                         />
                       )}
-                      <span className="leading-tight">{ability.title}</span>
-                    </span>
-                    {ability.weight && (
-                      <span className="text-xs text-gray-400 ml-2 flex-shrink-0">
-                        {ability.weight}
+                    </div>
+                  ) : (
+                    <span className="flex items-start justify-between w-full">
+                      <span className="flex items-start gap-2 flex-1">
+                        <span className="text-gray-400 font-normal min-w-[1.5rem]">
+                          {isIntroduction ? "★" : (isDiscussion ? "§" : `${abilityNumber}.`)}
+                        </span>
+                        {!isIntroduction && !isDiscussion && (
+                          <img 
+                            src={`/assets/icons/${ability.id.toLowerCase()}.svg`}
+                            alt={`${ability.title} icon`}
+                            className="w-4 h-4 mt-0.5 flex-shrink-0"
+                            onError={(e) => {
+                              // Hide icon if it doesn't exist
+                              e.currentTarget.style.display = 'none';
+                            }}
+                          />
+                        )}
+                        <span className="leading-tight">{ability.title}</span>
                       </span>
-                    )}
-                  </span>
+                      {ability.weight && (
+                        <span className="text-xs text-gray-400 ml-2 flex-shrink-0">
+                          {ability.weight}
+                        </span>
+                      )}
+                    </span>
+                  )}
+                </button>
+                
+                {/* Add horizontal line after Introduction */}
+                {isIntroduction && !isCollapsed && (
+                  <div className="border-b border-gray-200 my-2"></div>
                 )}
-              </button>
+                
+                {/* Add horizontal line after the last ability (before Discussion) */}
+                {!isIntroduction && !isDiscussion && index === abilities.length - 2 && !isCollapsed && (
+                  <div className="border-b border-gray-200 my-2"></div>
+                )}
+              </div>
             );
           })}
         </nav>

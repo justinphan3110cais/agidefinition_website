@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { LaTeXRenderer } from './LaTeXRenderer';
 
@@ -10,7 +10,7 @@ interface HTMLContentRendererProps {
 }
 
 export function HTMLContentRenderer({ content, className = "" }: HTMLContentRendererProps) {
-  const [parsedContent, setParsedContent] = useState<JSX.Element[]>([]);
+  const [parsedContent, setParsedContent] = useState<React.JSX.Element[]>([]);
 
   // Helper function to check if content contains LaTeX
   const containsLaTeX = (text: string) => {
@@ -30,7 +30,7 @@ export function HTMLContentRenderer({ content, className = "" }: HTMLContentRend
       const parts = content.split(imgRegex);
       const imgMatches = content.match(imgRegex) || [];
 
-      const elements: JSX.Element[] = [];
+      const elements: React.JSX.Element[] = [];
       
       parts.forEach((part, index) => {
         // Clean up excessive br tags before and after images

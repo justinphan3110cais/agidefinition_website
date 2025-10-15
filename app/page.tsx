@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { AGISidebar } from "@/components/AGISidebar";
 import { ExpandableSubcategory } from "@/components/ExpandableSubcategory";
+import { DiscussionSection } from "@/components/DiscussionSection";
 import { SimpleImageViewer } from "@/components/SimpleImageViewer";
 
 interface FullContent {
@@ -58,6 +59,8 @@ export default function AGIDefinitionPage() {
       try {
         const response = await fetch('/data/abilities.json');
         const data = await response.json();
+        
+        // Keep abilities as they are - Discussion is handled separately
         setAbilities(data.abilities);
       } catch (error) {
         console.error('Failed to load abilities:', error);
@@ -142,86 +145,86 @@ export default function AGIDefinitionPage() {
                 </p>
                 
               {(() => {
-                // Define abilities data structure
+                // Define abilities data structure with 4 color groups
                 const frameworkAbilities = [
                   {
                     id: 'k',
                     number: 1,
                     title: 'General Knowledge (K)',
                     description: 'The breadth of factual understanding of the world, encompassing commonsense, culture, science, social science, and history.',
-                    color: '#AACEF2'
+                    color: '#AACEF2' // Group 1: K, RW, M
                   },
                   {
                     id: 'rw',
                     number: 2,
                     title: 'Reading and Writing Ability (RW)',
                     description: 'Proficiency in consuming and producing written language, from basic decoding to complex comprehension, composition, and usage.',
-                    color: '#9ECC75'
+                    color: '#AACEF2' // Group 1: K, RW, M
                   },
                   {
                     id: 'm',
                     number: 3,
                     title: 'Mathematical Ability (M)',
                     description: 'The depth of mathematical knowledge and skills across arithmetic, algebra, geometry, probability, and calculus.',
-                    color: '#E28988'
+                    color: '#AACEF2' // Group 1: K, RW, M
                   },
                   {
                     id: 'r',
                     number: 4,
                     title: 'On-the-Spot Reasoning (R)',
                     description: 'The flexible control of attention to solve novel problems without relying exclusively on previously learned schemas, tested via deduction and induction.',
-                    color: '#BEA4EC'
+                    color: '#9ECC75' // Group 2: R, WM, MS, MR
                   },
                   {
                     id: 'wm',
                     number: 5,
                     title: 'Working Memory (WM)',
                     description: 'The ability to maintain and manipulate information in active attention across textual, auditory, and visual modalities.',
-                    color: '#EECF7B'
+                    color: '#9ECC75' // Group 2: R, WM, MS, MR
                   },
                   {
                     id: 'ms',
                     number: 6,
                     title: 'Long-Term Memory Storage (MS)',
                     description: 'The capability to continually learn new information (associative, meaningful, and verbatim).',
-                    color: '#609ACB'
+                    color: '#9ECC75' // Group 2: R, WM, MS, MR
                   },
                   {
                     id: 'mr',
                     number: 7,
                     title: 'Long-Term Memory Retrieval (MR)',
                     description: 'The fluency and precision of accessing stored knowledge, including the critical ability to avoid confabulation (hallucinations).',
-                    color: '#7E9D51'
+                    color: '#9ECC75' // Group 2: R, WM, MS, MR
                   },
                   {
                     id: 'v',
                     number: 8,
                     title: 'Visual Processing (V)',
                     description: 'The ability to perceive, analyze, reason about, generate, and scan visual information.',
-                    color: '#D08383'
+                    color: '#E28988' // Group 3: V, A
                   },
                   {
                     id: 'a',
                     number: 9,
                     title: 'Auditory Processing (A)',
                     description: 'The capacity to discriminate, recognize, and work creatively with auditory stimuli, including speech, rhythm, and music.',
-                    color: '#A78DE0'
+                    color: '#E28988' // Group 3: V, A
                   },
                   {
                     id: 's',
                     number: 10,
                     title: 'Speed (S)',
                     description: 'The ability to perform simple cognitive tasks quickly, encompassing perceptual speed, reaction times, and processing fluency.',
-                    color: '#E4B542'
+                    color: '#EDCC85' // Group 4: S
                   }
                 ];
 
                 return (
-                  <div className="grid gap-6 mb-8">
+                  <div className="grid gap-2 mb-8">
                     {frameworkAbilities.map((ability) => (
                       <div 
                         key={ability.id}
-                        className="flex items-start gap-4 cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-colors duration-150" 
+                        className="flex items-start gap-4 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors duration-150" 
                         onClick={() => {
                           const element = document.getElementById(ability.id);
                           if (element) {
@@ -239,12 +242,12 @@ export default function AGIDefinitionPage() {
                         />
                         <div className="flex-1">
                           <h4 
-                            className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-4 underline-offset-4 mb-2" 
+                            className="text-base sm:text-lg font-medium text-gray-900 underline decoration-dashed decoration-4 underline-offset-4 mb-0" 
                             style={{textDecorationColor: ability.color}}
                           >
                             {ability.title}
                           </h4>
-                          <p className="text-gray-700 leading-relaxed">
+                          <p className="text-gray-700 leading-snug">
                             {ability.description}
                           </p>
                         </div>
@@ -316,20 +319,21 @@ export default function AGIDefinitionPage() {
 
             {/* GPT Performance Radar Chart */}
             <section className="mb-16">
-              <div className="flex flex-col items-center">
-                <Image 
-                  src="/assets/radar.svg" 
-                  alt="GPT-4 and GPT-5 capabilities radar chart"
-                  width={600}
-                  height={450}
-                  className="max-w-full h-auto mb-4"
-                  style={{ maxWidth: '600px' }}
-                />
-                <div className="text-center max-w-lg">
-                  <p className="text-lg text-gray-600 italic">
+              <div className="flex flex-col items-center px-4">
+                <div className="w-full max-w-2xl">
+                  <Image 
+                    src="/assets/radar.svg" 
+                    alt="GPT-4 and GPT-5 capabilities radar chart"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto mb-4"
+                  />
+                </div>
+                <div className="text-center max-w-lg px-4">
+                  <p className="text-base sm:text-lg text-gray-600 italic">
                     The capabilities of GPT-4 and GPT-5.
                   </p>
-                  <p className="text-base text-gray-600 italic">
+                  <p className="text-sm sm:text-base text-gray-600 italic">
                     Here GPT-5 answers questions in &apos;Auto&apos; mode.
                   </p>
                 </div>
@@ -342,7 +346,7 @@ export default function AGIDefinitionPage() {
                 <div className="mb-12">
                   <div className="flex items-baseline gap-4 mb-8">
                     <div className="flex items-center gap-3">
-                    <h2 className="text-3xl text-gray-900 underline decoration-dashed decoration-2 underline-offset-4" style={{fontWeight: 550}}>
+                    <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-900 underline decoration-dashed decoration-2 underline-offset-4" style={{fontWeight: 550}}>
                         <span className="font-semibold">
                           {index + 1}.
                         </span>
@@ -351,12 +355,12 @@ export default function AGIDefinitionPage() {
                           alt={`${ability.title} icon`}
                           width={32}
                           height={32}
-                          className="w-8 h-8 inline mx-2"
+                          className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 inline mx-1 sm:mx-2"
                         />
                       {ability.title}
                     </h2>
                     </div>
-                    <span className="text-3xl text-gray-500">
+                    <span className="text-lg sm:text-xl lg:text-3xl text-gray-500">
                       ({ability.weight})
                     </span>
                   </div>
@@ -407,22 +411,7 @@ export default function AGIDefinitionPage() {
               </section>
             ))}
 
-            {/* Conclusion Section */}
-            <section className="mb-16 mt-12">
-              <div className="pt-8 border-t border-gray-200">
-                <h2 className="text-2xl font-medium text-gray-900 mb-6" style={{fontFamily: 'Arial, sans-serif'}}>
-                  Implications and Future Work
-                </h2>
-                <div className="prose prose-lg text-gray-700 leading-relaxed space-y-4" style={{fontFamily: 'Arial, sans-serif'}}>
-                  <p>
-                    This quantifiable framework for AGI provides a concrete methodology for measuring progress toward artificial general intelligence. By grounding the definition in empirically validated cognitive theory and providing specific metrics, we can better understand both the capabilities and limitations of current AI systems.
-                  </p>
-                  <p>
-                    The framework reveals that while current AI models excel in certain cognitive domains, significant work remains to achieve the broad cognitive versatility that characterizes human intelligence. This structured approach to AGI definition enables more targeted research and development efforts toward the ultimate goal of artificial general intelligence.
-                  </p>
-                </div>
-              </div>
-            </section>
+            <DiscussionSection />
           </div>
         </main>
     </>
