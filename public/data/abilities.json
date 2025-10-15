@@ -503,7 +503,7 @@
                   "Given the list: ['red', 'green', 'blue', 'yellow']. Remove the element 'green.' Then, insert the word 'purple' at the beginning of the list.",
                   "You have two sets of numbers: A={1,2,3} and B={3,4,5}. Call the intersection C. What is the set A after removing the element(s) in the intersection C?"
                 ],
-                "test": "A related benchmark is <a href=\"https://arxiv.org/abs/2311.09835\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Michelangelo</a>, but it is substantially harder since it uses very long sequences, whereas we use shorter sequences."
+                "test": "A related benchmark is <a href=\"https://arxiv.org/abs/2409.12640\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Michelangelo</a>, but it is substantially harder since it uses very long sequences, whereas we use shorter sequences."
               }
             ]
           }
