@@ -141,272 +141,176 @@ export default function AGIDefinitionPage() {
                   The framework comprises ten core cognitive components, derived from CHC broad abilities and weighted equally (10%) to prioritize breadth and cover major areas of cognition:
                 </p>
                 
-                <div className="grid gap-6 mb-8">
-                  {/* Define the 10 ability colors */}
-                  {(() => {
-                    const abilityColors = [
-                      '#AACEF2', // Light blue - General Knowledge
-                      '#9ECC75', // Light green - Reading and Writing
-                      '#E28988', // Light coral - Mathematical Ability
-                      '#BEA4EC', // Light purple - On-the-Spot Reasoning
-                      '#EECF7B', // Light yellow - Working Memory
-                      '#609ACB', // Medium blue - Long-Term Memory Storage
-                      '#7E9D51', // Medium green - Long-Term Memory Retrieval
-                      '#D08383', // Medium coral - Visual Processing
-                      '#A78DE0', // Medium purple - Auditory Processing
-                      '#E4B542'  // Medium yellow - Speed
-                    ];
-                    return null;
-                  })()}
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">1.</span>
-                    <Image 
-                      src="/assets/icons/k.svg"
-                      alt="General Knowledge icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#AACEF2'}}>
-                        General Knowledge (K)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The breadth of factual understanding of the world, encompassing commonsense, culture, science, social science, and history.
-                      </p>
-                    </div>
+              {(() => {
+                // Define abilities data structure
+                const frameworkAbilities = [
+                  {
+                    id: 'k',
+                    number: 1,
+                    title: 'General Knowledge (K)',
+                    description: 'The breadth of factual understanding of the world, encompassing commonsense, culture, science, social science, and history.',
+                    color: '#AACEF2'
+                  },
+                  {
+                    id: 'rw',
+                    number: 2,
+                    title: 'Reading and Writing Ability (RW)',
+                    description: 'Proficiency in consuming and producing written language, from basic decoding to complex comprehension, composition, and usage.',
+                    color: '#9ECC75'
+                  },
+                  {
+                    id: 'm',
+                    number: 3,
+                    title: 'Mathematical Ability (M)',
+                    description: 'The depth of mathematical knowledge and skills across arithmetic, algebra, geometry, probability, and calculus.',
+                    color: '#E28988'
+                  },
+                  {
+                    id: 'r',
+                    number: 4,
+                    title: 'On-the-Spot Reasoning (R)',
+                    description: 'The flexible control of attention to solve novel problems without relying exclusively on previously learned schemas, tested via deduction and induction.',
+                    color: '#BEA4EC'
+                  },
+                  {
+                    id: 'wm',
+                    number: 5,
+                    title: 'Working Memory (WM)',
+                    description: 'The ability to maintain and manipulate information in active attention across textual, auditory, and visual modalities.',
+                    color: '#EECF7B'
+                  },
+                  {
+                    id: 'ms',
+                    number: 6,
+                    title: 'Long-Term Memory Storage (MS)',
+                    description: 'The capability to continually learn new information (associative, meaningful, and verbatim).',
+                    color: '#609ACB'
+                  },
+                  {
+                    id: 'mr',
+                    number: 7,
+                    title: 'Long-Term Memory Retrieval (MR)',
+                    description: 'The fluency and precision of accessing stored knowledge, including the critical ability to avoid confabulation (hallucinations).',
+                    color: '#7E9D51'
+                  },
+                  {
+                    id: 'v',
+                    number: 8,
+                    title: 'Visual Processing (V)',
+                    description: 'The ability to perceive, analyze, reason about, generate, and scan visual information.',
+                    color: '#D08383'
+                  },
+                  {
+                    id: 'a',
+                    number: 9,
+                    title: 'Auditory Processing (A)',
+                    description: 'The capacity to discriminate, recognize, and work creatively with auditory stimuli, including speech, rhythm, and music.',
+                    color: '#A78DE0'
+                  },
+                  {
+                    id: 's',
+                    number: 10,
+                    title: 'Speed (S)',
+                    description: 'The ability to perform simple cognitive tasks quickly, encompassing perceptual speed, reaction times, and processing fluency.',
+                    color: '#E4B542'
+                  }
+                ];
+
+                return (
+                  <div className="grid gap-6 mb-8">
+                    {frameworkAbilities.map((ability) => (
+                      <div 
+                        key={ability.id}
+                        className="flex items-start gap-4 cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-colors duration-150" 
+                        onClick={() => {
+                          const element = document.getElementById(ability.id);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                      >
+                        <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">{ability.number}.</span>
+                        <Image 
+                          src={`/assets/icons/${ability.id}.svg`}
+                          alt={`${ability.title} icon`}
+                          width={24}
+                          height={24}
+                          className="w-6 h-6 mt-1 flex-shrink-0"
+                        />
+                        <div className="flex-1">
+                          <h4 
+                            className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-4 underline-offset-4 mb-2" 
+                            style={{textDecorationColor: ability.color}}
+                          >
+                            {ability.title}
+                          </h4>
+                          <p className="text-gray-700 leading-relaxed">
+                            {ability.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">2.</span>
-                    <Image 
-                      src="/assets/icons/rw.svg"
-                      alt="Reading and Writing icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#9ECC75'}}>
-                        Reading and Writing Ability (RW)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        Proficiency in consuming and producing written language, from basic decoding to complex comprehension, composition, and usage.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">3.</span>
-                    <Image 
-                      src="/assets/icons/m.svg"
-                      alt="Mathematical Ability icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#E28988'}}>
-                        Mathematical Ability (M)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The depth of mathematical knowledge and skills across arithmetic, algebra, geometry, probability, and calculus.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">4.</span>
-                    <Image 
-                      src="/assets/icons/r.svg"
-                      alt="On-the-Spot Reasoning icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#BEA4EC'}}>
-                        On-the-Spot Reasoning (R)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The flexible control of attention to solve novel problems without relying exclusively on previously learned schemas, tested via deduction and induction.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">5.</span>
-                    <Image 
-                      src="/assets/icons/wm.svg"
-                      alt="Working Memory icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#EECF7B'}}>
-                        Working Memory (WM)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The ability to maintain and manipulate information in active attention across textual, auditory, and visual modalities.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">6.</span>
-                    <Image 
-                      src="/assets/icons/ms.svg"
-                      alt="Long-Term Memory Storage icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#609ACB'}}>
-                        Long-Term Memory Storage (MS)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The capability to continually learn new information (associative, meaningful, and verbatim).
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">7.</span>
-                    <Image 
-                      src="/assets/icons/mr.svg"
-                      alt="Long-Term Memory Retrieval icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#7E9D51'}}>
-                        Long-Term Memory Retrieval (MR)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The fluency and precision of accessing stored knowledge, including the critical ability to avoid confabulation (hallucinations).
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">8.</span>
-                    <Image 
-                      src="/assets/icons/v.svg"
-                      alt="Visual Processing icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#D08383'}}>
-                        Visual Processing (V)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The ability to perceive, analyze, reason about, generate, and scan visual information.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">9.</span>
-                    <Image 
-                      src="/assets/icons/a.svg"
-                      alt="Auditory Processing icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#A78DE0'}}>
-                        Auditory Processing (A)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The capacity to discriminate, recognize, and work creatively with auditory stimuli, including speech, rhythm, and music.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <span className="text-xl font-semibold text-gray-900 min-w-[2rem]">10.</span>
-                    <Image 
-                      src="/assets/icons/s.svg"
-                      alt="Speed icon"
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 mt-1 flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <h4 className="text-lg font-medium text-gray-900 underline decoration-dashed decoration-2 underline-offset-4 mb-2" style={{textDecorationColor: '#E4B542'}}>
-                        Speed (S)
-                      </h4>
-                      <p className="text-gray-700 leading-relaxed">
-                        The ability to perform simple cognitive tasks quickly, encompassing perceptual speed, reaction times, and processing fluency.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                );
+              })()}
 
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
                   This operationalization provides a holistic and multimodal (text, visual, auditory) assessment, serving as a rigorous diagnostic tool to pinpoint the strengths and profound weaknesses of current AI systems.
                 </p>
 
                 {/* AGI Score Summary Table */}
-                <div className="overflow-x-auto mb-8">
-                  <table className="w-full border-collapse border border-gray-300 bg-white">
-                    <thead>
-                      <tr className="bg-gray-50">
-                        <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-gray-900">Model</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">K</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">RW</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">M</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">R</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">WM</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">MS</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">MR</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">V</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">A</th>
-                        <th className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">S</th>
-                        <th className="border border-gray-300 px-3 py-2 text-center font-semibold text-gray-900">Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td className="border border-gray-300 px-3 py-2 font-medium text-gray-900">GPT-4</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">8%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">6%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">4%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">0%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">2%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">0%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">4%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">0%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">0%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">3%</td>
-                        <td className="border border-gray-300 px-3 py-2 text-center font-semibold text-gray-900">27%</td>
-                      </tr>
-                      <tr>
-                        <td className="border border-gray-300 px-3 py-2 font-medium text-gray-900">GPT-5</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">9%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">10%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">10%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">7%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">5%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">0%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">4%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">4%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">6%</td>
-                        <td className="border border-gray-300 px-2 py-2 text-center text-gray-700">3%</td>
-                        <td className="border border-gray-300 px-3 py-2 text-center font-semibold text-gray-900">58%</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p className="text-sm text-gray-600 text-center mt-2 italic">
-                    AGI Score Summary for GPT-4 (2023) and GPT-5 (2025).
-                  </p>
-                </div>
+                {(() => {
+                  // Define model scores data
+                  const abilityColumns = ['K', 'RW', 'M', 'R', 'WM', 'MS', 'MR', 'V', 'A', 'S'];
+                  const modelScores = [
+                    {
+                      name: 'GPT-4',
+                      scores: [8, 6, 4, 0, 2, 0, 4, 0, 0, 3],
+                      total: 27
+                    },
+                    {
+                      name: 'GPT-5',
+                      scores: [9, 10, 10, 7, 5, 0, 4, 4, 6, 3],
+                      total: 58
+                    }
+                  ];
+
+                  return (
+                    <div className="overflow-x-auto mb-8">
+                      <table className="w-full border-collapse border border-gray-300 bg-white">
+                        <thead>
+                          <tr className="bg-gray-50">
+                            <th className="border border-gray-300 px-3 py-2 text-left font-semibold text-gray-900">Model</th>
+                            {abilityColumns.map((column) => (
+                              <th key={column} className="border border-gray-300 px-2 py-2 text-center font-semibold text-gray-900">
+                                {column}
+                              </th>
+                            ))}
+                            <th className="border border-gray-300 px-3 py-2 text-center font-semibold text-gray-900">Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {modelScores.map((model) => (
+                            <tr key={model.name}>
+                              <td className="border border-gray-300 px-3 py-2 font-medium text-gray-900">{model.name}</td>
+                              {model.scores.map((score, index) => (
+                                <td key={index} className="border border-gray-300 px-2 py-2 text-center text-gray-700">
+                                  {score}%
+                                </td>
+                              ))}
+                              <td className="border border-gray-300 px-3 py-2 text-center font-semibold text-gray-900">
+                                {model.total}%
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      <p className="text-sm text-gray-600 text-center mt-2 italic">
+                        AGI Score Summary for GPT-4 (2023) and GPT-5 (2025).
+                      </p>
+                    </div>
+                  );
+                })()}
               </div>
             </section>
 
@@ -438,7 +342,7 @@ export default function AGIDefinitionPage() {
                 <div className="mb-12">
                   <div className="flex items-baseline gap-4 mb-8">
                     <div className="flex items-center gap-3">
-                      <h2 className="text-3xl text-gray-900 underline decoration-dashed decoration-2 underline-offset-4" style={{fontWeight: 550}}>
+                    <h2 className="text-3xl text-gray-900 underline decoration-dashed decoration-2 underline-offset-4" style={{fontWeight: 550}}>
                         <span className="font-semibold">
                           {index + 1}.
                         </span>
@@ -449,8 +353,8 @@ export default function AGIDefinitionPage() {
                           height={32}
                           className="w-8 h-8 inline mx-2"
                         />
-                        {ability.title}
-                      </h2>
+                      {ability.title}
+                    </h2>
                     </div>
                     <span className="text-3xl text-gray-500">
                       ({ability.weight})
