@@ -60,12 +60,20 @@
           }
         },
         "mr": {
-          "total": "0%",
-          "subcategories": {}
+          "total": "4%",
+          "subcategories": {
+            "Fluency": "4%",
+            "Hallucinations": "0%"
+          }
         },
         "v": {
           "total": "0%",
-          "subcategories": {}
+          "subcategories": {
+            "Perception": "0%",
+            "Generation": "0%",
+            "Reasoning": "0%",
+            "Spatial Scanning": "0%"
+          }
         },
         "a": {
           "total": "0%",
@@ -78,8 +86,19 @@
           }
         },
         "s": {
-          "total": "0%",
-          "subcategories": {}
+          "total": "3%",
+          "subcategories": {
+            "PS-S": "0%",
+            "PS-C": "0%",
+            "Re": "1%",
+            "Wr": "1%",
+            "Num": "1%",
+            "SRT": "0%",
+            "CRT": "0%",
+            "IT": "0%",
+            "CS": "0%",
+            "PF": "0%"
+          }
         }
       }
     },
@@ -143,12 +162,20 @@
           }
         },
         "mr": {
-          "total": "0%",
-          "subcategories": {}
+          "total": "4%",
+          "subcategories": {
+            "Fluency": "4%",
+            "Hallucinations": "0%"
+          }
         },
         "v": {
-          "total": "0%",
-          "subcategories": {}
+          "total": "4%",
+          "subcategories": {
+            "Perception": "2%",
+            "Generation": "2%",
+            "Reasoning": "0%",
+            "Spatial Scanning": "0%"
+          }
         },
         "a": {
           "total": "6%",
@@ -161,8 +188,19 @@
           }
         },
         "s": {
-          "total": "0%",
-          "subcategories": {}
+          "total": "3%",
+          "subcategories": {
+            "PS-S": "0%",
+            "PS-C": "0%",
+            "Re": "1%",
+            "Wr": "1%",
+            "Num": "1%",
+            "SRT": "0%",
+            "CRT": "0%",
+            "IT": "0%",
+            "CS": "0%",
+            "PF": "0%"
+          }
         }
       }
     }

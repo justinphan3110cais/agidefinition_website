@@ -1082,8 +1082,8 @@
           "description": "The quality and responsiveness of the AI's synthesized voice.",
           "fullContent": {
             "definition": "This evaluates the quality and responsiveness of the AI's synthesized voice. We break down voice into two areas: <span class=\"font-semibold\"><u>natural speech (2%)</u></span> and <span class=\"font-semibold\"><u>natural conversation (1%)</u></span>. <em>Natural speech</em> tests the ability to utter sentences or paragraphs that sound natural and not robotic. <em>Natural conversation</em> tests the ability to maintain conversational fluidity without long delays or excessive interruptions.",
-            "subcategories": [
-              {
+          "subcategories": [
+            {
                 "name": "Natural Speech",
                 "description": "The ability to utter sentences or paragraphs that sound natural and not robotic.",
                 "examples": [

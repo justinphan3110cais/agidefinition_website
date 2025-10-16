@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ExpandableSubcategory } from './ExpandableSubcategory';
 import { SimpleImageViewer } from './SimpleImageViewer';
@@ -33,12 +33,91 @@ interface Ability {
   subcategories: Subcategory[];
 }
 
+interface ModelResults {
+  name: string;
+  abilities: {
+    [key: string]: {
+      total: string;
+      subcategories: { [key: string]: string };
+    };
+  };
+}
+
+interface ResultsData {
+  models: ModelResults[];
+}
+
 interface AbilityDetailProps {
   ability: Ability;
   index: number;
 }
 
 export function AbilityDetail({ ability, index }: AbilityDetailProps) {
+  const [results, setResults] = useState<ResultsData | null>(null);
+
+  useEffect(() => {
+    const loadResults = async () => {
+      try {
+        const response = await fetch('/data/results.json');
+        const data = await response.json();
+        setResults(data);
+      } catch (error) {
+        console.error('Failed to load results:', error);
+      }
+    };
+    loadResults();
+  }, []);
+
+  const renderPerformanceTable = () => {
+    if (!results) return null;
+
+    const abilityResults = results.models.map(model => ({
+      name: model.name,
+      data: model.abilities[ability.id]
+    })).filter(item => item.data);
+
+    if (abilityResults.length === 0) return null;
+
+    // Get subcategory names from the ability data
+    const subcategoryNames = Object.keys(abilityResults[0].data.subcategories || {});
+    
+    return (
+      <div className="mt-8 mb-8">
+        <h3 className="text-lg font-semibold mb-4 text-gray-900">Model Performance</h3>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="border border-gray-300 px-2 py-2 sm:px-4 text-left font-semibold text-gray-900 text-xs sm:text-base">Model</th>
+                {subcategoryNames.map((name) => (
+                  <th key={name} className="border border-gray-300 px-1 py-2 sm:px-4 text-center font-semibold text-gray-900 text-xs sm:text-sm">
+                    {name}
+                  </th>
+                ))}
+                <th className="border border-gray-300 px-2 py-2 sm:px-4 text-center font-semibold text-gray-900 text-xs sm:text-base">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {abilityResults.map((result, idx) => (
+                <tr key={result.name} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-300 px-2 py-2 sm:px-4 font-medium text-gray-900 text-xs sm:text-base">{result.name}</td>
+                  {subcategoryNames.map((name) => (
+                    <td key={name} className="border border-gray-300 px-1 py-2 sm:px-4 text-center text-gray-700 text-xs sm:text-sm">
+                      {result.data.subcategories[name] || '0%'}
+                    </td>
+                  ))}
+                  <td className="border border-gray-300 px-2 py-2 sm:px-4 text-center font-semibold text-gray-900 text-xs sm:text-base">
+                    {result.data.total}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section id={ability.id} className="mb-16 scroll-mt-8">
       <div className="mb-12">
@@ -71,6 +150,9 @@ export function AbilityDetail({ ability, index }: AbilityDetailProps) {
               />
             </div>
           )}
+
+          {/* Performance Table */}
+          {renderPerformanceTable()}
 
           {/* Component Breakdown */}
           {ability.subcategories && ability.subcategories.length > 0 && (

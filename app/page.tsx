@@ -119,11 +119,11 @@ export default function AGIDefinitionPage() {
                 />
                 <h1 className="text-4xl font-semibold text-gray-900 leading-tight text-center">
                   A Definition of AGI
-                </h1>
+        </h1>
               </div>
               
               <AuthorsSection />
-            </div>
+        </div>
 
             {/* Introduction Section */}
             <section id="introduction" className="mb-16 scroll-mt-8">
@@ -142,7 +142,7 @@ export default function AGIDefinitionPage() {
                   <p>
                   The resulting AGI scores (e.g., GPT-4 at 27%, GPT-5 at 58%) concretely quantify both rapid progress and the substantial gap remaining before AGI.
                   </p>
-                </div>
+        </div>
 
                 {/* GPT Performance Radar Chart */}
                 <div className="flex flex-col items-center px-4 mt-8">
@@ -158,9 +158,9 @@ export default function AGIDefinitionPage() {
                   <div className="text-center max-w-lg px-4">
                     <p className="text-base sm:text-lg text-gray-600">
                       The capabilities of GPT-4 and GPT-5.
-                    </p>
-                  </div>
-                </div>
+          </p>
+        </div>
+      </div>
               </div>
             </section>
 
@@ -311,7 +311,7 @@ export default function AGIDefinitionPage() {
                           );
                         })}
                       </div>
-                    </div>
+                </div>
 
                     {/* Output */}
                     <div>
@@ -403,12 +403,12 @@ export default function AGIDefinitionPage() {
                         />
                       </svg>
                     </button>
-                  </div>
-                </div>
-              </div>
-            </section>
+            </div>
           </div>
-        </main>
+        </div>
+      </section>
+          </div>
+    </main>
     </>
   );
 }
