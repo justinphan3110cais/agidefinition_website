@@ -1,6 +1,6 @@
 export const PAPER_URL = "/paper";
 export const GITHUB_URL = "";
-export const TWEET_URL = "https://x.com/DanHendrycks";
+export const TWEET_URL = "https://x.com/DanHendrycks/status/1978828377269117007";
 
 export const BIBTEX_CITATION = `@misc{hendrycks2025agidefinition,
       title={AGI Definition}, 
