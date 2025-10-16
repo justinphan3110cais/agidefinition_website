@@ -1029,7 +1029,7 @@
     },
     {
       "id": "a",
-      "title": "Auditory Processing (A)",
+      "title": "Auditory Processing",
       "shortLabel": "A",
       "weight": "10%",
       "description": "The ability to discriminate, remember, reason, and work creatively on auditory stimuli, which may consist of tones and speech units.",
@@ -1134,7 +1134,7 @@
     },
     {
       "id": "s",
-      "title": "Speed (S)",
+      "title": "Speed",
       "shortLabel": "S",
       "weight": "10%",
       "description": "The ability to perform simple cognitive tasks quickly.",

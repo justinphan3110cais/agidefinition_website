@@ -71,11 +71,11 @@ export function AuthorsSection() {
           {/* Desktop: Show as lines */}
           <div className="hidden sm:block">
             <p className="text-base">{renderAuthors(AUTHORS.firstLine)}</p>
-            <p className="mt-1 text-base">{renderAuthors(AUTHORS.secondLine)}</p>
-            <p className="mt-1 text-base">{renderAuthors(AUTHORS.thirdLine)}</p>
-            <p className="mt-1 text-base">{renderAuthors(AUTHORS.fourthLine)}</p>
-            <p className="mt-1 text-base">{renderAuthors(AUTHORS.fifthLine)}</p>
-            <p className="mt-1 text-base">{renderAuthors(AUTHORS.sixthLine)}</p>
+            <p className="text-base">{renderAuthors(AUTHORS.secondLine)}</p>
+            <p className="text-base">{renderAuthors(AUTHORS.thirdLine)}</p>
+            <p className="text-base">{renderAuthors(AUTHORS.fourthLine)}</p>
+            <p className="text-base">{renderAuthors(AUTHORS.fifthLine)}</p>
+            <p className="text-base">{renderAuthors(AUTHORS.sixthLine)}</p>
           </div>
 
           {/* Mobile: Show 3 authors per row */}
