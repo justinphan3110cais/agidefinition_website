@@ -27,7 +27,7 @@ export function AuthorsSection() {
           author.name
         )}
         <sup>{author.sup}</sup>
-        {index < authors.length - 1 ? ", " : ""}
+        {index < authors.length - 1 ? ",\u00A0" : ""}
       </span>
     ));
   };
@@ -58,14 +58,14 @@ export function AuthorsSection() {
       <div className="w-full">
         <div className="mx-auto max-w-4xl rounded-lg p-6 text-center">
           <p className="text-base">{renderAuthors(AUTHORS.firstLine)}</p>
-          <p className="mt-2 text-base">{renderAuthors(AUTHORS.secondLine)}</p>
-          <p className="mt-2 text-base">{renderAuthors(AUTHORS.thirdLine)}</p>
-          <p className="mt-2 text-base">{renderAuthors(AUTHORS.fourthLine)}</p>
-          <p className="mt-2 text-base">{renderAuthors(AUTHORS.fifthLine)}</p>
-          <p className="mt-2 text-base">{renderAuthors(AUTHORS.sixthLine)}</p>
-          <p className="mt-2 text-base">{renderAuthors(AUTHORS.seventhLine)}</p>
+          <p className="mt-1 text-base">{renderAuthors(AUTHORS.secondLine)}</p>
+          <p className="mt-1 text-base">{renderAuthors(AUTHORS.thirdLine)}</p>
+          <p className="mt-1 text-base">{renderAuthors(AUTHORS.fourthLine)}</p>
+          <p className="mt-1 text-base">{renderAuthors(AUTHORS.fifthLine)}</p>
+          <p className="mt-1 text-base">{renderAuthors(AUTHORS.sixthLine)}</p>
+          <p className="mt-1 text-base">{renderAuthors(AUTHORS.seventhLine)}</p>
           
-          <div className="mt-4 text-xs font-semibold text-gray-700 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
+          <div className="mt-4 text-xs font-medium text-gray-700 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
             {AFFILIATIONS.map((affiliation) => (
               <p key={affiliation.sup} className="text-left">
                 <sup>{affiliation.sup}</sup>{affiliation.name}

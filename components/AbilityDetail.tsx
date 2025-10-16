@@ -44,7 +44,7 @@ export function AbilityDetail({ ability, index }: AbilityDetailProps) {
       <div className="mb-12">
         <div className="flex items-baseline gap-4 mb-8">
           <div className="flex items-center gap-3">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-900 underline decoration-dashed decoration-2 underline-offset-4" style={{fontWeight: 550}}>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-900 decoration-dashed decoration-2 underline-offset-4" style={{fontWeight: 550}}>
               <span className="font-semibold">
                 {index + 1}.
               </span>

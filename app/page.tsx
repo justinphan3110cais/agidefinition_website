@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 // import { AGISidebar } from "@/components/AGISidebar";
-import { DiscussionSection } from "@/components/DiscussionSection";
+// import { DiscussionSection } from "@/components/DiscussionSection";
 import { AbilityDetail } from "@/components/AbilityDetail";
 import { AuthorsSection } from "@/app/authors-section";
 import { BIBTEX_CITATION } from "@/app/constants";
@@ -128,7 +128,7 @@ export default function AGIDefinitionPage() {
             {/* Introduction Section */}
             <section id="introduction" className="mb-16 scroll-mt-8">
               <div className="mx-auto max-w-4xl">
-                <h2 className="mb-4 text-center text-2xl font-bold">Introduction</h2>
+                <h2 className="mb-4 text-center text-3xl font-bold">Introduction</h2>
                 <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
                 
                 <div className="text-lg text-gray-700 leading-relaxed space-y-4">
@@ -138,6 +138,9 @@ export default function AGIDefinitionPage() {
 
                   <p>
                     The framework dissects general intelligence into ten core cognitive domains—including reasoning, memory, and perception—and adapts established human psychometric batteries to evaluate AI systems. Application of this framework reveals a highly &ldquo;jagged&rdquo; cognitive profile in contemporary models. While proficient in knowledge-intensive domains, current AI systems have critical deficits in foundational cognitive machinery, particularly long-term memory storage.
+                  </p>
+                  <p>
+                  The resulting AGI scores (e.g., GPT-4 at 27%, GPT-5 at 58%) concretely quantify both rapid progress and the substantial gap remaining before AGI.
                   </p>
                 </div>
 
@@ -164,7 +167,7 @@ export default function AGIDefinitionPage() {
             {/* Definition Section */}
             <section id="definition" className="mb-16 scroll-mt-8">
               <div className="mx-auto max-w-4xl">
-                <h2 className="mb-4 text-center text-2xl font-bold">Definition</h2>
+                <h2 className="mb-4 text-center text-3xl font-bold">Definition</h2>
                 <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
                 
                 <blockquote className="text-xl font-bold text-gray-900 mb-8 mx-12 text-center">
@@ -370,7 +373,7 @@ export default function AGIDefinitionPage() {
             {/* Citation Section */}
             <section id="citation" className="mb-12 w-full mt-8 scroll-mt-8">
               <div className="mx-auto max-w-4xl">
-                <h2 className="mb-4 text-center text-2xl font-bold">Citation</h2>
+                <h2 className="mb-4 text-center text-3xl font-bold">Citation</h2>
                 <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
 
                 <div className="relative">
