@@ -76,12 +76,13 @@ export function AuthorsSection() {
             <p className="text-base">{renderAuthors(AUTHORS.fourthLine)}</p>
             <p className="text-base">{renderAuthors(AUTHORS.fifthLine)}</p>
             <p className="text-base">{renderAuthors(AUTHORS.sixthLine)}</p>
+            <p className="text-base">{renderAuthors(AUTHORS.seventhLine)}</p>
           </div>
 
           {/* Mobile: Show 3 authors per row */}
           <div className="block sm:hidden text-sm">
             {(() => {
-              const allAuthors = [...AUTHORS.firstLine, ...AUTHORS.secondLine, ...AUTHORS.thirdLine, ...AUTHORS.fourthLine, ...AUTHORS.fifthLine, ...AUTHORS.sixthLine];
+              const allAuthors = [...AUTHORS.firstLine, ...AUTHORS.secondLine, ...AUTHORS.thirdLine, ...AUTHORS.fourthLine, ...AUTHORS.fifthLine, ...AUTHORS.sixthLine, ...AUTHORS.seventhLine];
               const rows = [];
               for (let i = 0; i < allAuthors.length; i += 3) {
                 rows.push(allAuthors.slice(i, i + 3));

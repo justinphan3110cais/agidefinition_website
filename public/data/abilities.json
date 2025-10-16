@@ -88,7 +88,7 @@
               {
                 "name": "Microeconomics",
                 "examples": [
-                  "A firm's total cost is $500, and its fixed cost is $200. If it produces 10 units, what is its average variable cost?",
+                  "A firm's total cost is \\$500, and its fixed cost is \\$200. If it produces 10 units, what is its average variable cost?",
                   "Define a positive externality and provide an example."
                 ],
                 "test": "A score of 5 on the AP Microeconomics test is sufficient for the 1%, subject to memorization and robustness checks."
