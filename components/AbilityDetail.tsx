@@ -75,9 +75,6 @@ export function AbilityDetail({ ability, index }: AbilityDetailProps) {
           {/* Component Breakdown */}
           {ability.subcategories && ability.subcategories.length > 0 && (
             <div className="mt-8">
-              <p className="text-lg text-gray-700 mb-4">
-                We decompose {ability.title.toLowerCase()} into {ability.subcategories.length === 1 ? 'one area' : `${ability.subcategories.length} distinct areas`}, each contributing to the AGI score:
-              </p>
               
               <ol className="space-y-4 mb-6">
                 {ability.subcategories.map((subcategory, index) => (
@@ -89,19 +86,6 @@ export function AbilityDetail({ ability, index }: AbilityDetailProps) {
                   />
                 ))}
               </ol>
-              
-              <p className="text-lg text-gray-700 mb-4">
-                Each of these components contributes to the AGI score, with the total score for {ability.title.toLowerCase()} being up to {ability.weight}.
-              </p>
-            </div>
-          )}
-
-          {/* Note */}
-          {ability.note && (
-            <div>
-              <p className="text-lg text-gray-700">
-                <strong>Note:</strong> {ability.note}
-              </p>
             </div>
           )}
         </div>

@@ -483,9 +483,9 @@
           "fullContent": {
             "definition": "This tests the capacity to maintain and transform textual information in active attention. We test textual working memory in two ways: <span class=\"font-semibold\"><u>recall (1%)</u></span> and <span class=\"font-semibold\"><u>transformation sequence (1%)</u></span>.",
             "testingNote": "Text input, text output. External tools are disabled.",
-            "subcategories": [
-              {
-                "name": "Recall",
+          "subcategories": [
+            {
+              "name": "Recall",
                 "description": "The ability to remember a short sequence of elements (digits, letters, words, and nonsense words) and answer basic questions about them.",
                 "testingNote": "This is highly related to the narrow CHC ability \"Memory Span (MS).\"",
                 "examples": [
@@ -493,9 +493,9 @@
                   "\"Apple, 9, Truck, 3, Lamp, 6.\" What was the number after Truck?",
                   "\"Fleep, Zorp, Glim, Chair.\" State the nonsense words in alphabetical order."
                 ]
-              },
-              {
-                "name": "Transformation Sequence",
+            },
+            {
+              "name": "Transformation Sequence",
                 "description": "The ability to remember and update a short list of digits or lists of digits following a sequence of operations (e.g., append, insert, pop, remove, slice, sort, reverse, union, intersection setminus, add elementwise, swap element at position).",
                 "testingNote": "This is highly related to the narrow CHC ability \"Attentional control (AC).\"",
                 "examples": [
@@ -515,9 +515,9 @@
           "fullContent": {
             "definition": "We test auditory working memory in two ways: <span class=\"font-semibold\"><u>recall (1%)</u></span> and <span class=\"font-semibold\"><u>transformation sequence (1%)</u></span>.",
             "testingNote": "Audio input, audio/text output.",
-            "subcategories": [
-              {
-                "name": "Recall",
+          "subcategories": [
+            {
+              "name": "Recall",
                 "description": "The ability to remember a collection of voices, utterances, and sound effects and answer basic questions about them.",
                 "testingNote": "This is highly related to the narrow CHC ability \"Auditory short-term storage (Wa).\"",
                 "examples": [
@@ -525,9 +525,9 @@
                   "I will play a collection of voices. After presenting that collection, I will play a voice. You will be tasked with determining whether you have heard that voice in the collection. Voice collection: <a href=\"https://drive.google.com/file/d/1kQYOvU_quesgLS6MgFgbCPvkCOx7vYTy/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">echo.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1-wb8SWVMhn2fs18FPKHvpUVPFAfbrs9e/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">coral.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1qJ1-tVl40fyLlTqBWL8P8iX7NxhxGJlK/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">fabin.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1FdfHzYwnQC5wYceNaRwRF_roqbaF4tgm/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">marin.wav 🔊</a><br>Question: Was this voice <a href=\"https://drive.google.com/file/d/1kSzx-39N9iN83bjzOmHeTvnauKitE4rO/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">coral_2.wav 🔊</a> played in the first collection?",
                   "Listen to this sequence of tones: 🎵 [C4, E4, G4, F4, A4]. Now listen to this sequence: 🎵 [C4, E4, F4, G4, A4]. Are they the same?"
                 ]
-              },
-              {
-                "name": "Transformation Sequence",
+            },
+            {
+              "name": "Transformation Sequence",
                 "description": "The ability to remember and modify a short utterance with a variety of transformations (change articulation, change emotional expressiveness, question inflection, laugh, sigh, hum, change pitch, change timbre).",
                 "examples": [
                   "Say \"I spilled my coffee on my shirt. Today's just not my day.\" Now say it with a sigh between the two sentences.",
@@ -544,18 +544,18 @@
           "description": "The ability to hold and manipulate visual information, including images, scenes, spatial layouts, and video.",
           "fullContent": {
             "definition": "We test visual working memory in four ways: <span class=\"font-semibold\"><u>recall (1%)</u></span>, <span class=\"font-semibold\"><u>transformation sequence (1%)</u></span>, <span class=\"font-semibold\"><u>spatial navigation memory (1%)</u></span>, and <span class=\"font-semibold\"><u>long video Q&A (1%)</u></span>.",
-            "subcategories": [
-              {
-                "name": "Recall",
+          "subcategories": [
+            {
+              "name": "Recall",
                 "description": "The ability to remember a collection of images and answer basic questions about them.",
                 "testingNote": "This is highly related to the narrow CHC ability \"Visual-spatial short-term storage.\"",
                 "examples": [
                   "I will give you two collections of visual elements, one shown after the other. Identify which visual elements, if any, in the second collection were present in the first collection.<br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;\"><div><strong>Collection 1:</strong><br><img src=\"/assets/examples/4_planes.png\" alt=\"Collection of 4 planes\" style=\"max-width: 200px; margin: 10px 0;\"></div><div><strong>Collection 2:</strong><br><img src=\"/assets/examples/2_planes.png\" alt=\"Collection of 2 planes\" style=\"max-width: 200px; margin: 10px 0;\"></div></div>",
                   "I will give you two collections of visual elements, one shown after the other. Identify which element in the second collection is most like the first collection.<br><div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0;\"><div><strong>Collection 1:</strong><br><img src=\"/assets/examples/6_shoes.png\" alt=\"Collection of 6 shoes\" style=\"max-width: 200px; margin: 10px 0;\"></div><div><strong>Collection 2:</strong><br><img src=\"/assets/examples/2_shoes.png\" alt=\"Collection of 2 shoes\" style=\"max-width: 200px; margin: 10px 0;\"></div></div>"
                 ]
-              },
-              {
-                "name": "Transformation Sequence",
+            },
+            {
+              "name": "Transformation Sequence",
                 "description": "The ability to transform a visual input following a sequence of operations (e.g. object addition, object deletion, object rotation, denoise, deblur, colorization, etc.).",
                 "testingNote": "This is highly related to the narrow CHC ability \"Visualization (Vz).\" Image and text input, image output.",
                 "examples": [
@@ -563,9 +563,9 @@
                   "Finish this sketch:<br><img src=\"/assets/examples/dino.png\" alt=\"Incomplete dinosaur sketch\" style=\"max-width: 300px; margin: 10px 0;\">",
                   "Fill in the colors according to the key at the bottom:<br><img src=\"/assets/examples/tomato.png\" alt=\"Tomato coloring page with color key\" style=\"max-width: 300px; margin: 10px 0;\">"
                 ]
-              },
-              {
-                "name": "Spatial Navigation Memory",
+            },
+            {
+              "name": "Spatial Navigation Memory",
                 "description": "The ability to represent a sense of location in an environment.",
                 "examples": [
                   "<a href=\"https://drive.google.com/file/d/13E_pU3luxpHowCTgsqfjyeAKOhbqY_lL/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">vsibench.mp4 🎥</a> If I am standing in front of the refrigerator and facing the kitchen window, is the stove to my left, right, or back?"
@@ -574,9 +574,9 @@
                   "System performance on <a href=\"https://arxiv.org/abs/2412.14171\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">VSI-Bench</a> must exceed 80% accuracy.",
                   "System performance on <a href=\"https://arxiv.org/abs/2506.21458\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">MindCube Tiny</a> must exceed 90%."
                 ]
-              },
-              {
-                "name": "Long Video Q&A",
+            },
+            {
+              "name": "Long Video Q&A",
                 "description": "The ability to watch a long video or a movie (up to three hours) and answer basic questions about it (including anomaly detection and indicating when a question is not determined by the context). If the AI cannot process the movie, it will not receive 1%.",
                 "examples": [
                   "Show the movie Avengers: Infinity War. Was the dwarf on Nidavellir taller than Rocket Racoon? Was he taller than Thor?<br><u>Answer:</u> Yes, Yes",
@@ -631,9 +631,9 @@
           "fullContent": {
             "definition": "The ability to form a link between two previously unrelated stimuli, such that the subsequent presentation of one of the stimuli serves to activate the recall of the other stimuli. We test this with <span class=\"font-semibold\"><u>cross-modal association (2%)</u></span>, <span class=\"font-semibold\"><u>personalization adherence (1%)</u></span>, and <span class=\"font-semibold\"><u>procedural association (1%)</u></span>.",
             "note": "This is highly related to the narrow CHC ability \"Associative memory (MA).\"",
-            "subcategories": [
-              {
-                "name": "Cross-Modal Association",
+          "subcategories": [
+            {
+              "name": "Cross-Modal Association",
                 "description": "The ability to form associations between audio, visual, or textual information.",
                 "examples": [
                   "The AI is introduced to several fictional personas, each with a couple of unique biographical details (e.g., Name, Age, Occupation, Hobby). After 48 hours, the AI is asked questions about these personas. \"What is [Name]'s hobby?\", \"Who is the botanist?\"",
@@ -642,17 +642,17 @@
                   "The AI is shown several distinct faces, each paired with a full name. After 48 hours, the AI sees the name and must visualize the associated face, or whether it does not have an associated face.",
                   "The AI is shown several distinct images of cartoon aliens, each paired with a name. After 48 hours, the AI sees the alien and must state the associated name (if any association exists)."
                 ]
-              },
-              {
-                "name": "Personalization Adherence",
+            },
+            {
+              "name": "Personalization Adherence",
                 "description": "The ability to associate specific rules, preferences, or corrections with a distinct interaction context and apply them consistently and unprompted over time.",
                 "examples": [
                   "Stylistic preference: The AI remembers user preferences, communicated explicitly or through correction, such as \"always use the Oxford comma,\" \"signoff all of my emails with 'Best, <name>' for formal communications and 'Love, <first name>' for my partner,\" \"Use the phrase 'intelligence recursion' or 'recursion' instead of 'recursive self-improvement.'\" After a week, the AI is tasked with content generation and evaluated on its unprompted adherence to these rules.",
                   "Factual override: The AI remembers new facts about the user such as \"I now weigh 160 lbs not 155 lbs but am the same height,\" \"I no longer work at X; I work at Y.\" After a week, the AI is queried to test if the specific association overrides base knowledge or previous inputs (e.g., it is given a BMI calculation query)."
                 ]
-              },
-              {
-                "name": "Procedural Association",
+            },
+            {
+              "name": "Procedural Association",
                 "description": "The ability to acquire and retain a sequence of associated steps or rules and execute them when cued with the name of the procedure.",
                 "examples": [
                   "The AI is taught a novel, multi-step data manipulation procedure (e.g., \"1. Normalize column A. 2. Remove outliers in column B. 3. Encode column C using this specific dictionary.\") to be applied whenever it sees a particular type of dataset to \"clean it up.\" After a week, the AI is given a dataset with the type appropriate for the procedure, and should apply the procedure after being told to clean it.",
@@ -669,25 +669,25 @@
           "fullContent": {
             "definition": "The ability to remember narratives and other forms of semantically related information. We test this with <span class=\"font-semibold\"><u>story recall (1%)</u></span>, <span class=\"font-semibold\"><u>movie recall (1%)</u></span>, and <span class=\"font-semibold\"><u>episodic context recall (1%)</u></span>.",
             "note": "This is highly related to the narrow CHC ability \"Meaningful memory (MM).\"",
-            "subcategories": [
-              {
-                "name": "Story Recall",
+          "subcategories": [
+            {
+              "name": "Story Recall",
                 "description": "The ability to remember the gist of stories.",
                 "testingNote": "Text input, text output.",
                 "examples": [
                   "The AI is presented with a novel ~3000-word short story with multiple characters and interlocking plot lines. After 48 hours, the AI is asked questions about key narrative elements of the story. Evaluation should focus on the accuracy of major plot points, character motivations, central conflicts, and thematic elements, rather than verbatim recall of specific sentences."
                 ]
-              },
-              {
-                "name": "Movie Recall",
+            },
+            {
+              "name": "Movie Recall",
                 "description": "The ability to remember the gist of movies.",
                 "testingNote": "Audio/visual input, text output.",
                 "examples": [
                   "The AI is presented with a movie. After 48 hours, the AI is asked questions about key narrative elements of the movie (e.g., character motivations)."
                 ]
-              },
-              {
-                "name": "Episodic Context Recall",
+            },
+            {
+              "name": "Episodic Context Recall",
                 "description": "The ability to remember specific events or experiences, including their context (the \"what, where, when, and how\").",
                 "examples": [
                   "The AI is asked to summarize interactions with the user from a week ago.",
@@ -703,9 +703,9 @@
           "description": "The ability to store and reproduce information precisely as it was presented.",
           "fullContent": {
             "definition": "The ability to recall information exactly as it was presented, requiring precise encoding of specific sequences, sets, or designs, often independent of the information's meaning. We test this with <span class=\"font-semibold\"><u>short sequence recall (1%)</u></span>, <span class=\"font-semibold\"><u>set recall (1%)</u></span>, and <span class=\"font-semibold\"><u>design recall (1%)</u></span>.",
-            "subcategories": [
-              {
-                "name": "Short Sequence Recall",
+          "subcategories": [
+            {
+              "name": "Short Sequence Recall",
                 "description": "The ability to exactly recall short sequences of text after a delay.",
                 "note": "This is highly related to the narrow CHC ability \"Free-recall memory (M6).\"",
                 "examples": [
@@ -714,18 +714,18 @@
                   "The AI is presented with a limerick. After 48 hours, the AI is asked to reproduce the limerick.",
                   "The AI is presented with a dense but short three-step mathematical proof. After 48 hours, the AI is asked to reproduce the proof."
                 ]
-              },
-              {
-                "name": "Set Recall",
+            },
+            {
+              "name": "Set Recall",
                 "description": "The ability to recall a set (the order of recall does not matter).",
                 "note": "This is highly related to the narrow CHC ability \"Free-recall memory (M6).\"",
                 "examples": [
                   "The AI is presented with a set of 10–20 words. After 48 hours, the AI is asked to name elements of this set. Evaluation should measure the proportion of the set recalled correctly and the number of intrusions (recalling items not present in the original set). Precision and recall should match or exceed 90%.",
                   "The AI is shown a collection of images in a slideshow (e.g., <a href=\"https://docs.google.com/presentation/d/1cs4HvcBXlD7_xufOJ_nBfxO2O-IgbhzhGScmbFjT6EU/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">this slideshow 📊</a>). After 48 hours, the AI is asked to name elements of this set."
                 ]
-              },
-              {
-                "name": "Design Recall",
+            },
+            {
+              "name": "Design Recall",
                 "description": "The ability to recall the spatial arrangement and structure of visual information.",
                 "examples": [
                   "The AI is shown a novel, complex schematic or blueprint (e.g., a circuit diagram) with several labeled components. After 48 hours, the AI is asked to reproduce the design.",
@@ -754,9 +754,9 @@
           "fullContent": {
             "definition": "Fluency consists of six parts: <span class=\"font-semibold\"><u>ideational (1%)</u></span>, <span class=\"font-semibold\"><u>expressional (1%)</u></span>, <span class=\"font-semibold\"><u>alternative solution (1%)</u></span>, <span class=\"font-semibold\"><u>word (1%)</u></span>, <span class=\"font-semibold\"><u>naming (1%)</u></span>, and <span class=\"font-semibold\"><u>figure fluency (1%)</u></span>.",
             "testingNote": "Fluency is measured by comparing the AI's performance on tasks (e.g., quantity and originality of responses within a time limit, typically 60 seconds) against human performance.<br><br>To achieve the 1% for a specific fluency type, the AI must perform at or above the typical well-educated adult.",
-            "subcategories": [
-              {
-                "name": "Ideational Fluency",
+          "subcategories": [
+            {
+              "name": "Ideational Fluency",
                 "description": "The ability to rapidly produce a series of ideas, words, or phrases related to a specific condition, category, or object.",
                 "note": "This is highly related to the narrow CHC ability \"Ideational fluency (FI).\"",
                 "examples": [
@@ -764,9 +764,9 @@
                   "Name as many round objects as possible in 60 seconds.",
                   "Give as many different ideas you associate with 'river' in 60 seconds."
                 ]
-              },
-              {
-                "name": "Expressional Fluency",
+            },
+            {
+              "name": "Expressional Fluency",
                 "description": "The ability to rapidly think of different ways of expressing an idea.",
                 "note": "This is highly related to the narrow CHC ability \"Expressional fluency (FE).\"",
                 "examples": [
@@ -774,9 +774,9 @@
                   "Provide three alternative sentences that mean, \"She is a very successful person.\"",
                   "Describe a sunset over the ocean and to evoke three different moods: peaceful, dramatic, and lonely."
                 ]
-              },
-              {
-                "name": "Alternative Solution Fluency",
+            },
+            {
+              "name": "Alternative Solution Fluency",
                 "description": "The ability to rapidly think of several alternative solutions to a practical problem.",
                 "note": "This is highly related to the narrow CHC ability \"Alternative solution fluency (SP).\"",
                 "examples": [
@@ -784,9 +784,9 @@
                   "You want to cool down on a very hot day, but you don't have air conditioning or a pool. List as many ways as you can to cool your body off in 60 seconds.",
                   "You need to get a book that is on a very high shelf, but you don't have a ladder. List as many ways as you can to safely get the book down in 60 seconds."
                 ]
-              },
-              {
-                "name": "Word Fluency",
+            },
+            {
+              "name": "Word Fluency",
                 "description": "The ability to rapidly produce words that share a non-semantic feature.",
                 "note": "This is highly related to the narrow CHC ability \"Word fluency (FW).\"",
                 "examples": [
@@ -794,9 +794,9 @@
                   "List as many words that rhyme with 'tone' as you can in 60 seconds.",
                   "List as many English words as you can that are palindromes in 60 seconds."
                 ]
-              },
-              {
-                "name": "Naming Facility",
+            },
+            {
+              "name": "Naming Facility",
                 "description": "The ability to rapidly and accurately recall the specific names for objects, people, places, or concepts from memory.",
                 "note": "This is highly related to the narrow CHC ability \"Naming facility (NA).\"",
                 "testingNote": "Requires real-time video or computer screen input.",
@@ -806,9 +806,9 @@
                 "tests": [
                   "The Stroop effect on the Stroop task must be less than 90 milliseconds."
                 ]
-              },
-              {
-                "name": "Figural Fluency",
+            },
+            {
+              "name": "Figural Fluency",
                 "description": "The ability to rapidly draw or sketch as many things as possible.",
                 "note": "This is highly related to the narrow CHC ability \"Figural fluency (FF).\"",
                 "examples": [
@@ -855,8 +855,8 @@
           "fullContent": {
             "definition": "The ability to process and interpret visual input from images and videos to identify objects and understand scenes. We give five opportunities to demonstrate proficiency in perception: <span class=\"font-semibold\"><u>image recognition</u></span>, <span class=\"font-semibold\"><u>image captioning</u></span>, <span class=\"font-semibold\"><u>image anomaly detection</u></span>, <span class=\"font-semibold\"><u>clip captioning</u></span>, and <span class=\"font-semibold\"><u>video anomaly detection</u></span>. The AGI score is 2% if the model is proficient at one of these tasks. The AGI score is 4% if it is proficient at all of these tasks.",
             "note": "Image anomaly detection is highly related to the \"Odd-Item Out\" and the \"What's Missing (WHM)\" RIAS-2 subtests.",
-            "subcategories": [
-              {
+          "subcategories": [
+            {
                 "name": "Image Recognition",
                 "description": "The ability to classify images of commonplace objects, places, or facial expressions including distorted (e.g., occluded, noisy, blurry, etc.) images.",
                 "examples": [
@@ -975,7 +975,7 @@
                 "description": "Visualizing how 2D patterns fold into 3D objects and vice versa.",
                 "examples": [
                   "(<a href=\"https://arxiv.org/abs/2410.06468\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/mental_folding_shapes.png\" alt=\"Mental folding puzzle\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> A",
-                  "(Block Design) Arrange and rotate the 9 identical 3D blocks on the right, so their top faces form the pattern on the left.<br><img src=\"/assets/examples/block_design.png\" alt=\"Block design puzzle\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "(Block Design) Arrange and rotate the 9 identical 3D blocks on the right, so their top faces form the pattern on the left. (<a href=\"https://arxiv.org/abs/2410.06468\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/block_design.png\" alt=\"Block design puzzle\" style=\"max-width: 300px; margin: 10px 0;\">",
                   "The left image shows a cube with different patterns on its six faces from a particular viewing angle. The options are nets (unfolded patterns) of the cube, which are folded upward to form the cube. Which net, when folded, cannot form the cube shown in the left image? (<a href=\"https://arxiv.org/abs/2507.07610\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/cube_shape_folding.png\" alt=\"Cube folding puzzle\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> B",
                   "Choose the figure that displays the pieces joined together. (<a href=\"https://www.ijee.ie/articles/Vol29-3/22_ijee2729ns.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/pieces_joined_together.png\" alt=\"Pieces joining puzzle\" style=\"max-width: 200px; margin: 10px 0;\"><br><u>Answer:</u> A"
                 ]
@@ -992,8 +992,8 @@
                 "description": "Interpreting and analyzing visual data representations, charts, and diagrams.",
                 "examples": [
                   "What is the spatially lowest labeled tick on the y-axis? (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/heat_chart.png\" alt=\"Heat chart with y-axis labels\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> CC daily 4.00PM",
-                  "For each line in (a), give the number corresponding to the orientation in the answer card.<br><img src=\"/assets/examples/arc_lines.png\" alt=\"Line orientation matching\" style=\"max-width: 300px; margin: 10px 0;\">",
-                  "(Digit Symbol Substitution Test) Using the key at the top, what is the sequence of numbers matching the shapes at the bottom?<br><img src=\"/assets/examples/shapes_numbers_match.png\" alt=\"Shape to number matching\" style=\"max-width: 300px; margin: 10px 0;\">"
+                  "For each line in (a), give the number corresponding to the orientation in the answer card. (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/arc_lines.png\" alt=\"Line orientation matching\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "(Digit Symbol Substitution Test) Using the key at the top, what is the sequence of numbers matching the shapes at the bottom? (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/shapes_numbers_match.png\" alt=\"Shape to number matching\" style=\"max-width: 300px; margin: 10px 0;\">"
                 ]
               }
             ],

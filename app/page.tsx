@@ -113,7 +113,7 @@ export default function AGIDefinitionPage() {
     <>
       {/* <AGISidebar activeSection={activeSection} onSectionChange={scrollToSection} /> */}
       
-            <main className="flex-1 overflow-y-auto bg-white">
+            <main className="flex-1 overflow-y-auto">
               <div className="max-w-4xl mx-auto px-6 py-16">
             <section id="introduction" className="mb-16 scroll-mt-8">
               <div className="mb-12">
@@ -152,7 +152,7 @@ export default function AGIDefinitionPage() {
               <div className="flex flex-col items-center px-4">
                 <div className="w-full max-w-2xl">
                   <Image 
-                    src="/assets/radar.svg" 
+                    src="/assets/radar.png" 
                     alt="GPT-4 and GPT-5 capabilities radar chart"
                     width={600}
                     height={450}
@@ -162,9 +162,6 @@ export default function AGIDefinitionPage() {
                 <div className="text-center max-w-lg px-4">
                   <p className="text-base sm:text-lg text-gray-600 italic">
                     The capabilities of GPT-4 and GPT-5.
-                  </p>
-                  <p className="text-sm sm:text-base text-gray-600 italic">
-                    Here GPT-5 answers questions in &apos;Auto&apos; mode.
                   </p>
                 </div>
               </div>
@@ -182,7 +179,7 @@ export default function AGIDefinitionPage() {
                 <div className="space-y-3 mb-8">
                   {/* Long-Term Memory Group */}
                   <div>
-                    <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Long-Term Memory</h3>
+                    <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Acquired Knowledge</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                       {abilities.slice(0, 3).map((ability, index) => {
                         const getColor = () => '#AACEF2'; // K, RW, M
