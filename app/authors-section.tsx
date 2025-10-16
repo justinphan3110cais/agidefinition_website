@@ -44,7 +44,7 @@ export function AuthorsSection() {
         </a>
         {TWEET_URL && (
           <a 
-            className="flex items-center justify-center bg-black text-white rounded-md w-10 h-10 hover:bg-gray-800 transition-colors" 
+            className="flex items-center justify-center bg-black text-white rounded-md w-8 h-8 hover:bg-gray-800 transition-colors" 
             href={TWEET_URL} 
             target="_blank"
             rel="noopener noreferrer"
