@@ -2,7 +2,7 @@
   "abilities": [
     {
       "id": "k",
-      "title": "General Knowledge (K)",
+      "title": "General Knowledge",
       "shortLabel": "K",
       "weight": "10%",
       "description": "Knowledge that is familiar to most members of society or is important enough that most adults have been exposed to it.",
@@ -199,7 +199,7 @@
     },
     {
       "id": "rw",
-      "title": "Reading and Writing Ability (RW)",
+      "title": "Reading and Writing Ability",
       "shortLabel": "RW",
       "weight": "10%",
       "description": "Reading and writing ability captures all of the declarative knowledge and procedural skills a person uses to consume and produce written language.",
@@ -284,7 +284,7 @@
     },
     {
       "id": "m",
-      "title": "Mathematical Ability (M)",
+      "title": "Mathematical Ability",
       "shortLabel": "M",
       "weight": "10%",
       "description": "This is the depth and breadth of mathematical knowledge and skills.",
@@ -388,7 +388,7 @@
     },
     {
       "id": "r",
-      "title": "On-the-Spot Reasoning (R)",
+      "title": "On-the-Spot Reasoning",
       "shortLabel": "R",
       "weight": "10%",
       "description": "The deliberate but flexible control of attention to solve novel \"on the spot\" problems that cannot be performed by relying exclusively on previously learned habits, schemas, and scripts.",
@@ -469,7 +469,7 @@
     },
     {
       "id": "wm",
-      "title": "Working Memory (WM)",
+      "title": "Working Memory",
       "shortLabel": "WM",
       "weight": "10%",
       "description": "The ability to maintain, manipulate, and update information in active attention. (Often referred to as short-term memory.)",
@@ -616,7 +616,7 @@
     },
     {
       "id": "ms",
-      "title": "Long-Term Memory Storage (MS)",
+      "title": "Long-Term Memory Storage",
       "shortLabel": "MS",
       "weight": "10%",
       "description": "The ability to stably acquire, consolidate, and store new information from recent experiences.",
@@ -740,7 +740,7 @@
     },
     {
       "id": "mr",
-      "title": "Long-Term Memory Retrieval (MR)",
+      "title": "Long-Term Memory Retrieval",
       "shortLabel": "MR",
       "weight": "10%",
       "description": "The fluency and precision with which individuals can access long-term memory.",
@@ -841,7 +841,7 @@
     },
     {
       "id": "v",
-      "title": "Visual Processing (V)",
+      "title": "Visual Processing",
       "shortLabel": "V",
       "weight": "10%",
       "description": "The ability to analyze and generate natural and unnatural images and videos.",
@@ -1029,7 +1029,7 @@
     },
     {
       "id": "a",
-      "title": "Auditory Processing (A)",
+      "title": "Auditory Processing",
       "shortLabel": "A",
       "weight": "10%",
       "description": "The ability to discriminate, remember, reason, and work creatively on auditory stimuli, which may consist of tones and speech units.",
@@ -1069,7 +1069,7 @@
     },
     {
       "id": "s",
-      "title": "Speed (S)",
+      "title": "Speed",
       "shortLabel": "S",
       "weight": "10%",
       "description": "The ability to perform simple cognitive tasks quickly.",

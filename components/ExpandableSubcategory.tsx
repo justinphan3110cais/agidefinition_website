@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { ChevronDown, ChevronRight, Play, FileText, ExternalLink } from 'lucide-react';
-import { LaTeXRenderer } from './LaTeXRenderer';
 import { HTMLContentRenderer } from './HTMLContentRenderer';
 
 interface ExpandableSubcategoryProps {
@@ -63,11 +62,6 @@ export function ExpandableSubcategory({ subcategory, index, colorIndex }: Expand
     setIsExpanded(!isExpanded);
   };
 
-  // Helper function to check if content contains LaTeX
-  const containsLaTeX = (text: string) => {
-    return /\$[^$]+\$/.test(text) || /\$\$[^$]+\$\$/.test(text);
-  };
-
   // Helper function to check if content is a section header
   const isSectionHeader = (content: string) => {
     return content.includes('<strong>') && (
@@ -124,13 +118,6 @@ export function ExpandableSubcategory({ subcategory, index, colorIndex }: Expand
             </div>
           )}
 
-          {subcategory.fullContent.testingNote && (
-            <div>
-              <p className="text-gray-600 italic text-sm">
-                <span className="font-medium">Testing note:</span> {renderContent(subcategory.fullContent.testingNote)}
-              </p>
-            </div>
-          )}
 
           {subcategory.fullContent.examples && subcategory.fullContent.examples.length > 0 && (
             <div>
@@ -175,11 +162,7 @@ export function ExpandableSubcategory({ subcategory, index, colorIndex }: Expand
                     {subcat.description && (
                       <p className="text-gray-600 text-sm mt-1 ml-5">{renderContent(subcat.description)}</p>
                     )}
-                    {subcat.testingNote && (
-                      <p className="text-gray-500 italic text-sm mt-1 ml-5">
-                        <span className="font-medium">Testing:</span> {renderContent(subcat.testingNote)}
-                      </p>
-                    )}
+
                     {subcat.examples && subcat.examples.length > 0 && (
                       <div className="mt-2 ml-5">
                         <p className="font-semibold text-gray-700 text-sm flex items-center gap-1">
@@ -286,14 +269,6 @@ export function ExpandableSubcategory({ subcategory, index, colorIndex }: Expand
                   </li>
                 ))}
               </ul>
-            </div>
-          )}
-
-          {subcategory.fullContent.note && (
-            <div className="mt-4 pt-3 border-t border-gray-200">
-              <p className="text-gray-600 italic text-sm">
-                <span className="font-medium">Note:</span> {subcategory.fullContent.note}
-              </p>
             </div>
           )}
         </div>

@@ -5,6 +5,8 @@ import Image from "next/image";
 // import { AGISidebar } from "@/components/AGISidebar";
 import { DiscussionSection } from "@/components/DiscussionSection";
 import { AbilityDetail } from "@/components/AbilityDetail";
+import { AuthorsSection } from "@/app/authors-section";
+import { BIBTEX_CITATION } from "@/app/constants";
 
 interface FullContent {
   definition?: string;
@@ -81,14 +83,6 @@ export default function AGIDefinitionPage() {
     loadAbilities();
   }, []);
 
-  // const scrollToSection = (sectionId: string) => {
-  //   setActiveSection(sectionId);
-  //   const element = document.getElementById(sectionId);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
-
   // Scroll spy functionality
   useEffect(() => {
     const handleScroll = () => {
@@ -110,36 +104,35 @@ export default function AGIDefinitionPage() {
 
 
   return (
-    <>
-      {/* <AGISidebar activeSection={activeSection} onSectionChange={scrollToSection} /> */}
-      
+    <>      
             <main className="flex-1 overflow-y-auto">
               <div className="max-w-4xl mx-auto px-6 py-16">
             <section id="introduction" className="mb-16 scroll-mt-8">
               <div className="mb-12">
-                <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="flex flex-col items-center justify-center mb-6">
                   <Image 
                     src="/assets/agi_definition_logo.svg" 
                     alt="AGI Definition Logo" 
                     width={128}
                     height={128}
-                    className="w-32 h-32"
+                    className="w-50 h-50 mb-4"
                   />
-                  <h1 className="text-4xl font-semibold text-gray-900 leading-tight">
+                  <h1 className="text-4xl font-semibold text-gray-900 leading-tight text-center">
                     A Definition of AGI
                   </h1>
                 </div>
+                
+                <AuthorsSection />
               </div>
 
               <div className="mb-12">
-                <blockquote className="text-xl italic font-bold text-gray-900 mb-8 mx-12 text-center">
-                  &ldquo;AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.&rdquo;
-                </blockquote>
+
                 
                 <div className="text-lg text-gray-700 leading-relaxed space-y-4">
                   <p>
                     The lack of a concrete definition for Artificial General Intelligence (AGI) obscures the gap between today&rsquo;s specialized AI and human-level cognition. This paper introduces a quantifiable framework to address this, defining AGI as matching the cognitive versatility and proficiency of a well-educated adult. To operationalize this, we ground our methodology in Cattell-Horn-Carroll theory, the most empirically validated model of human cognition.
                   </p>
+
                   <p>
                     The framework dissects general intelligence into ten core cognitive domains—including reasoning, memory, and perception—and adapts established human psychometric batteries to evaluate AI systems. Application of this framework reveals a highly &ldquo;jagged&rdquo; cognitive profile in contemporary models. While proficient in knowledge-intensive domains, current AI systems have critical deficits in foundational cognitive machinery, particularly long-term memory storage.
                   </p>
@@ -171,6 +164,9 @@ export default function AGIDefinitionPage() {
             <section className="mb-12">
               <div className="max-w-4xl mx-auto">
                 <hr className="border-gray-300 mb-8" />
+                <blockquote className="text-xl italic font-bold text-gray-900 mb-8 mx-12 text-center">
+                  &ldquo;AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.&rdquo;
+                </blockquote>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   The framework comprises ten core cognitive components, derived from CHC broad abilities and weighted equally (10%) to prioritize breadth and cover major areas of cognition:
                 </p>
@@ -211,7 +207,7 @@ export default function AGIDefinitionPage() {
                                 className="w-4 h-4 flex-shrink-0"
                               />
                               <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
-                                {ability.title}
+                                {ability.title.replace(/\s*\([^)]*\)$/, '')}
                               </h4>
                             </div>
                           </div>
@@ -254,7 +250,7 @@ export default function AGIDefinitionPage() {
                                 className="w-4 h-4 flex-shrink-0"
                               />
                               <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
-                                {ability.title}
+                                {ability.title.replace(/\s*\([^)]*\)$/, '')}
                               </h4>
                             </div>
                           </div>
@@ -365,7 +361,45 @@ export default function AGIDefinitionPage() {
               />
             )}
 
-            <DiscussionSection />
+            {/* <DiscussionSection /> */}
+            
+            {/* Citation Section */}
+            <section className="mb-12 w-full mt-8">
+              <div className="mx-auto max-w-4xl">
+                <h2 className="mb-4 text-center text-2xl font-bold">Citation</h2>
+                <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
+
+                <div className="relative">
+                  <div className="rounded-lg bg-gray-50 p-4">
+                    <pre className="max-h-[200px] overflow-y-scroll whitespace-pre-wrap text-xs scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                      {BIBTEX_CITATION}
+                    </pre>
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(BIBTEX_CITATION);
+                      }}
+                      className="absolute right-2 top-2 rounded-md bg-gray-200 p-2 hover:bg-gray-300"
+                      title="Copy to clipboard"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="h-5 w-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </main>
     </>
