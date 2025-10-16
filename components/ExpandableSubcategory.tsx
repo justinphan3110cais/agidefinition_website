@@ -92,17 +92,12 @@ export function ExpandableSubcategory({ subcategory, index, colorIndex }: Expand
         <div className="flex-1">
           <span className="font-semibold">
             {index + 1}. <span 
-              className="underline decoration-dashed decoration-2 underline-offset-2"
+              className="underline decoration-2 underline-offset-2"
               style={{ textDecorationColor: underlineColor }}
             >
               {subcategory.name}
             </span>
           </span>
-          {subcategory.weight && (
-            <span>
-              {" "}(<span className="underline decoration-2 underline-offset-2">{subcategory.weight}</span>)
-            </span>
-          )}
           {subcategory.description && <span>: {subcategory.description}</span>}
         </div>
       </div>

@@ -150,11 +150,7 @@ export function AGISidebar({ activeSection, onSectionChange }: AGISidebarProps) 
                         )}
                         <span className="leading-tight">{ability.title}</span>
                       </span>
-                      {ability.weight && (
-                        <span className="text-xs text-gray-400 ml-2 flex-shrink-0">
-                          {ability.weight}
-                        </span>
-                      )}
+
                     </span>
                   )}
                 </button>
