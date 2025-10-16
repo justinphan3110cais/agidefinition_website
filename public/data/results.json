@@ -1,0 +1,170 @@
+{
+  "models": [
+    {
+      "name": "GPT-4",
+      "abilities": {
+        "k": {
+          "total": "8%",
+          "subcategories": {
+            "Commonsense": "2%",
+            "Science": "2%",
+            "Social Science": "2%",
+            "History": "2%",
+            "Culture": "0%"
+          }
+        },
+        "rw": {
+          "total": "6%",
+          "subcategories": {
+            "Letters": "0%",
+            "Reading": "2%",
+            "Writing": "3%",
+            "Usage": "1%"
+          }
+        },
+        "m": {
+          "total": "4%",
+          "subcategories": {
+            "Arithmetic": "2%",
+            "Algebra": "1%",
+            "Geometry": "0%",
+            "Probability": "1%",
+            "Calculus": "0%"
+          }
+        },
+        "r": {
+          "total": "0%",
+          "subcategories": {
+            "Deduction": "0%",
+            "Induction": "0%",
+            "Theory of Mind": "0%",
+            "Planning": "0%",
+            "Adaptation": "0%"
+          }
+        },
+        "wm": {
+          "total": "2%",
+          "subcategories": {
+            "Textual": "2%",
+            "Auditory": "0%",
+            "Visual": "0%",
+            "Cross-Modal": "0%"
+          }
+        },
+        "ms": {
+          "total": "0%",
+          "subcategories": {
+            "Associative": "0%",
+            "Meaningful": "0%",
+            "Verbatim": "0%"
+          }
+        },
+        "mr": {
+          "total": "0%",
+          "subcategories": {}
+        },
+        "v": {
+          "total": "0%",
+          "subcategories": {}
+        },
+        "a": {
+          "total": "0%",
+          "subcategories": {
+            "Phonetic": "0%",
+            "Speech Recognition": "0%",
+            "Voice": "0%",
+            "Rhythmic": "0%",
+            "Musical": "0%"
+          }
+        },
+        "s": {
+          "total": "0%",
+          "subcategories": {}
+        }
+      }
+    },
+    {
+      "name": "GPT-5",
+      "abilities": {
+        "k": {
+          "total": "9%",
+          "subcategories": {
+            "Commonsense": "2%",
+            "Science": "2%",
+            "Social Science": "2%",
+            "History": "2%",
+            "Culture": "1%"
+          }
+        },
+        "rw": {
+          "total": "10%",
+          "subcategories": {
+            "Letters": "1%",
+            "Reading": "3%",
+            "Writing": "3%",
+            "Usage": "3%"
+          }
+        },
+        "m": {
+          "total": "10%",
+          "subcategories": {
+            "Arithmetic": "2%",
+            "Algebra": "2%",
+            "Geometry": "2%",
+            "Probability": "2%",
+            "Calculus": "2%"
+          }
+        },
+        "r": {
+          "total": "7%",
+          "subcategories": {
+            "Deduction": "2%",
+            "Induction": "2%",
+            "Theory of Mind": "2%",
+            "Planning": "1%",
+            "Adaptation": "0%"
+          }
+        },
+        "wm": {
+          "total": "4%",
+          "subcategories": {
+            "Textual": "2%",
+            "Auditory": "0%",
+            "Visual": "1%",
+            "Cross-Modal": "1%"
+          }
+        },
+        "ms": {
+          "total": "0%",
+          "subcategories": {
+            "Associative": "0%",
+            "Meaningful": "0%",
+            "Verbatim": "0%"
+          }
+        },
+        "mr": {
+          "total": "0%",
+          "subcategories": {}
+        },
+        "v": {
+          "total": "0%",
+          "subcategories": {}
+        },
+        "a": {
+          "total": "6%",
+          "subcategories": {
+            "Phonetic": "0%",
+            "Speech Recognition": "4%",
+            "Voice": "2%",
+            "Rhythmic": "0%",
+            "Musical": "0%"
+          }
+        },
+        "s": {
+          "total": "0%",
+          "subcategories": {}
+        }
+      }
+    }
+  ]
+}

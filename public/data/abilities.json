@@ -992,8 +992,8 @@
                 "description": "Interpreting and analyzing visual data representations, charts, and diagrams.",
                 "examples": [
                   "What is the spatially lowest labeled tick on the y-axis? (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/heat_chart.png\" alt=\"Heat chart with y-axis labels\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> CC daily 4.00PM",
-                  "For each line in (a), give the number corresponding to the orientation in the answer card. (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/arc_lines.png\" alt=\"Line orientation matching\" style=\"max-width: 300px; margin: 10px 0;\">",
-                  "(Digit Symbol Substitution Test) Using the key at the top, what is the sequence of numbers matching the shapes at the bottom? (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/shapes_numbers_match.png\" alt=\"Shape to number matching\" style=\"max-width: 300px; margin: 10px 0;\">"
+                  "For each line in (a), give the number corresponding to the orientation in the answer card.<br><img src=\"/assets/examples/arc_lines.png\" alt=\"Line orientation matching\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "(Digit Symbol Substitution Test) Using the key at the top, what is the sequence of numbers matching the shapes at the bottom?<br><img src=\"/assets/examples/shapes_numbers_match.png\" alt=\"Shape to number matching\" style=\"max-width: 300px; margin: 10px 0;\">"
                 ]
               }
             ],
@@ -1029,91 +1029,265 @@
     },
     {
       "id": "a",
-      "title": "Auditory Processing",
+      "title": "Auditory Processing (A)",
       "shortLabel": "A",
       "weight": "10%",
       "description": "The ability to discriminate, remember, reason, and work creatively on auditory stimuli, which may consist of tones and speech units.",
       "mainFigure": "a_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Auditory Processing (Ga).\"",
       "subcategories": [
         {
           "name": "Phonetic Coding",
-          "description": "The ability to hear phonemes distinctly, blend sounds into words, and segment words into parts, sounds, or phonemes."
+          "weight": "1%",
+          "description": "The ability to hear phonemes distinctly, blend sounds into words, and segment words into parts, sounds, or phonemes.",
+          "fullContent": {
+            "definition": "This is the ability to hear phonemes distinctly, blend sounds into words, and segment words into parts, sounds, or phonemes.",
+            "testingNote": "Audio input, audio output.",
+            "note": "This is highly related to the narrow CHC ability \"Phonetic coding (PC).\"",
+            "examples": [
+              "Repeat the following nonsense word: <a href=\"https://drive.google.com/file/d/1ChUb2FkTgc99-1OU_QLmZUaY5HzJp6m6/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">phontetic_coding.wav 🔊</a>",
+              "Spell the following nonsense word letter by letter: <a href=\"https://drive.google.com/file/d/1tqwu5o6ISw98xqFNtuzXVgzA6N-37gJ_/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">onyx_plimf.wav 🔊</a>",
+              "Listen to the following two speakers say nonsense words. Indicate whether they said the same word or whether it is different: <a href=\"https://drive.google.com/file/d/14LeCe1na_qr3U45mi2q0Jf4w2JwCDru9/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">alloy_plimf.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1tqwu5o6ISw98xqFNtuzXVgzA6N-37gJ_/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">onyx_plimf.wav 🔊</a>",
+              "Listen to the following two speakers say nonsense words. Indicate whether they said the same word or whether it is different: <a href=\"https://drive.google.com/file/d/1tqwu5o6ISw98xqFNtuzXVgzA6N-37gJ_/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">onyx_plimf.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1Paf22Y-yqLOyDIktl144clXIBLiMQl4c/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">shimmer.wav 🔊</a>",
+              "I'm going to say a word, split into two parts. Tell me what word they form when concatenated: \"row\" (pause for 2 seconds) \"d\".",
+              "Say the word \"glint\" without the \"l\".",
+              "Do \"tref\" and \"gref\" rhyme? Are they alliterations?",
+              "Do \"snud\" and \"snit\" rhyme? Are they alliterations?",
+              "Repeat this letter sequence with around a second pause between each character: \"ZQHTMB2XRAGOC@YNDKF#AMQT1EQRN\""
+            ]
+          }
         },
         {
           "name": "Speech Recognition",
-          "description": "The ability to transcribe a spoken audio signal into its corresponding sequence of text."
+          "weight": "4%",
+          "description": "The ability to transcribe a spoken audio signal into its corresponding sequence of text.",
+          "fullContent": {
+            "definition": "This is the ability to transcribe a spoken audio signal into its corresponding sequence of text. We test speech recognition capabilities on clean audio and noisy (e.g., white noise, pub noise, multispeaker, traffic, etc.) audio. The AGI score is 2% if the model can transcribe clean audio with a word error rate (WER) at human-level or beyond. The AGI score is 4% if it can also transcribe noisy audio with a WER at human-level or beyond. Achieving the full score does not require proficiency in transcribing audio with very strong accents, singing, or esoteric jargon.",
+            "note": "This is highly related to the narrow CHC abilities \"Speech sound discrimination (US)\" and \"Resistance to auditory stimulus distortion (UR).\"",
+            "examples": [
+              "Transcribe this TED talk: <a href=\"https://www.youtube.com/watch?v=8nt3edWLgIg\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"Can we build Al without losing control over it?\" 🎥</a>",
+              "Transcribe this scene: <a href=\"https://www.youtube.com/watch?v=r_DwZfyXAXI\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"Goodfellas 'Funny Guy' Scene\" 🎥</a>",
+              "Transcribe this audio: <a href=\"https://drive.google.com/file/d/1pelT_ZOY0iqxoCJY6CVXJe2g7QDuUCOk/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">asr.wav 🔊</a>",
+              "Transcribe this audio: <a href=\"https://drive.google.com/file/d/1vcISV-U4-cfl2rzQsSDHZfALpAI98hkj/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">asr_distorted.wav 🔊</a>"
+            ],
+            "tests": [
+              "<a href=\"https://ieeexplore.ieee.org/document/7178964\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">LibriSpeech</a> (test-clean) WER must be less than 5.83% (human-level) for the clean audio 2%.",
+              "<a href=\"https://ieeexplore.ieee.org/document/7178964\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">LibriSpeech</a> (test-other) WER must be less than 12.69% (human-level) for the noisy audio additional 2%."
+            ]
+          }
         },
         {
           "name": "Voice",
+          "weight": "3%",
           "description": "The quality and responsiveness of the AI's synthesized voice.",
-          "subcategories": [
-            {
-              "name": "Natural speech",
-              "description": "The ability to utter sentences or paragraphs that sound natural and not robotic."
-            },
-            {
-              "name": "Natural conversation",
-              "description": "The ability to maintain conversational fluidity without long delays or excessive interruptions."
-            }
-          ]
+          "fullContent": {
+            "definition": "This evaluates the quality and responsiveness of the AI's synthesized voice. We break down voice into two areas: <span class=\"font-semibold\"><u>natural speech (2%)</u></span> and <span class=\"font-semibold\"><u>natural conversation (1%)</u></span>. <em>Natural speech</em> tests the ability to utter sentences or paragraphs that sound natural and not robotic. <em>Natural conversation</em> tests the ability to maintain conversational fluidity without long delays or excessive interruptions.",
+            "subcategories": [
+              {
+                "name": "Natural Speech",
+                "description": "The ability to utter sentences or paragraphs that sound natural and not robotic.",
+                "examples": [
+                  "Say this sentence: \"Wait, you mean the tickets were free this whole time?\"",
+                  "Say this sentence: \"Concrete jungle, where dreams are made of.\""
+                ]
+              },
+              {
+                "name": "Natural Conversation",
+                "description": "The ability to maintain conversational fluidity without long delays or excessive interruptions.",
+                "examples": [
+                  "Have a conversation about a topic of interest."
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Rhythmic Ability",
-          "description": "The ability to recognize and maintain a musical beat, including reproducing rhythms, detecting differences between rhythms, and synchronizing by playing or humming along."
+          "weight": "1%",
+          "description": "The ability to recognize and maintain a musical beat, including reproducing rhythms, detecting differences between rhythms, and synchronizing by playing or humming along.",
+          "fullContent": {
+            "definition": "The ability to recognize and maintain a musical beat, including reproducing rhythms, detecting differences between rhythms, and synchronizing by playing or humming along.",
+            "note": "This is highly related to the narrow CHC ability \"Maintaining and judging rhythm (U8).\"",
+            "examples": [
+              "Listen to the following rhythm and repeat: <a href=\"https://drive.google.com/file/d/1Ch-ecgW5Et7vXvQc3oiFLQEIjkvZeJ4k/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">rhythm_1.mp3 🔊</a>",
+              "Continue the following rhythm to keep the beat: <a href=\"https://drive.google.com/file/d/1Z25YGuan8MzL0CAVpoKVpLOrNZGDurzI/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">drum_rhythm.mp3 🔊</a>",
+              "Are these two rhythms the same? <a href=\"https://drive.google.com/file/d/1a1MVn-rn5YPYoSjmYhXZtTcKA-wxhV9q/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">drum_1.mp3 🔊</a>, <a href=\"https://drive.google.com/file/d/14dYADiJFxackdaZB6OrQdTHGxZ2Jr0NT/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">drum_2.mp3 🔊</a>"
+            ]
+          }
         },
         {
           "name": "Musical Judgment",
-          "description": "The ability to discriminate and judge simple patterns in music."
+          "weight": "1%",
+          "description": "The ability to discriminate and judge simple patterns in music.",
+          "fullContent": {
+            "definition": "The ability to discriminate and judge simple patterns in music. Tests should not require knowledge of musical jargon.",
+            "note": "This is highly related to the narrow CHC ability \"Musical discrimination and judgment (U1 U9).\"",
+            "examples": [
+              "Which note is higher? <a href=\"https://drive.google.com/file/d/1e70xl3i5eLd0JG_-1l4ncLMLU8tLDgOt/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">piano1.mp3 🔊</a>, <a href=\"https://drive.google.com/file/d/1Lhma2NDGiChgUq4y4vaPsJZ44oeoR-fl/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">piano2.mp3 🔊</a>",
+              "Which sounds more dissonant (clashing): <a href=\"https://drive.google.com/file/d/10enft1byFFWzgyoM5IvEpUUgz14XgrE7/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">piano-chord.mp3 🔊</a>, <a href=\"https://drive.google.com/file/d/1-aqAgDuMpI6qd2JKcFaOTaZzSnPFfpqQ/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">piano-dissonant.mp3 🔊</a>",
+              "Describe what part of this piece is musically anomalous, if any?<br><a href=\"https://www.youtube.com/watch?v=yfxX_IVfBok\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"20th Century Fox (Alien 3)\" 🔊</a>",
+              "<em>Play the clip for 20 seconds starting at the 34th second.</em> Is she singing very slowly or not?<br><a href=\"https://youtu.be/YuBeBjqKSGQ?si=HPcdQ0A3wZgRO9L9&t=34\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">\"The Magic Flute - Queen of the Night aria\" 🔊</a>"
+            ]
+          }
         }
       ]
     },
     {
       "id": "s",
-      "title": "Speed",
+      "title": "Speed (S)",
       "shortLabel": "S",
       "weight": "10%",
       "description": "The ability to perform simple cognitive tasks quickly.",
       "mainFigure": "s_examples.png",
+      "note": "This is highly related to the broad CHC abilities \"Processing Speed (Gs),\" \"Reaction and Decision Speed (Gt),\" and to a lesser extent \"Psychomotor Speed (Gps).\"",
+      "testingNote": "For all speed tests, the AI's performance (latency or throughput) is compared against the average performance of a well-educated adult on the same tasks. The 1% for each area is awarded if the AI meets or exceeds this human baseline. Crucially, artificial delays (e.g., excessive \"thinking\" time for simple tasks) count toward the time limit.",
       "subcategories": [
         {
           "name": "Perceptual Speed–Search",
-          "description": "The speed and fluency of searching or scanning an extended textual or visual field to locate one or more simple patterns."
+          "weight": "1%",
+          "description": "The speed of scanning a visual or textual field to find specific targets.",
+          "fullContent": {
+            "definition": "The speed and fluency of searching or scanning an extended textual or visual field to locate one or more simple patterns.",
+            "note": "This is highly related to the narrow CHC ability \"Perceptual speed–search (Ps).\"",
+            "examples": [
+              "Scan of instances of \"a\" and \"t\" in text passages",
+              "Scan for instances of ∈ and ¥ in text made up of random symbols",
+              "Return the pairs in this list of lists that sum to 10: [8, 1~~9, 3~~2, 7~~8, 2~~9, 6~~4, 6~~8, 0~~5, 5~~1, 9~~4, 5~~7, 2]",
+              "Circle one bell in the following image:<br><img src=\"/assets/examples/circle_bell.png\" alt=\"Bell search puzzle\" style=\"max-width: 300px; margin: 10px 0;\">"
+            ]
+          }
         },
         {
           "name": "Perceptual Speed–Compare",
-          "description": "The speed and fluency of looking up and comparing textual or visual stimuli that are side by side or more widely separated in an extended textual or visual field."
+          "weight": "1%",
+          "description": "The speed of comparing two or more stimuli to identify similarities or differences.",
+          "fullContent": {
+            "definition": "The speed and fluency of looking up and comparing textual or visual stimuli that are side by side or more widely separated in an extended textual or visual field.",
+            "note": "This is highly related to the narrow CHC ability \"Perceptual speed–compare (Pc).\"",
+            "examples": [
+              "Determine mismatched name pairs in the 2 lists:<br>[\"Johnson\", \"Smith\", \"Garcia\", \"Miller\", \"Davis\"]<br>[\"Johnson\", \"Smyth\", \"Garcia\", \"Millar\", \"Davis\"]",
+              "Find the largest number in \"48291, 93652, 12844, 59277\"",
+              "Identify the youngest person in the list:<br><table style=\"border-collapse: collapse; margin: 10px 0;\"><tr><th style=\"border: 1px solid #ccc; padding: 8px;\">ID</th><th style=\"border: 1px solid #ccc; padding: 8px;\">Name</th><th style=\"border: 1px solid #ccc; padding: 8px;\">Date of Birth</th></tr><tr><td style=\"border: 1px solid #ccc; padding: 8px;\">101</td><td style=\"border: 1px solid #ccc; padding: 8px;\">Alice</td><td style=\"border: 1px solid #ccc; padding: 8px;\">03/12/1992</td></tr><tr><td style=\"border: 1px solid #ccc; padding: 8px;\">102</td><td style=\"border: 1px solid #ccc; padding: 8px;\">John</td><td style=\"border: 1px solid #ccc; padding: 8px;\">07/25/1988</td></tr><tr><td style=\"border: 1px solid #ccc; padding: 8px;\">103</td><td style=\"border: 1px solid #ccc; padding: 8px;\">Maria</td><td style=\"border: 1px solid #ccc; padding: 8px;\">11/03/1990</td></tr><tr><td style=\"border: 1px solid #ccc; padding: 8px;\">104</td><td style=\"border: 1px solid #ccc; padding: 8px;\">David</td><td style=\"border: 1px solid #ccc; padding: 8px;\">05/19/1995</td></tr></table>"
+            ]
+          }
         },
         {
           "name": "Reading Speed",
-          "description": "Rate of reading text with full comprehension."
+          "weight": "1%",
+          "description": "The rate at which text can be processed with full comprehension.",
+          "fullContent": {
+            "definition": "Rate of reading text with full comprehension.",
+            "note": "This is highly related to the narrow CHC ability \"Reading speed (fluency) (RS).\"",
+            "examples": [
+              "Read along this textual passage for 60 seconds: <a href=\"https://docs.google.com/document/d/1ndBmyo7e4LOaPLvbv4i16t0LE2lbicK_OvargOXyjRE/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Reading/Writing Speed Example 📄</a>. <em>60 seconds pass</em>. What are \"feelies\"?"
+            ],
+            "tests": [
+              "Input text token processing speed gauges reading speed. Can measure the \"time-to-first-token\" latency of a 100 thousand token prompt."
+            ]
+          }
         },
         {
           "name": "Writing Speed",
-          "description": "The rate at which words or sentences can be generated or copied."
+          "weight": "1%",
+          "description": "The rate at which text can be generated or copied.",
+          "fullContent": {
+            "definition": "The rate at which words or sentences can be generated or copied.",
+            "note": "This is highly related to the narrow CHC ability \"Writing speed (fluency) (WS).\"",
+            "examples": [
+              "In 60 seconds, please copy and output as much of the following textual passage as you can: <a href=\"https://docs.google.com/document/d/1ndBmyo7e4LOaPLvbv4i16t0LE2lbicK_OvargOXyjRE/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Reading/Writing Speed Example 📄</a>."
+            ],
+            "tests": [
+              "Output text token processing speed gauges writing speed."
+            ]
+          }
         },
         {
           "name": "Number Facility",
-          "description": "The rate at which basic arithmetic or algorithmic operations are performed accurately."
+          "weight": "1%",
+          "description": "The speed and accuracy of performing basic arithmetic operations.",
+          "fullContent": {
+            "definition": "The rate at which basic arithmetic or algorithmic operations are performed accurately.",
+            "note": "This is highly related to the narrow CHC ability \"Number facility (N).\"",
+            "examples": [
+              "Compute 72/2",
+              "Compute 9 × 10 × 11",
+              "Sort from least to greatest: 37, 4, 92, 58, 13",
+              "Square each element: 9, 3, 1"
+            ]
+          }
         },
         {
           "name": "Simple Reaction Time",
-          "description": "Reaction time to the onset of a single stimulus (textual, visual, or auditory)."
+          "weight": "1%",
+          "description": "The time taken to respond to a single, anticipated stimulus.",
+          "fullContent": {
+            "definition": "Reaction time to the onset of a single stimulus (textual, visual, or auditory).",
+            "note": "This is highly related to the narrow CHC ability \"Simple RT (R1).\"",
+            "examples": [
+              "After reading this, immediately say 'hello'.",
+              "After reading this, immediately output the letter 'a'.",
+              "I'm going to speak. While I do so, briefly say 'beep' immediately whenever you hear me use the letter 'Q'. <a href=\"https://drive.google.com/file/d/1Dds-Pip1Lgzhy5sKwd-eCekxySAJuIid/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">letter_sequence.m4a 🎥</a>",
+              "I will play a video. Whenever you see a blue flash, output the letter 'g' as quickly as you can."
+            ]
+          }
         },
         {
           "name": "Choice Reaction Time",
-          "description": "Reaction time to the onset of one of several possible stimuli."
+          "weight": "1%",
+          "description": "The time taken to respond correctly when presented with one of several possible stimuli.",
+          "fullContent": {
+            "definition": "Reaction time to the onset of one of several possible stimuli.",
+            "note": "This is highly related to the narrow CHC ability \"Choice RT (R2).\"",
+            "examples": [
+              "I'll give a string of four characters, and you need to repeat the character that is capitalized as quickly as you can. \"a B c d\".",
+              "As quickly as you can, respond with the character L if the arrow points left, R if right. Stimulus: →",
+              "As quickly as you can, respond with exactly the stimulus letter if it is one of A, E, I, or O. Otherwise, respond with X. Stimulus: E",
+              "As quickly as you can, identify the color of the image: <img src=\"/assets/examples/green.png\" alt=\"Green color sample\" style=\"max-width: 50px; margin: 10px 0;\">"
+            ]
+          }
         },
         {
           "name": "Inspection Time",
-          "description": "The speed at which differences in visual stimuli can be perceived."
+          "weight": "1%",
+          "description": "The speed at which subtle differences between visual or auditory stimuli can be perceived.",
+          "fullContent": {
+            "definition": "The speed at which differences in visual stimuli can be perceived.",
+            "note": "This is highly related to the narrow CHC ability \"Inspection time (IT).\"",
+            "examples": [
+              "Here are two strings. They differ in exactly one character. What are the two letters that differ? \"QX9afGhtkLmN, QX9afGhtkLnN\"",
+              "Which image has a bell?<br>A. <img src=\"/assets/examples/bell_images_a.png\" alt=\"Bell search option A\" style=\"max-width: 200px; margin: 10px 0;\"><br>B. <img src=\"/assets/examples/bell_images_b.png\" alt=\"Bell search option B\" style=\"max-width: 200px; margin: 10px 0;\">",
+              "As quickly as you can, select which voice sounds the most typically feminine: <a href=\"https://drive.google.com/file/d/1OhHpxjVSM4PCMOOqQxdR-JXzvvJXxQ2O/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">voice_1.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/17-G1Zj9Rp7d_GM6WkpTA5BmSymYQn2l-/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">voice_2.wav 🔊</a>, <a href=\"https://drive.google.com/file/d/1A5UrfWTPrpwRTFid4zcIPiFK2DQaefYu/view?usp=drive_link\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">voice_3.wav 🔊</a>."
+            ]
+          }
         },
         {
           "name": "Comparison Speed",
-          "description": "Reaction time where stimuli must be compared for a particular characteristic or attribute."
+          "weight": "1%",
+          "description": "The time taken to make a judgment comparing two stimuli on a specific attribute.",
+          "fullContent": {
+            "definition": "Reaction time where stimuli must be compared for a particular characteristic or attribute.",
+            "note": "This is highly related to the narrow CHC ability \"Mental comparison speed (R7).\"",
+            "examples": [
+              "I will give two numbers. As quickly as you can, answer yes or no to whether they have the same parity (both even or both odd): \"14, 9\"",
+              "I will give two numbers. As quickly as you can, indicate which number is larger: \"5.11, 5.9\"",
+              "I will give two words. As quickly as you can, answer which word comes first alphabetically: \"apple, apricot\"",
+              "I will give two words. As quickly as you can, answer which word has more vowels: \"reason, crypt\""
+            ]
+          }
         },
         {
           "name": "Pointer Fluency",
-          "description": "The fluency of moving a virtual computer mouse to execute simple requests."
+          "weight": "1%",
+          "description": "The speed and accuracy of moving a pointer, such as a virtual mouse.",
+          "fullContent": {
+            "definition": "The fluency of moving a computer mouse to execute simple requests. <em>Note: We do not assume the AGI must be embodied, so the AI can use a virtual mouse to complete this task, just as it uses virtual keys to write responses.</em>",
+            "note": "This is highly related to the narrow CHC ability \"Movement time (MT).\"",
+            "examples": [
+              "Using a mouse, draw as many roughly circular shapes as you can on a digital canvas using the pen feature. You have 30 seconds.",
+              "Using a mouse, sketch a very rough outline of a T-Rex on a digital canvas using the pen feature.",
+              "As quickly as you can, close all the tabs in this browser window, one by one, using the X button on the tabs."
+            ]
+          }
         }
       ]
     }
