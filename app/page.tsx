@@ -6,7 +6,6 @@ import Image from "next/image";
 import { DiscussionSection } from "@/components/DiscussionSection";
 import { AbilityDetail } from "@/components/AbilityDetail";
 import { AuthorsSection } from "@/app/authors-section";
-import { BIBTEX_CITATION } from "@/app/constants";
 
 interface FullContent {
   definition?: string;
@@ -153,7 +152,7 @@ export default function AGIDefinitionPage() {
                   />
                 </div>
                 <div className="text-center max-w-lg px-4">
-                  <p className="text-base sm:text-lg text-gray-600 italic">
+                  <p className="text-base sm:text-lg text-gray-600">
                     The capabilities of GPT-4 and GPT-5.
                   </p>
                 </div>
@@ -164,188 +163,189 @@ export default function AGIDefinitionPage() {
             <section className="mb-12">
               <div className="max-w-4xl mx-auto">
                 <hr className="border-gray-300 mb-8" />
-                <blockquote className="text-xl italic font-bold text-gray-900 mb-8 mx-12 text-center">
-                  &ldquo;AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.&rdquo;
+                <blockquote className="text-xl font-bold text-gray-900 mb-8 mx-12 text-center">
+                  &quot;AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.&quot;
                 </blockquote>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   The framework comprises ten core cognitive components, derived from CHC broad abilities and weighted equally (10%) to prioritize breadth and cover major areas of cognition:
                 </p>
                 
 
-                <div className="space-y-3 mb-8">
-                  {/* Long-Term Memory Group */}
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Acquired Knowledge</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                      {abilities.slice(0, 3).map((ability, index) => {
-                        const getColor = () => '#AACEF2'; // K, RW, M
-                        
-                        return (
-                          <div 
-                            key={ability.id}
-                            className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
-                              selectedAbility?.id === ability.id 
-                                ? 'shadow-md transform scale-105 opacity-100' 
-                                : 'opacity-50 hover:opacity-75'
-                            }`}
-                            style={{
-                              borderColor: getColor(),
-                              backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
-                            }}
-                        onClick={() => {
-                          setSelectedAbility(ability);
-                          // setActiveSection(ability.id);
-                        }}
-                          >
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm font-medium text-gray-900">{index + 1}.</span>
-                              <Image 
-                                src={`/assets/icons/${ability.id}.svg`}
-                                alt={`${ability.title} icon`}
-                                width={16}
-                                height={16}
-                                className="w-4 h-4 flex-shrink-0"
-                              />
-                              <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
-                                {ability.title.replace(/\s*\([^)]*\)$/, '')}
-                              </h4>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Central Executive Group */}
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Central Executive</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-                      {abilities.slice(3, 7).map((ability, index) => {
-                        const getColor = () => '#9ECC75'; // R, WM, MS, MR
-                        
-                        return (
-                          <div 
-                            key={ability.id}
-                            className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
-                              selectedAbility?.id === ability.id 
-                                ? 'shadow-md transform scale-105 opacity-100' 
-                                : 'opacity-50 hover:opacity-75'
-                            }`}
-                            style={{
-                              borderColor: getColor(),
-                              backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
-                            }}
-                        onClick={() => {
-                          setSelectedAbility(ability);
-                          // setActiveSection(ability.id);
-                        }}
-                          >
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm font-medium text-gray-900">{index + 4}.</span>
-                              <Image 
-                                src={`/assets/icons/${ability.id}.svg`}
-                                alt={`${ability.title} icon`}
-                                width={16}
-                                height={16}
-                                className="w-4 h-4 flex-shrink-0"
-                              />
-                              <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
-                                {ability.title.replace(/\s*\([^)]*\)$/, '')}
-                              </h4>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Perception & Output Group */}
-                  <div>
-                    <div className="flex gap-4">
-                      {/* Perception */}
-                      <div className="flex-1">
-                        <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Perception</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {abilities.slice(7, 9).map((ability, index) => {
-                            const getColor = () => '#E28988'; // V, A
-                            
-                            return (
-                              <div 
-                                key={ability.id}
-                                className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
-                                  selectedAbility?.id === ability.id 
-                                    ? 'shadow-md transform scale-105 opacity-100' 
-                                    : 'opacity-50 hover:opacity-75'
-                                }`}
-                                style={{
-                                  borderColor: getColor(),
-                                  backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
-                                }}
-                        onClick={() => {
-                          setSelectedAbility(ability);
-                          // setActiveSection(ability.id);
-                        }}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <span className="text-sm font-medium text-gray-900">{index + 8}.</span>
-                                  <Image 
-                                    src={`/assets/icons/${ability.id}.svg`}
-                                    alt={`${ability.title} icon`}
-                                    width={16}
-                                    height={16}
-                                    className="w-4 h-4 flex-shrink-0"
-                                  />
-                                  <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
-                                    {ability.title}
-                                  </h4>
-                                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                  {/* Column 1: Acquired Knowledge and Perception */}
+                  <div className="space-y-4">
+                    {/* Acquired Knowledge */}
+                    <div>
+                      <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Acquired Knowledge</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {abilities.slice(0, 3).map((ability, index) => {
+                          const getColor = () => '#AACEF2'; // K, RW, M
+                          
+                          return (
+                            <div 
+                              key={ability.id}
+                              className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
+                                selectedAbility?.id === ability.id 
+                                  ? 'shadow-md transform scale-105 opacity-100' 
+                                  : 'opacity-50 hover:opacity-75'
+                              }`}
+                              style={{
+                                borderColor: getColor(),
+                                backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
+                              }}
+                          onClick={() => {
+                            setSelectedAbility(ability);
+                            // setActiveSection(ability.id);
+                          }}
+                            >
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-medium text-gray-900">{index + 1}.</span>
+                                <Image 
+                                  src={`/assets/icons/${ability.id}.svg`}
+                                  alt={`${ability.title} icon`}
+                                  width={16}
+                                  height={16}
+                                  className="w-4 h-4 flex-shrink-0"
+                                />
+                                <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
+                                  {ability.title.replace(/\s*\([^)]*\)$/, '')}
+                                </h4>
                               </div>
-                            );
-                          })}
-                        </div>
+                            </div>
+                          );
+                        })}
                       </div>
+                    </div>
 
-                      {/* Output */}
-                      <div className="flex-1">
-                        <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Output</h3>
-                        <div className="flex justify-start">
-                          {abilities.slice(9, 10).map((ability) => {
-                            const getColor = () => '#EDCC85'; // S
-                            
-                            return (
-                              <div 
-                                key={ability.id}
-                                className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 max-w-fit ${
-                                  selectedAbility?.id === ability.id 
-                                    ? 'shadow-md transform scale-105 opacity-100' 
-                                    : 'opacity-50 hover:opacity-75'
-                                }`}
-                                style={{
-                                  borderColor: getColor(),
-                                  backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
-                                }}
-                        onClick={() => {
-                          setSelectedAbility(ability);
-                          // setActiveSection(ability.id);
-                        }}
-                              >
-                                <div className="flex items-center gap-2">
-                                  <span className="text-sm font-medium text-gray-900">10.</span>
-                                  <Image 
-                                    src={`/assets/icons/${ability.id}.svg`}
-                                    alt={`${ability.title} icon`}
-                                    width={16}
-                                    height={16}
-                                    className="w-4 h-4 flex-shrink-0"
-                                  />
-                                  <h4 className="text-xs sm:text-sm font-medium text-gray-900">
-                                    {ability.title}
-                                  </h4>
-                                </div>
+                    {/* Perception */}
+                    <div>
+                      <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Perception</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {abilities.slice(7, 9).map((ability, index) => {
+                          const getColor = () => '#E28988'; // V, A
+                          
+                          return (
+                            <div 
+                              key={ability.id}
+                              className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
+                                selectedAbility?.id === ability.id 
+                                  ? 'shadow-md transform scale-105 opacity-100' 
+                                  : 'opacity-50 hover:opacity-75'
+                              }`}
+                              style={{
+                                borderColor: getColor(),
+                                backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
+                              }}
+                      onClick={() => {
+                        setSelectedAbility(ability);
+                        // setActiveSection(ability.id);
+                      }}
+                            >
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-medium text-gray-900">{index + 8}.</span>
+                                <Image 
+                                  src={`/assets/icons/${ability.id}.svg`}
+                                  alt={`${ability.title} icon`}
+                                  width={16}
+                                  height={16}
+                                  className="w-4 h-4 flex-shrink-0"
+                                />
+                                <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
+                                  {ability.title}
+                                </h4>
                               </div>
-                            );
-                          })}
-                        </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Column 2: Central Executive and Output */}
+                  <div className="space-y-4">
+                    {/* Central Executive */}
+                    <div>
+                      <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Central Executive</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {abilities.slice(3, 7).map((ability, index) => {
+                          const getColor = () => '#9ECC75'; // R, WM, MS, MR
+                          
+                          return (
+                            <div 
+                              key={ability.id}
+                              className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
+                                selectedAbility?.id === ability.id 
+                                  ? 'shadow-md transform scale-105 opacity-100' 
+                                  : 'opacity-50 hover:opacity-75'
+                              }`}
+                              style={{
+                                borderColor: getColor(),
+                                backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
+                              }}
+                      onClick={() => {
+                        setSelectedAbility(ability);
+                        // setActiveSection(ability.id);
+                      }}
+                            >
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-medium text-gray-900">{index + 4}.</span>
+                                <Image 
+                                  src={`/assets/icons/${ability.id}.svg`}
+                                  alt={`${ability.title} icon`}
+                                  width={16}
+                                  height={16}
+                                  className="w-4 h-4 flex-shrink-0"
+                                />
+                                <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
+                                  {ability.title.replace(/\s*\([^)]*\)$/, '')}
+                                </h4>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Output */}
+                    <div>
+                      <h3 className="text-sm font-medium text-gray-600 mb-2 uppercase tracking-wide">Output</h3>
+                      <div className="grid grid-cols-1 gap-2">
+                        {abilities.slice(9, 10).map((ability) => {
+                          const getColor = () => '#EDCC85'; // S
+                          
+                          return (
+                            <div 
+                              key={ability.id}
+                              className={`p-2 border-2 rounded cursor-pointer transition-all duration-150 hover:bg-gray-50 ${
+                                selectedAbility?.id === ability.id 
+                                  ? 'shadow-md transform scale-105 opacity-100' 
+                                  : 'opacity-50 hover:opacity-75'
+                              }`}
+                              style={{
+                                borderColor: getColor(),
+                                backgroundColor: selectedAbility?.id === ability.id ? getColor() + '20' : 'transparent'
+                              }}
+                      onClick={() => {
+                        setSelectedAbility(ability);
+                        // setActiveSection(ability.id);
+                      }}
+                            >
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-medium text-gray-900">10.</span>
+                                <Image 
+                                  src={`/assets/icons/${ability.id}.svg`}
+                                  alt={`${ability.title} icon`}
+                                  width={16}
+                                  height={16}
+                                  className="w-4 h-4 flex-shrink-0"
+                                />
+                                <h4 className="text-xs sm:text-sm font-medium text-gray-900 flex-1">
+                                  {ability.title}
+                                </h4>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -362,44 +362,6 @@ export default function AGIDefinitionPage() {
             )}
 
             {/* <DiscussionSection /> */}
-            
-            {/* Citation Section */}
-            <section className="mb-12 w-full mt-8">
-              <div className="mx-auto max-w-4xl">
-                <h2 className="mb-4 text-center text-2xl font-bold">Citation</h2>
-                <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
-
-                <div className="relative">
-                  <div className="rounded-lg bg-gray-50 p-4">
-                    <pre className="max-h-[200px] overflow-y-scroll whitespace-pre-wrap text-xs scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-                      {BIBTEX_CITATION}
-                    </pre>
-                    <button
-                      onClick={() => {
-                        navigator.clipboard.writeText(BIBTEX_CITATION);
-                      }}
-                      className="absolute right-2 top-2 rounded-md bg-gray-200 p-2 hover:bg-gray-300"
-                      title="Copy to clipboard"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="h-5 w-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.666 3.888A2.25 2.25 0 0013.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 01-.75.75H9a.75.75 0 01-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 011.927-.184"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
         </main>
     </>
