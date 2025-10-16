@@ -104,10 +104,10 @@ export function AGISidebar({ activeSection, onSectionChange }: AGISidebarProps) 
               <div key={ability.id}>
                 <button
                   onClick={() => onSectionChange(ability.id)}
-                  className={`w-full text-left py-1 text-sm transition-all duration-150 ease-in-out ${
+                  className={`w-full text-left py-1 px-1 text-sm transition-all duration-150 ease-in-out ${
                     activeSection === ability.id
-                      ? 'text-gray-900 font-medium'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-blue-700 font-medium bg-blue-50'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 cursor-pointer'
                   }`}
                   style={{fontFamily: 'Arial, sans-serif'}}
                   title={isCollapsed ? ability.title : undefined}

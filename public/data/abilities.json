@@ -621,60 +621,120 @@
       "weight": "10%",
       "description": "The ability to stably acquire, consolidate, and store new information from recent experiences.",
       "mainFigure": "ms_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Long-term storage (Gl).\"",
+      "testingNote": "To ensure we are testing long-term storage rather than working memory, all tests in this section must be conducted in a new session separate from the initial presentation of information. External tools (e.g., internet search) must be disabled.",
       "subcategories": [
         {
           "name": "Associative Memory",
-          "description": "The ability to form a link between two previously unrelated stimuli, such that the subsequent presentation of one of the stimuli serves to activate the recall of the other stimuli.",
-          "subcategories": [
-            {
-              "name": "Cross-Modal Association",
-              "description": "The ability to form associations between audio, visual, or textual information."
-            },
-            {
-              "name": "Personalization Adherence",
-              "description": "The ability to associate specific rules, preferences, or corrections with a distinct interaction context and apply them consistently and unprompted over time."
-            },
-            {
-              "name": "Procedural Association",
-              "description": "The ability to acquire and retain a sequence of associated steps or rules (a procedure) and execute them when cued with the name of the procedure."
-            }
-          ]
+          "weight": "4%",
+          "description": "The ability to link previously unrelated pieces of information.",
+          "fullContent": {
+            "definition": "The ability to form a link between two previously unrelated stimuli, such that the subsequent presentation of one of the stimuli serves to activate the recall of the other stimuli. We test this with <span class=\"font-semibold\"><u>cross-modal association (2%)</u></span>, <span class=\"font-semibold\"><u>personalization adherence (1%)</u></span>, and <span class=\"font-semibold\"><u>procedural association (1%)</u></span>.",
+            "note": "This is highly related to the narrow CHC ability \"Associative memory (MA).\"",
+            "subcategories": [
+              {
+                "name": "Cross-Modal Association",
+                "description": "The ability to form associations between audio, visual, or textual information.",
+                "examples": [
+                  "The AI is introduced to several fictional personas, each with a couple of unique biographical details (e.g., Name, Age, Occupation, Hobby). After 48 hours, the AI is asked questions about these personas. \"What is [Name]'s hobby?\", \"Who is the botanist?\"",
+                  "The AI is presented with several distinct voice samples (different pitches, accents, tempos). Each voice is explicitly paired with a name. After 48 hours, the AI hears voice samples and must identify the name.",
+                  "The AI is shown several distinct faces, each paired with a full name. After 48 hours, the AI sees the face and must state the associated name, or whether it has not seen the face before.",
+                  "The AI is shown several distinct faces, each paired with a full name. After 48 hours, the AI sees the name and must visualize the associated face, or whether it does not have an associated face.",
+                  "The AI is shown several distinct images of cartoon aliens, each paired with a name. After 48 hours, the AI sees the alien and must state the associated name (if any association exists)."
+                ]
+              },
+              {
+                "name": "Personalization Adherence",
+                "description": "The ability to associate specific rules, preferences, or corrections with a distinct interaction context and apply them consistently and unprompted over time.",
+                "examples": [
+                  "Stylistic preference: The AI remembers user preferences, communicated explicitly or through correction, such as \"always use the Oxford comma,\" \"signoff all of my emails with 'Best, <name>' for formal communications and 'Love, <first name>' for my partner,\" \"Use the phrase 'intelligence recursion' or 'recursion' instead of 'recursive self-improvement.'\" After a week, the AI is tasked with content generation and evaluated on its unprompted adherence to these rules.",
+                  "Factual override: The AI remembers new facts about the user such as \"I now weigh 160 lbs not 155 lbs but am the same height,\" \"I no longer work at X; I work at Y.\" After a week, the AI is queried to test if the specific association overrides base knowledge or previous inputs (e.g., it is given a BMI calculation query)."
+                ]
+              },
+              {
+                "name": "Procedural Association",
+                "description": "The ability to acquire and retain a sequence of associated steps or rules and execute them when cued with the name of the procedure.",
+                "examples": [
+                  "The AI is taught a novel, multi-step data manipulation procedure (e.g., \"1. Normalize column A. 2. Remove outliers in column B. 3. Encode column C using this specific dictionary.\") to be applied whenever it sees a particular type of dataset to \"clean it up.\" After a week, the AI is given a dataset with the type appropriate for the procedure, and should apply the procedure after being told to clean it.",
+                  "The AI is taught a complex, arbitrary cipher that is given a name. After 48 hours, it is asked to encrypt a message following the named cipher."
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Meaningful Memory",
-          "description": "The ability to remember narratives and other forms of semantically related information.",
-          "subcategories": [
-            {
-              "name": "Story Recall",
-              "description": "The ability to remember the gist of stories."
-            },
-            {
-              "name": "Movie Recall",
-              "description": "The ability to remember the gist of movies."
-            },
-            {
-              "name": "Episodic Context Recall",
-              "description": "The ability to remember specific events or experiences, including their context (the \"what, where, when, and how\")."
-            }
-          ]
+          "weight": "3%",
+          "description": "The ability to encode and recall the semantic gist of experiences and narratives.",
+          "fullContent": {
+            "definition": "The ability to remember narratives and other forms of semantically related information. We test this with <span class=\"font-semibold\"><u>story recall (1%)</u></span>, <span class=\"font-semibold\"><u>movie recall (1%)</u></span>, and <span class=\"font-semibold\"><u>episodic context recall (1%)</u></span>.",
+            "note": "This is highly related to the narrow CHC ability \"Meaningful memory (MM).\"",
+            "subcategories": [
+              {
+                "name": "Story Recall",
+                "description": "The ability to remember the gist of stories.",
+                "testingNote": "Text input, text output.",
+                "examples": [
+                  "The AI is presented with a novel ~3000-word short story with multiple characters and interlocking plot lines. After 48 hours, the AI is asked questions about key narrative elements of the story. Evaluation should focus on the accuracy of major plot points, character motivations, central conflicts, and thematic elements, rather than verbatim recall of specific sentences."
+                ]
+              },
+              {
+                "name": "Movie Recall",
+                "description": "The ability to remember the gist of movies.",
+                "testingNote": "Audio/visual input, text output.",
+                "examples": [
+                  "The AI is presented with a movie. After 48 hours, the AI is asked questions about key narrative elements of the movie (e.g., character motivations)."
+                ]
+              },
+              {
+                "name": "Episodic Context Recall",
+                "description": "The ability to remember specific events or experiences, including their context (the \"what, where, when, and how\").",
+                "examples": [
+                  "The AI is asked to summarize interactions with the user from a week ago.",
+                  "Given a sequence of experiences with a user, the AI is asked \"Did I talk to you about X before or after Y? Have I ever told you about Z before?\""
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Verbatim Memory",
-          "description": "The ability to recall information exactly as it was presented, requiring precise encoding of specific sequences, sets, or designs, often independent of the information's meaning.",
-          "subcategories": [
-            {
-              "name": "Short Sequence Recall",
-              "description": "The ability to exactly recall short sequences of text after a delay."
-            },
-            {
-              "name": "Set Recall",
-              "description": "The ability to recall a set (the order of recall does not matter)."
-            },
-            {
-              "name": "Design Recall",
-              "description": "The ability to reproduce novel designs, schematics, or diagrams after a delay."
-            }
-          ]
+          "weight": "3%",
+          "description": "The ability to store and reproduce information precisely as it was presented.",
+          "fullContent": {
+            "definition": "The ability to recall information exactly as it was presented, requiring precise encoding of specific sequences, sets, or designs, often independent of the information's meaning. We test this with <span class=\"font-semibold\"><u>short sequence recall (1%)</u></span>, <span class=\"font-semibold\"><u>set recall (1%)</u></span>, and <span class=\"font-semibold\"><u>design recall (1%)</u></span>.",
+            "subcategories": [
+              {
+                "name": "Short Sequence Recall",
+                "description": "The ability to exactly recall short sequences of text after a delay.",
+                "note": "This is highly related to the narrow CHC ability \"Free-recall memory (M6).\"",
+                "examples": [
+                  "The AI is presented with a sentence that is a fictional quote. After 48 hours, the AI is asked to reproduce the sentence.",
+                  "The AI is presented with a phone number. After 48 hours, the AI is asked to reproduce the phone number.",
+                  "The AI is presented with a limerick. After 48 hours, the AI is asked to reproduce the limerick.",
+                  "The AI is presented with a dense but short three-step mathematical proof. After 48 hours, the AI is asked to reproduce the proof."
+                ]
+              },
+              {
+                "name": "Set Recall",
+                "description": "The ability to recall a set (the order of recall does not matter).",
+                "note": "This is highly related to the narrow CHC ability \"Free-recall memory (M6).\"",
+                "examples": [
+                  "The AI is presented with a set of 10–20 words. After 48 hours, the AI is asked to name elements of this set. Evaluation should measure the proportion of the set recalled correctly and the number of intrusions (recalling items not present in the original set). Precision and recall should match or exceed 90%.",
+                  "The AI is shown a collection of images in a slideshow (e.g., <a href=\"https://docs.google.com/presentation/d/1cs4HvcBXlD7_xufOJ_nBfxO2O-IgbhzhGScmbFjT6EU/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">this slideshow 📊</a>). After 48 hours, the AI is asked to name elements of this set."
+                ]
+              },
+              {
+                "name": "Design Recall",
+                "description": "The ability to recall the spatial arrangement and structure of visual information.",
+                "examples": [
+                  "The AI is shown a novel, complex schematic or blueprint (e.g., a circuit diagram) with several labeled components. After 48 hours, the AI is asked to reproduce the design.",
+                  "The AI is shown a grid with several (say, 4–10) designs on a page. After 48 hours, the AI selects the designs from a set of cards and places the cards on a grid in the same location as previously shown.",
+                  "The AI is shown an abstract diagram, such as:<br><img src=\"/assets/examples/abstract_design.png\" alt=\"Abstract geometric design\" style=\"max-width: 50px; margin: 10px 0;\"><br>After 48 hours, the AI is asked to reproduce the design. The reproduction is evaluated by comparing the generated markup against the ground truth and should have no substantial discrepancies."
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -685,40 +745,97 @@
       "weight": "10%",
       "description": "The fluency and precision with which individuals can access long-term memory.",
       "mainFigure": "mr_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Retrieval Fluency (Gr).\"",
       "subcategories": [
         {
           "name": "Retrieval Fluency (Fluency)",
+          "weight": "6%",
           "description": "The speed and ease of generating ideas, associations, and solutions based on stored knowledge.",
-          "subcategories": [
-            {
-              "name": "Ideational Fluency",
-              "description": "The ability to rapidly produce a series of ideas, words, or phrases related to a specific condition, category, or object."
-            },
-            {
-              "name": "Expressional Fluency",
-              "description": "The ability to rapidly think of different ways of expressing an idea."
-            },
-            {
-              "name": "Alternative Solution Fluency",
-              "description": "The ability to rapidly think of several alternative solutions to a practical problem."
-            },
-            {
-              "name": "Word Fluency",
-              "description": "The ability to rapidly produce words that share a non-semantic feature."
-            },
-            {
-              "name": "Naming Facility",
-              "description": "The ability to rapidly and accurately recall the specific names for objects, people, places, or concepts from memory."
-            },
-            {
-              "name": "Figural Fluency",
-              "description": "The ability to rapidly draw or sketch as many things as possible."
-            }
-          ]
+          "fullContent": {
+            "definition": "Fluency consists of six parts: <span class=\"font-semibold\"><u>ideational (1%)</u></span>, <span class=\"font-semibold\"><u>expressional (1%)</u></span>, <span class=\"font-semibold\"><u>alternative solution (1%)</u></span>, <span class=\"font-semibold\"><u>word (1%)</u></span>, <span class=\"font-semibold\"><u>naming (1%)</u></span>, and <span class=\"font-semibold\"><u>figure fluency (1%)</u></span>.",
+            "testingNote": "Fluency is measured by comparing the AI's performance on tasks (e.g., quantity and originality of responses within a time limit, typically 60 seconds) against human performance.<br><br>To achieve the 1% for a specific fluency type, the AI must perform at or above the typical well-educated adult.",
+            "subcategories": [
+              {
+                "name": "Ideational Fluency",
+                "description": "The ability to rapidly produce a series of ideas, words, or phrases related to a specific condition, category, or object.",
+                "note": "This is highly related to the narrow CHC ability \"Ideational fluency (FI).\"",
+                "examples": [
+                  "List as many uses of a pencil as possible in 1 minute.",
+                  "Name as many round objects as possible in 60 seconds.",
+                  "Give as many different ideas you associate with 'river' in 60 seconds."
+                ]
+              },
+              {
+                "name": "Expressional Fluency",
+                "description": "The ability to rapidly think of different ways of expressing an idea.",
+                "note": "This is highly related to the narrow CHC ability \"Expressional fluency (FE).\"",
+                "examples": [
+                  "\"How many ways can you say that a person is crazy?\"",
+                  "Provide three alternative sentences that mean, \"She is a very successful person.\"",
+                  "Describe a sunset over the ocean and to evoke three different moods: peaceful, dramatic, and lonely."
+                ]
+              },
+              {
+                "name": "Alternative Solution Fluency",
+                "description": "The ability to rapidly think of several alternative solutions to a practical problem.",
+                "note": "This is highly related to the narrow CHC ability \"Alternative solution fluency (SP).\"",
+                "examples": [
+                  "List as many ways as you can to get a reluctant child to go to school in 60 seconds.",
+                  "You want to cool down on a very hot day, but you don't have air conditioning or a pool. List as many ways as you can to cool your body off in 60 seconds.",
+                  "You need to get a book that is on a very high shelf, but you don't have a ladder. List as many ways as you can to safely get the book down in 60 seconds."
+                ]
+              },
+              {
+                "name": "Word Fluency",
+                "description": "The ability to rapidly produce words that share a non-semantic feature.",
+                "note": "This is highly related to the narrow CHC ability \"Word fluency (FW).\"",
+                "examples": [
+                  "List as many words that start with [letter] as you can in 60 seconds.",
+                  "List as many words that rhyme with 'tone' as you can in 60 seconds.",
+                  "List as many English words as you can that are palindromes in 60 seconds."
+                ]
+              },
+              {
+                "name": "Naming Facility",
+                "description": "The ability to rapidly and accurately recall the specific names for objects, people, places, or concepts from memory.",
+                "note": "This is highly related to the narrow CHC ability \"Naming facility (NA).\"",
+                "testingNote": "Requires real-time video or computer screen input.",
+                "examples": [
+                  "I will show a slideshow of images. Name the object as quickly as you can, and then I will move onto the next slide. (<a href=\"https://docs.google.com/presentation/d/1cs4HvcBXlD7_xufOJ_nBfxO2O-IgbhzhGScmbFjT6EU/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">this slideshow 📊</a>.)"
+                ],
+                "tests": [
+                  "The Stroop effect on the Stroop task must be less than 90 milliseconds."
+                ]
+              },
+              {
+                "name": "Figural Fluency",
+                "description": "The ability to rapidly draw or sketch as many things as possible.",
+                "note": "This is highly related to the narrow CHC ability \"Figural fluency (FF).\"",
+                "examples": [
+                  "Draw as many unique designs as possible by connecting the dots with exactly four straight lines in 60 seconds:<br><img src=\"/assets/examples/non_self_crossing.png\" alt=\"Dot pattern for design fluency test\" style=\"max-width: 200px; margin: 10px 0;\"><br>(Delis-Kaplan Design Fluency test)",
+                  "Sketch as many non-self-crossing paths from A to B using orthogonal steps using the lattice below in 60 seconds:<br><img src=\"/assets/examples/a_b_dots.png\" alt=\"Lattice with points A and B\" style=\"max-width: 300px; margin: 10px 0;\">"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Retrieval Precision (Hallucinations)",
-          "description": "The accuracy of accessed knowledge, including the critical ability to avoid confabulation (hallucinations)."
+          "weight": "4%",
+          "description": "The accuracy of accessed knowledge, including the critical ability to avoid confabulation (hallucinations).",
+          "fullContent": {
+            "definition": "The ability not to confabulate or hallucinate across a variety of topics (e.g., people, places, TV shows, etc.).",
+            "testingNote": "External tools (e.g., internet search) must be disabled for these tests to assess the model's internal knowledge retrieval precision.",
+            "examples": [
+              "What was the context for Winston Churchill's famous 1961 inaugural address, where he said, \"Ask not what your country can do for you—ask what you can do for your country\"<br><u>Answer:</u> This is not a quote from Winston Churchill",
+              "Describe the key strategy that Napoleon Bonaparte used to win his South African campaign.<br><u>Answer:</u> Napoleon was never involved in a campaign in South Africa.",
+              "\"What date should I put in the infobox for {name}?\" or \"Write a bio for {name}.\"",
+              "What is Daniel James Hendrycks's birthday? If you know, just respond with DD-MM. No searching."
+            ],
+            "tests": [
+              "The hallucination rate of the system on <a href=\"https://openai.com/index/introducing-simpleqa/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">SimpleQA</a> (without tools) must be less than 5%."
+            ]
+          }
         }
       ]
     },
@@ -729,44 +846,184 @@
       "weight": "10%",
       "description": "The ability to analyze and generate natural and unnatural images and videos.",
       "mainFigure": "v_examples.png",
+      "note": "This is highly related to the broad CHC ability \"Visual Processing (Gv).\"",
       "subcategories": [
         {
           "name": "Perception",
-          "description": "The ability to process and interpret visual input from images and videos to identify objects and understand scenes.",
-          "subcategories": [
-            {
-              "name": "Image recognition",
-              "description": "The ability to classify images of commonplace objects, places, or facial expressions including distorted images."
-            },
-            {
-              "name": "Image captioning",
-              "description": "The ability to generate a concise, human-like text description for the visual content of an image."
-            },
-            {
-              "name": "Image anomaly detection",
-              "description": "Includes detecting whether there is something anomalous in an image, whether a visual object is the odd one out, or what is missing from an object."
-            },
-            {
-              "name": "Clip captioning",
-              "description": "The ability to generate a concise, human-like text description of a short video segment."
-            },
-            {
-              "name": "Video anomaly detection",
-              "description": "The ability to detect whether a short video segment is anomalous or implausible."
-            }
-          ]
+          "weight": "4%",
+          "description": "The ability to accurately interpret and understand visual input.",
+          "fullContent": {
+            "definition": "The ability to process and interpret visual input from images and videos to identify objects and understand scenes. We give five opportunities to demonstrate proficiency in perception: <span class=\"font-semibold\"><u>image recognition</u></span>, <span class=\"font-semibold\"><u>image captioning</u></span>, <span class=\"font-semibold\"><u>image anomaly detection</u></span>, <span class=\"font-semibold\"><u>clip captioning</u></span>, and <span class=\"font-semibold\"><u>video anomaly detection</u></span>. The AGI score is 2% if the model is proficient at one of these tasks. The AGI score is 4% if it is proficient at all of these tasks.",
+            "note": "Image anomaly detection is highly related to the \"Odd-Item Out\" and the \"What's Missing (WHM)\" RIAS-2 subtests.",
+            "subcategories": [
+              {
+                "name": "Image Recognition",
+                "description": "The ability to classify images of commonplace objects, places, or facial expressions including distorted (e.g., occluded, noisy, blurry, etc.) images.",
+                "examples": [
+                  "What is this? (<a href=\"https://research.google.com/youtube-bb/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/realistic_airplane.png\" alt=\"Realistic airplane image\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> Airplane",
+                  "What does this depict? (<a href=\"https://arxiv.org/abs/2006.16241\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/dog_glass.png\" alt=\"Siberian Husky with distorted view\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> Siberian Husky",
+                  "What does this distorted image depict? (<a href=\"https://arxiv.org/abs/2111.06377\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/distorted_zebra.png\" alt=\"Distorted zebra image\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> Zebras"
+                ]
+              },
+              {
+                "name": "Image Captioning",
+                "description": "The ability to generate a concise, human-like text description for the visual content of an image.",
+                "examples": [
+                  "Create a descriptive caption for this. (<a href=\"https://cs.stanford.edu/people/karpathy/deepimagesent/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/baby_toothbrush.png\" alt=\"Baby with toothbrush\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> A baby in denim overalls holds a toothbrush.",
+                  "Create a descriptive caption for this. (<a href=\"https://cs.stanford.edu/people/karpathy/deepimagesent/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/ferrit_phone.png\" alt=\"Ferret with remote control\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> A ferret rests its head on a black remote control."
+                ]
+              },
+              {
+                "name": "Image Anomaly Detection",
+                "description": "Detecting whether there is something anomalous in an image, or what is missing from an object. These questions should not be reasoning intensive.",
+                "examples": [
+                  "Is this an unusual image?<br><img src=\"/assets/examples/weird_stoplight.png\" alt=\"Unusual stoplight\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> Yes.",
+                  "Which is the odd one out?<br><img src=\"/assets/examples/animals_2.png\" alt=\"Various animals with one odd one out\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> the bird.",
+                  "Which of the bees is the odd one out?<br><img src=\"/assets/examples/bees.png\" alt=\"Grid of bees with one different\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> third row to the right.",
+                  "What is missing?<br><img src=\"/assets/examples/plane_missing_wing.png\" alt=\"Airplane with missing wing\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> the airplane's right wing."
+                ]
+              },
+              {
+                "name": "Clip Captioning",
+                "description": "The ability to generate a concise, human-like text description of a short video segment.",
+                "examples": [
+                  "<a href=\"https://www.youtube.com/watch?v=LeAltgu_pbM\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Youtube link 🎥</a> What happens in this video?<br><u>Answer:</u> a man snowboards and then falls over.",
+                  "<a href=\"https://www.youtube.com/watch?v=DvIChW4Twk4\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Youtube link 🎥</a> What happens in this video?<br><u>Answer:</u> a woman playing charades pretends to be a vampire."
+                ]
+              },
+              {
+                "name": "Video Anomaly Detection",
+                "description": "The ability to detect whether a short video segment is anomalous or implausible.",
+                "examples": [
+                  "<a href=\"https://drive.google.com/file/d/1OUICdReJvxLnvsWRa1kEyU8cSQMBlMmp/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Intuitivephysics1.mp4 🎥</a> Is this animated scene physically plausible?<br><u>Answer:</u> No.",
+                  "<a href=\"https://drive.google.com/file/d/1xmdDs7H-lqYVYPLtj5FpoIhRr0UWxJOr/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Intuitivephysics2.mp4 🎥</a> Is this animated scene physically plausible?<br><u>Answer:</u> Yes.",
+                  "<a href=\"https://drive.google.com/file/d/1xuORphFhvejDKzkgYPumQoMCQTysRpKR/view?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">Running.mov 🎥</a> Is this animated scene anomalous?<br><u>Answer:</u> Yes."
+                ]
+              }
+            ],
+            "tests": [
+              "For image recognition, it is necessary to receive over 85% on <a href=\"https://www.image-net.org/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ImageNet</a> and 90% on <a href=\"https://arxiv.org/abs/2006.16241\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ImageNet-R</a>.",
+              "For video anomaly detection, it is necessary to receive over 85% on <a href=\"https://arxiv.org/abs/2506.09849\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">IntPhysics 2</a>, a measurement of intuitive physics understanding."
+            ]
+          }
         },
         {
           "name": "Visual Generation",
-          "description": "The ability to synthesize images and short videos."
+          "weight": "3%",
+          "description": "The ability to synthesize images and short videos.",
+          "fullContent": {
+            "definition": "Visual generation is the ability to synthesize images and short videos. We test for three visual generation abilities: the ability to generate <span class=\"font-semibold\"><u>simple natural images</u></span>, <span class=\"font-semibold\"><u>complicated images</u></span>, and <span class=\"font-semibold\"><u>simple natural videos</u></span>. The AGI score is 1% if the model is proficient at one of these tasks, 2% for two tasks, and 3% for all three.",
+            "note": "This is highly related to the narrow CHC ability \"Imagery (IM).\" For an AI, synthesizing an image is a direct computational process. In contrast, for a human, it is a mental skill for simple visuals but often a tool-assisted skill to express a complicated internal image. Despite this difference, we include these tasks because we believe the ability to translate abstract concepts into novel visual information is a critical component of general intelligence in the modern era. Therefore, the AI's output is assessed not as a direct analogue of human ability, but as a measurable proxy for its capacity for high-level conceptual and imaginative synthesis.",
+            "subcategories": [
+              {
+                "name": "Simple Natural Images",
+                "description": "Generate straightforward, realistic images of common objects and scenes.",
+                "examples": [
+                  "Generate an image of a golden retriever playing in a park.",
+                  "Create an image of a black leather chair."
+                ]
+              },
+              {
+                "name": "Complicated Images",
+                "description": "Generate complex, abstract, or unusual images requiring creative interpretation.",
+                "examples": [
+                  "Generate an image of a horse with 8 legs.",
+                  "Generate a diagram showing the process of photosynthesis.",
+                  "\"Generate an image with the following characteristics: Abraham Lincoln touches his toes while George Washington does chin-ups. Lincoln is barefoot. Washington is wearing boots.\" (<a href=\"https://arxiv.org/abs/2204.13807\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)",
+                  "Generate an image of a volume knob on an amplifier. The knob levels should go from 1 to 11.",
+                  "Create a diagram of an elephant and label its parts. (<a href=\"https://x.com/GaryMarcus/status/1961111081092616404\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)"
+                ]
+              },
+              {
+                "name": "Simple Natural Videos",
+                "description": "Generate short, realistic video clips of common activities.",
+                "examples": [
+                  "Generate a short video of somebody typing on a keyboard.",
+                  "Generate a short video of a grizzly bear catching a fish."
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Visual Reasoning",
-          "description": "The ability to solve problems and make inferences using spatial logic and visual abstractions (e.g., mental rotation, mental folding)."
+          "weight": "2%",
+          "description": "The ability to solve problems and make inferences using spatial logic and visual abstractions.",
+          "fullContent": {
+            "definition": "Visual reasoning is the ability to understand and make logical inferences about the information in an image. We test multiple skills to determine proficiency in visual reasoning: <span class=\"font-semibold\"><u>gestalt reasoning</u></span>, <span class=\"font-semibold\"><u>mental rotation</u></span>, <span class=\"font-semibold\"><u>mental folding</u></span>, <span class=\"font-semibold\"><u>embodied reasoning</u></span>, <span class=\"font-semibold\"><u>figure question and answering</u></span>, and similar miscellaneous skills. The AGI score is 2% if it is proficient at all of these tasks.",
+            "note": "This is highly related to the narrow CHC abilities \"Flexibility of closure (CF),\" \"Closure speed (CS),\" and \"Length estimation (LE).\"",
+            "subcategories": [
+              {
+                "name": "Gestalt Reasoning",
+                "description": "Understanding visual patterns and completing incomplete visual information.",
+                "examples": [
+                  "Please join the circles together to form a letter (ignore the squares). (<a href=\"https://elmirmohammedmemorypsy.com/wp-content/uploads/2018/03/woodcock-johnson-iii-tests-of-cognitive-abilities.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/join_circles.png\" alt=\"Circles and squares pattern\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "Identify the picture: (<a href=\"https://elmirmohammedmemorypsy.com/wp-content/uploads/2018/03/woodcock-johnson-iii-tests-of-cognitive-abilities.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/face_ink.png\" alt=\"Ink blot face pattern\" style=\"max-width: 200px; margin: 10px 0;\">"
+                ]
+              },
+              {
+                "name": "Mental Rotation",
+                "description": "Visualizing how objects appear when rotated in space.",
+                "examples": [
+                  "Which shape on the right is the same as the shape on the left?<br><img src=\"/assets/examples/6_shape_rotations_2.png\" alt=\"Shape rotation comparison\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "List the pieces required to complete the shape on the left<br><img src=\"/assets/examples/5_shape_rotations.png\" alt=\"Shape completion puzzle\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "Choose the two shapes that are identical to the one on the farthest left<br><img src=\"/assets/examples/5_circle_shapes.png\" alt=\"Circle shape matching\" style=\"max-width: 300px; margin: 10px 0;\">"
+                ]
+              },
+              {
+                "name": "Mental Folding",
+                "description": "Visualizing how 2D patterns fold into 3D objects and vice versa.",
+                "examples": [
+                  "(<a href=\"https://arxiv.org/abs/2410.06468\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/mental_folding_shapes.png\" alt=\"Mental folding puzzle\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> A",
+                  "(Block Design) Arrange and rotate the 9 identical 3D blocks on the right, so their top faces form the pattern on the left.<br><img src=\"/assets/examples/block_design.png\" alt=\"Block design puzzle\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "The left image shows a cube with different patterns on its six faces from a particular viewing angle. The options are nets (unfolded patterns) of the cube, which are folded upward to form the cube. Which net, when folded, cannot form the cube shown in the left image? (<a href=\"https://arxiv.org/abs/2507.07610\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/cube_shape_folding.png\" alt=\"Cube folding puzzle\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> B",
+                  "Choose the figure that displays the pieces joined together. (<a href=\"https://www.ijee.ie/articles/Vol29-3/22_ijee2729ns.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/pieces_joined_together.png\" alt=\"Pieces joining puzzle\" style=\"max-width: 200px; margin: 10px 0;\"><br><u>Answer:</u> A"
+                ]
+              },
+              {
+                "name": "Embodied Reasoning",
+                "description": "Understanding physical interactions and spatial relationships in real-world contexts.",
+                "examples": [
+                  "Approximately which colored trajectory should the zipper follow to begin zipping up the suitcase? (<a href=\"https://arxiv.org/abs/2503.20020\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/suitcase.png\" alt=\"Suitcase zipper trajectory\" style=\"max-width: 200px; margin: 10px 0;\"><br><u>Answer:</u> Blue"
+                ]
+              },
+              {
+                "name": "Chart and Figure Reasoning",
+                "description": "Interpreting and analyzing visual data representations, charts, and diagrams.",
+                "examples": [
+                  "What is the spatially lowest labeled tick on the y-axis? (<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">source</a>)<br><img src=\"/assets/examples/heat_chart.png\" alt=\"Heat chart with y-axis labels\" style=\"max-width: 300px; margin: 10px 0;\"><br><u>Answer:</u> CC daily 4.00PM",
+                  "For each line in (a), give the number corresponding to the orientation in the answer card.<br><img src=\"/assets/examples/arc_lines.png\" alt=\"Line orientation matching\" style=\"max-width: 300px; margin: 10px 0;\">",
+                  "(Digit Symbol Substitution Test) Using the key at the top, what is the sequence of numbers matching the shapes at the bottom?<br><img src=\"/assets/examples/shapes_numbers_match.png\" alt=\"Shape to number matching\" style=\"max-width: 300px; margin: 10px 0;\">"
+                ]
+              }
+            ],
+            "tests": [
+              "<a href=\"https://arxiv.org/abs/2410.06468\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">SPACE</a>, a test of various visual reasoning skills, must be above 80%.",
+              "<a href=\"https://arxiv.org/abs/2507.07610\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">SpatialViz-Bench</a>, a test of mental rotation and folding, must be above 80%.",
+              "<a href=\"https://arxiv.org/pdf/2406.18521\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">CharXiv</a>, a test of figure question and answering, must be above 80%.",
+              "<a href=\"https://arxiv.org/abs/2503.20020\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ERQA</a>, a test of embodied reasoning, must be above 80%.",
+              "<a href=\"https://clockbench.ai/ClockBench.pdf\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">ClockBench</a>, a test of reading clock hands, must be above 80%."
+            ]
+          }
         },
         {
           "name": "Spatial Scanning",
-          "description": "The ability to accurately survey (visually explore) a wide or complicated spatial field or pattern with multiple obstacles, and identify target configurations or identify a path through the field to a target endpoint."
+          "weight": "1%",
+          "description": "The speed and accuracy of visually exploring a complex field.",
+          "fullContent": {
+            "definition": "Spatial scanning is the ability to accurately survey (visually explore) a wide or complicated spatial field or pattern with multiple obstacles, and identify target configurations or identify a path through the field to a target endpoint. We test multiple skills to determine proficiency in visual reasoning: <span class=\"font-semibold\"><u>tracing a path through the maze</u></span>, <span class=\"font-semibold\"><u>finding all instances of an object in an image</u></span>, <span class=\"font-semibold\"><u>connecting the dots</u></span>, <span class=\"font-semibold\"><u>map route analysis</u></span>, and similar miscellaneous skills. The AGI score is 1% if it is proficient at all of these tasks.",
+            "note": "This is highly related to the narrow CHC ability \"Spatial scanning (SS).\"",
+            "examples": [
+              "Find a path to the center of this maze.<br><img src=\"/assets/examples/kids_maze.png\" alt=\"Children's maze puzzle\" style=\"max-width: 200px; margin: 10px 0;\">",
+              "Determine the number of people in this picture.<br><img src=\"/assets/examples/friends.png\" alt=\"Group of friends\" style=\"max-width: 200px; margin: 10px 0;\">",
+              "Determine the number of fingers on this hand.<br><img src=\"/assets/examples/stop_emoji.png\" alt=\"Stop hand emoji\" style=\"max-width: 200px; margin: 10px 0;\">",
+              "Find Waldo in this image.<br><img src=\"/assets/examples/wheres_waldo.png\" alt=\"Where's Waldo puzzle\" style=\"max-width: 500px; margin: 10px 0;\">",
+              "Circle all pairs matching the pair at the top-left.<br><img src=\"/assets/examples/pairs_icons.png\" alt=\"Icon pair matching\" style=\"max-width: 500px; margin: 10px 0;\">",
+              "Mark the midpoint of each line.<br><img src=\"/assets/examples/midpoint_lines.png\" alt=\"Lines for midpoint marking\" style=\"max-width: 200px; margin: 10px 0;\">",
+              "Connect the dots:<br><img src=\"/assets/examples/connect_dots.png\" alt=\"Dot connection puzzle\" style=\"max-width: 200px; margin: 10px 0;\">",
+              "Consider the map of the fictional planet Zebes from <em>Super Metroid</em> (see <a href=\"https://www.snesmaps.com/maps/SuperMetroid/SuperMetroidMapZebes.png\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 hover:text-blue-800 underline\">map link</a>). Is the \"Spring Ball\" above or below the \"Varia Suit\"?<br><u>Answer:</u> Above."
+            ]
+          }
         }
       ]
     },

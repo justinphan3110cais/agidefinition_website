@@ -9,7 +9,7 @@ interface ExpandableSubcategoryProps {
   subcategory: {
     name: string;
     weight?: string;
-    description: string;
+    description?: string;
     fullContent?: {
       definition?: string;
       testingNote?: string;
@@ -109,7 +109,7 @@ export function ExpandableSubcategory({ subcategory, index, colorIndex }: Expand
               {" "}(<span className="underline decoration-2 underline-offset-2">{subcategory.weight}</span>)
             </span>
           )}
-          <span>: {subcategory.description}</span>
+          {subcategory.description && <span>: {subcategory.description}</span>}
         </div>
       </div>
 
