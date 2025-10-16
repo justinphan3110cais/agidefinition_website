@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "A Definition of AGI",
-  description: "A quantifiable framework for defining Artificial General Intelligence based on Cattell-Horn-Carroll theory",
+  description: "A definition and measurement of Artificial General Intelligence (AGI)",
 };
 
 export default function RootLayout({

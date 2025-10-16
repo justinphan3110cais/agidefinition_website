@@ -44,12 +44,12 @@ export function AuthorsSection() {
         </a>
         {TWEET_URL && (
           <a 
-            className="flex items-center justify-center bg-black text-white rounded-md px-4 py-1 hover:bg-gray-800 transition-colors" 
+            className="flex items-center justify-center bg-black text-white rounded-md w-10 h-10 hover:bg-gray-800 transition-colors" 
             href={TWEET_URL} 
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src={xLogo} alt="X Logo" width={22} height={22} className="mr-1.5" />
+            <Image src={xLogo} alt="X Logo" width={18} height={18} />
           </a>
         )}
       </div>
