@@ -107,26 +107,29 @@ export default function AGIDefinitionPage() {
     <>      
             <main className="flex-1 overflow-y-auto">
               <div className="max-w-4xl mx-auto px-6 py-16">
-            <section id="introduction" className="mb-16 scroll-mt-8">
-              <div className="mb-12">
-                <div className="flex flex-col items-center justify-center mb-6">
-                  <Image 
-                    src="/assets/agi_definition_logo.svg" 
-                    alt="AGI Definition Logo" 
-                    width={128}
-                    height={128}
-                    className="w-50 h-50 mb-4"
-                  />
-                  <h1 className="text-4xl font-semibold text-gray-900 leading-tight text-center">
-                    A Definition of AGI
-                  </h1>
-                </div>
-                
-                <AuthorsSection />
+            {/* Header */}
+            <div className="mb-12">
+              <div className="flex flex-col items-center justify-center mb-6">
+                <Image 
+                  src="/assets/agi_definition_logo.svg" 
+                  alt="AGI Definition Logo" 
+                  width={128}
+                  height={128}
+                  className="w-50 h-50 mb-4"
+                />
+                <h1 className="text-4xl font-semibold text-gray-900 leading-tight text-center">
+                  A Definition of AGI
+                </h1>
               </div>
+              
+              <AuthorsSection />
+            </div>
 
-              <div className="mb-12">
-
+            {/* Introduction Section */}
+            <section id="introduction" className="mb-16 scroll-mt-8">
+              <div className="mx-auto max-w-4xl">
+                <h2 className="mb-4 text-center text-2xl font-bold">Introduction</h2>
+                <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
                 
                 <div className="text-lg text-gray-700 leading-relaxed space-y-4">
                   <p>
@@ -137,33 +140,33 @@ export default function AGIDefinitionPage() {
                     The framework dissects general intelligence into ten core cognitive domains—including reasoning, memory, and perception—and adapts established human psychometric batteries to evaluate AI systems. Application of this framework reveals a highly &ldquo;jagged&rdquo; cognitive profile in contemporary models. While proficient in knowledge-intensive domains, current AI systems have critical deficits in foundational cognitive machinery, particularly long-term memory storage.
                   </p>
                 </div>
-              </div>
-            </section>
 
-            {/* GPT Performance Radar Chart */}
-            <section className="mb-16">
-              <div className="flex flex-col items-center px-4">
-                <div className="w-full max-w-2xl">
-                  <Image 
-                    src="/assets/radar.png" 
-                    alt="GPT-4 and GPT-5 capabilities radar chart"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto mb-4"
-                  />
-                </div>
-                <div className="text-center max-w-lg px-4">
-                  <p className="text-base sm:text-lg text-gray-600">
-                    The capabilities of GPT-4 and GPT-5.
-                  </p>
+                {/* GPT Performance Radar Chart */}
+                <div className="flex flex-col items-center px-4 mt-8">
+                  <div className="w-full max-w-2xl">
+                    <Image 
+                      src="/assets/radar.png" 
+                      alt="GPT-4 and GPT-5 capabilities radar chart"
+                      width={600}
+                      height={450}
+                      className="w-full h-auto mb-4"
+                    />
+                  </div>
+                  <div className="text-center max-w-lg px-4">
+                    <p className="text-base sm:text-lg text-gray-600">
+                      The capabilities of GPT-4 and GPT-5.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
 
-            {/* Framework Overview */}
-            <section className="mb-12">
-              <div className="max-w-4xl mx-auto">
-                <hr className="border-gray-300 mb-8" />
+            {/* Definition Section */}
+            <section id="definition" className="mb-16 scroll-mt-8">
+              <div className="mx-auto max-w-4xl">
+                <h2 className="mb-4 text-center text-2xl font-bold">Definition</h2>
+                <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
+                
                 <blockquote className="text-xl font-bold text-gray-900 mb-8 mx-12 text-center">
                   &quot;AGI is an AI that can match or exceed the cognitive versatility and proficiency of a well-educated adult.&quot;
                 </blockquote>
@@ -351,21 +354,21 @@ export default function AGIDefinitionPage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Selected Ability Detail */}
+                {selectedAbility && (
+                  <AbilityDetail 
+                    ability={selectedAbility} 
+                    index={abilities.findIndex(a => a.id === selectedAbility.id)} 
+                  />
+                )}
               </div>
             </section>
-
-            {/* Selected Ability Detail */}
-            {selectedAbility && (
-              <AbilityDetail 
-                ability={selectedAbility} 
-                index={abilities.findIndex(a => a.id === selectedAbility.id)} 
-              />
-            )}
 
             {/* <DiscussionSection /> */}
             
             {/* Citation Section */}
-            <section className="mb-12 w-full mt-8">
+            <section id="citation" className="mb-12 w-full mt-8 scroll-mt-8">
               <div className="mx-auto max-w-4xl">
                 <h2 className="mb-4 text-center text-2xl font-bold">Citation</h2>
                 <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
