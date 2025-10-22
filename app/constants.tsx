@@ -2,10 +2,14 @@ export const PAPER_URL = "https://arxiv.org/abs/2510.18212";
 export const GITHUB_URL = "";
 export const TWEET_URL = "https://x.com/DanHendrycks/status/1978828377269117007";
 
-export const BIBTEX_CITATION = `@misc{hendrycks2025agidefinition,
-      title={AGI Definition}, 
+export const BIBTEX_CITATION = `@misc{hendrycks2025definitionagi,
+      title={A Definition of AGI}, 
       author={Dan Hendrycks and Dawn Song and Christian Szegedy and Honglak Lee and Yarin Gal and Erik Brynjolfsson and Sharon Li and Andy Zou and Lionel Levine and Bo Han and Jie Fu and Ziwei Liu and Jinwoo Shin and Kimin Lee and Mantas Mazeika and Long Phan and George Ingebretsen and Adam Khoja and Cihang Xie and Olawale Salaudeen and Matthias Hein and Kevin Zhao and Alexander Pan and David Duvenaud and Bo Li and Steve Omohundro and Gabriel Alfour and Max Tegmark and Kevin McGrew and Gary Marcus and Jaan Tallinn and Eric Schmidt and Yoshua Bengio},
       year={2025},
+      eprint={2510.18212},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2510.18212}, 
 }`;
 
 export const AUTHORS = {
