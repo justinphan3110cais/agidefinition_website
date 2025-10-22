@@ -1,4 +1,4 @@
-export const PAPER_URL = "/paper";
+export const PAPER_URL = "https://arxiv.org/abs/2510.18212";
 export const GITHUB_URL = "";
 export const TWEET_URL = "https://x.com/DanHendrycks/status/1978828377269117007";
 
