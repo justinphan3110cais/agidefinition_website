@@ -46,7 +46,7 @@ export const AUTHORS = {
   fifthLine: [
     { name: "Alexander Pan", sup: "2", link: "https://aypan17.github.io/" },
     { name: "David Duvenaud", sup: "21,22", link: "https://www.cs.toronto.edu/~duvenaud/" },
-    { name: "Bo Li", sup: "23,3", link: "https://aisecure.github.io/" },
+    { name: "Bo Li", sup: "3,23", link: "https://aisecure.github.io/" },
     { name: "Steve Omohundro", sup: "24", link: "https://steveomohundro.com/" },
     { name: "Gabriel Alfour", sup: "25", link: "" },
   ],
